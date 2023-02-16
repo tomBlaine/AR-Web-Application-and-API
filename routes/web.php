@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PresentationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/timeline', [PresentationController::class, 'index'])
+    ->name('presentations.index');
+
+Route::post('/timeline', [PresentationController::class, 'store'])
+    ->name('presentations.store')->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

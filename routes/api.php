@@ -16,6 +16,8 @@ use App\Http\Controllers\APIAuth;
 */
 
 //Route::get('/index', [PresentationController::class, 'index']);
+
+
 Route::post('/register', [APIAuth::class, 'register']);
 Route::post('/login', [APIAuth::class, 'login']);
 
@@ -23,6 +25,7 @@ Route::post('/login', [APIAuth::class, 'login']);
 Route::group(['middleware' => ['auth:sanctum']], function() {
     
     Route::post('/logout', [APIAuth::class, 'logout']);
+    
 });
 
 
