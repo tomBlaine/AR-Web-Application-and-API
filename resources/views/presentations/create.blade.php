@@ -6,12 +6,12 @@
 @section('content')
 
 <p>Create Presentation:</p>
-<form method="POST" action="{{route('presentation.store')}}">
+<form method="POST" action="{{route('presentations.store')}}">
     @csrf
     <p>Title: </p>
-    <textarea type="text" name="title" rows=2 style="width: 80%"></textarea>
+    <textarea name="title" rows=2 style="width: 80%"></textarea>
     <p>Body: </p>
-    <textarea type="text" name="body" rows=15 style="width: 80%"></textarea>
+    <textarea name="body" rows=15 style="width: 80%"></textarea>
 
     <br>
     <br>
