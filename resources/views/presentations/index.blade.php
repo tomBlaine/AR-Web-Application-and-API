@@ -3,7 +3,7 @@
 @section('title', 'Timeline')
 
 @section('content')
-
+<p>Presentations:</p>
 <ul>
     @foreach ($presentations as $presentation)
         <li>Post: {{$presentation->text}}</li>

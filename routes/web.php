@@ -19,15 +19,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/timeline', [PresentationController::class, 'index'])
-    ->name('presentations.index');
 
-//Route::post('/timeline', [PresentationController::class, 'store'])
-//    ->name('presentations.store')->middleware(['auth']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+
+Route::get('/timeline', [PresentationController::class, 'index'])
+    ->name('presentations.index');
+
+Route::get('/presentations/create', [PresentationController::class, 'create'])
+    ->name('posts.create')->middleware(['auth']);
+
+
+Route::post('/timeline', [PresentationController::class, 'store'])
+    ->name('presentations.store')->middleware(['auth']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
