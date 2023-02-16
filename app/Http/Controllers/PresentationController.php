@@ -8,6 +8,7 @@ use App\Models\Presentation;
 
 class PresentationController extends Controller
 {
+    /*
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -26,7 +27,7 @@ class PresentationController extends Controller
         session()->flash('message', 'Presentation was created.');
         return redirect()->route('timeline');
     }
-
+*/
 
     public function index()
     {

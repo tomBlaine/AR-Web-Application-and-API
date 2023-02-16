@@ -22,8 +22,8 @@ Route::get('/', function () {
 Route::get('/timeline', [PresentationController::class, 'index'])
     ->name('presentations.index');
 
-Route::post('/timeline', [PresentationController::class, 'store'])
-    ->name('presentations.store')->middleware(['auth']);
+//Route::post('/timeline', [PresentationController::class, 'store'])
+//    ->name('presentations.store')->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
