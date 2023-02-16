@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Presentation;
+use Illuminate\Support\Facades\Auth;
 
 class PresentationController extends Controller
 {
+
+
+    public function create()
+    {
+        return view('presentations.create');
+    }
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -23,15 +31,9 @@ class PresentationController extends Controller
 
         $a->save();
 
-        session()->flash('message', 'Presentation was created.');
+        //session()->flash('message', 'Presentation was created.');
         return redirect()->route('timeline');
     }
-    
-    public function create()
-    {
-        return view('presentations.create');
-    }
-
 
     public function index()
     {
