@@ -15,7 +15,7 @@ class PresentationController extends Controller
             'body' => ['required', 'string', 'max:3000'],
         ]);
 
-        $a = new Post;
+        $a = new Presentation;
         $a->title = $validatedData['title'];
         $a->text = $validatedData['body'];
         $a->user_id = auth()->id();
@@ -24,7 +24,7 @@ class PresentationController extends Controller
         $a->save();
 
         session()->flash('message', 'Presentation was created.');
-        return redirect()->route('presentations.store');
+        return redirect()->route('timeline');
     }
 
 
