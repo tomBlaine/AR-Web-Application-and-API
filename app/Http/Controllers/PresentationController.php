@@ -30,7 +30,7 @@ class PresentationController extends Controller
 
     public function index()
     {
-        $presentations = Presentations::orderBy('created_at', 'desc')->simplePaginate(5);
+        $presentations = Presentation::orderBy('created_at', 'desc')->simplePaginate(5);
         return view('presentations.index', ['presentations' => $presentations]);
     }
 }
