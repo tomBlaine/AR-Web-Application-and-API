@@ -21,6 +21,10 @@ use App\Http\Controllers\APIAuth;
 Route::post('/register', [APIAuth::class, 'register']);
 Route::post('/login', [APIAuth::class, 'login']);
 
+Route::get('/presentations/{id}', function(){
+    return Presentation::where('id', $id)->get();
+});
+
 //protected routes
 Route::group(['middleware' => ['auth:sanctum']], function() {
     

@@ -37,8 +37,8 @@ class SlideController extends Controller
 
         $a = new Slide;
         $a->text1 = $text1;
-        $a->text2 = $text1;
-        $a->text3 = $text1;
+        $a->text2 = $text2;
+        $a->text3 = $text3;
         $a->obj=$validatedData['obj'];
         $a->user_id = auth()->id();
         $a->pres_id = $id;
