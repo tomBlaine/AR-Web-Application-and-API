@@ -31,6 +31,9 @@ Route::get('/dashboard', function () {
 Route::get('/timeline', [PresentationController::class, 'index'])
     ->name('presentations.index');
 
+Route::get('/presentations/{id}/slides', [SlideController::class, 'store'])
+    ->name('slides.store')->middleware(['auth']);
+
 
 
 Route::get('/presentations/create', [PresentationController::class, 'create'])

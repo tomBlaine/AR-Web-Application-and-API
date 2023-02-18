@@ -3,6 +3,7 @@
 @section('title', 'View')
 
 @section('content')
+<div>
 <p>{{$presentation->title}}</p>
 <p>{{$presentation->text}}</p>
 <br>
@@ -17,7 +18,15 @@
         <p> </p>
     @endforeach
 </ul>
+
+@auth
+@if ($presentation->User->id == auth()->id())
+    @yield('addSlide')
+@endif
+@endauth
 </div>
+
+
 
 
 @endsection

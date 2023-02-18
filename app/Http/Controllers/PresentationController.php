@@ -48,4 +48,6 @@ class PresentationController extends Controller
         $slides = Slide::where('pres_id', $id)->get();
         return view('presentations.show', ['presentation' => $presentation, 'slides'=>$slides]);
     }
+
+
 }
