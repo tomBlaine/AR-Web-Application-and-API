@@ -13,7 +13,7 @@ class SlideController extends Controller
     public function store(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'text1' => ['required', 'string', 'max:255'],
+            'text1' => ['required', 'string', 'max:2550'],
             'text2' => ['max:3000'],
             'text3' => ['max:3000'],
             'obj' =>['max:2000']
@@ -21,17 +21,19 @@ class SlideController extends Controller
 
         $text1 = $validatedData['text1'];
 
-        //$text1 = $this->removeNewLines($validatedData['text1']);
+        $text1 = $this->removeNewLines($validatedData['text1']);
         $text1 = $this->getBoxType($text1) . $text1;
 
-        //if(strlen($validatedData['text2']) > 0){
-            //$text2 = removeNewLines($validatedData['text2']);
-            //$text2 = getBoxType($text2) . $text2;
-        //}
-        //if(strlen($validatedData['text3']) > 0){
-        //    $text3 = removeNewLines($validatedData['text3']);
-        //    $text3 = getBoxType($text3) . $text3;
-        //}
+        $text2="";
+        if(strlen($validatedData['text2']) > 0){
+            $text2 = removeNewLines($validatedData['text2']);
+            $text2 = getBoxType($text2) . $text2;
+        }
+        $text3="";
+        if(strlen($validatedData['text3']) > 0){
+            $text3 = removeNewLines($validatedData['text3']);
+            $text3 = getBoxType($text3) . $text3;
+        }
 
         $a = new Slide;
         $a->text1 = $text1;
@@ -50,26 +52,18 @@ class SlideController extends Controller
 
     private function removeNewLines($str){
         $str = preg_replace('/^\n+/', '', $str);
-        // remove new lines from end of string
         $str = preg_replace('/\n+$/', '', $str);
-        // return modified string
         return $str;
     }
 
     private function getBoxType($str) {
         $result = "";
+        $newlines = substr_count($str, "\n");
 
         if (strlen($str) < 150) {
             $result = 'F';
         } else {
-            $length = strlen($str);
-            $newLines = 0;
-            for ($i = 0; $i < $length; $i++) {
-                if ($str[$i] == "\n") {
-                    $newLines = 1;
-                }
-            }
-            if($newLines==0){
+            if($newLines>1){
                 $result = 'P';
             } else{
                 $result = 'L';
