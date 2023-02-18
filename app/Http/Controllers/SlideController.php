@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Presentation;
 use App\Models\Slide;
+use Illuminate\Support\Facades\Auth;
 
 class SlideController extends Controller
 {
