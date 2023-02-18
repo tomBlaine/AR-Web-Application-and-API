@@ -74,6 +74,7 @@ class SlideController extends Controller
                 $result = 'L';
             }
         }
+        return $result;
     }
 
     public function edit($id)
