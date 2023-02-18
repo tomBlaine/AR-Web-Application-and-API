@@ -26,10 +26,7 @@
 
 @auth
 @if ($presentation->User->id == auth()->id())
-    <form method="POST" action="{{route('slides.edit', ['id'=>$presentation])}}">
-        @csrf
-        <button type="submit">Add Slide</button>
-    </form>
+    <p><a href={{route('slides.edit', ['id'=>$presentation])}}>Add Slide</a></p>
 @endif
 @endauth
 
