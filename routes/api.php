@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PresentationController;
 use App\Http\Controllers\APIAuth;
+use App\Http\Controllers\APIController;
 use App\Models\Presentation;
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +27,7 @@ Route::get('/sayhello', function(){
     return "hello";
 });
 
-Route::get('/presentations/{id}', function(){
-    return Presentation::where('id', $id)->get();
-});
+Route::get('/presentations/{id}', [APIController::class, 'show']);
 
 //protected routes
 Route::group(['middleware' => ['auth:sanctum']], function() {
