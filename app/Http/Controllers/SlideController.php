@@ -20,8 +20,8 @@ class SlideController extends Controller
         ]);
 
 
-        $text1 = removeNewLines($validatedData['text1']);
-        //$text1 = getBoxType($text1) . $text1;
+        //$text1 = removeNewLines($validatedData['text1']);
+        $text1 = getBoxType($text1) . $text1;
 
         //if(strlen($validatedData['text2']) > 0){
             //$text2 = removeNewLines($validatedData['text2']);
