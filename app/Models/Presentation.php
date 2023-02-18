@@ -14,4 +14,10 @@ class Presentation extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+
+
+    public function slides()
+    {
+        return $this->hasMany('App\Models\Slide');
+    }
 }
