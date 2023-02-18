@@ -10,12 +10,12 @@ use Illuminate\Support\Facades\Auth;
 
 class SlideController extends Controller
 {
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         $validatedData = $request->validate([
             'text1' => ['required', 'string', 'max:255'],
-            'text2' => ['string', 'max:3000'],
-            'text3' => ['string', 'max:3000'],
+            'text2' => ['max:3000'],
+            'text3' => ['max:3000'],
             'obj' =>['max:2000']
         ]);
 
