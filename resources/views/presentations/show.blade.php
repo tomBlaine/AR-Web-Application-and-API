@@ -19,12 +19,19 @@
     @endforeach
 </ul>
 
+<div>
+    @yield('addSlide')
+</div>
+</div>
+
 @auth
 @if ($presentation->User->id == auth()->id())
-    @yield('addSlide')
+    <form method="POST" action="{{route('slides.edit', ['id'=>$presentation])}}">
+        @csrf
+        <button type="submit">Add Slide</button>
+    </form>
 @endif
 @endauth
-</div>
 
 
 

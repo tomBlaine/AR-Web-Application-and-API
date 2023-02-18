@@ -39,6 +39,9 @@ Route::get('/presentations/create', [PresentationController::class, 'create'])
 Route::get('/presentations/{id}', [PresentationController::class, 'show'])
     ->name('presentations.show');
 
+Route::get('/presentations/{id}/slide', [SlideController::class, 'edit'])
+    ->name('slides.edit')->middleware(['auth']);
+
 Route::post('/presentations/{id}', [SlideController::class, 'store'])
     ->name('slides.store')->middleware(['auth']);
 

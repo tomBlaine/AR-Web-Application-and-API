@@ -32,4 +32,13 @@ class SlideController extends Controller
         session()->flash('message', 'Post was created.');
         return redirect()->route('presentations.index');
     }
+
+    public function edit($id)
+    {
+        $presentation = Presentation::findOrFail($id);
+        $slides = Slide::where('pres_id', $presentation->id)->get();
+        return view('slides.create', ['slides'=>$slides, 'presentation'=>$presentation]);
+    }
+
+    
 }
