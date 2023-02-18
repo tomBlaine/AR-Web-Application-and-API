@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PresentationController;
 use App\Http\Controllers\APIAuth;
+use App\Models\Presentation;
 /*
 |--------------------------------------------------------------------------
 | API Routes
