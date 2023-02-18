@@ -22,6 +22,10 @@ use App\Models\Presentation;
 Route::post('/register', [APIAuth::class, 'register']);
 Route::post('/login', [APIAuth::class, 'login']);
 
+Route::get('/sayhello', function(){
+    return "hello";
+});
+
 Route::get('/presentations/{id}', function(){
     return Presentation::where('id', $id)->get();
 });
