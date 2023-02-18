@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string("text2")->nullable();
             $table->string("text3")->nullable();
             $table->string("obj")->nullable();
+            $table->bigInteger('user_id')->references('id')->on('User')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigInteger('pres_id')->references('id')->on('Presentation')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
