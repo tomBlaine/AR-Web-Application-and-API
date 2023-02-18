@@ -21,7 +21,7 @@ class SlideController extends Controller
 
         $text1 = $validatedData['text1'];
 
-        //$text1 = removeNewLines($validatedData['text1']);
+        $text1 = removeNewLines($validatedData['text1']);
         //$text1 = getBoxType($text1) . $text1;
 
         //if(strlen($validatedData['text2']) > 0){
@@ -48,7 +48,7 @@ class SlideController extends Controller
         return redirect()->route('presentations.show', ['id'=> $id]);
     }
 
-    function removeNewLines($str){
+    private function removeNewLines($str){
         $str = preg_replace('/^\n+/', '', $str);
         // remove new lines from end of string
         $str = preg_replace('/\n+$/', '', $str);
