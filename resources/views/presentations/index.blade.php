@@ -6,7 +6,7 @@
 <p>Presentations:</p>
 <ul>
     @foreach ($presentations as $presentation)
-        <li>Title: {{$presentation->title}}</li>
+        <li><a href={{route('presentations.show', ['id'=>$presentation->id])}}>Title: {{$presentation->title}}</a></li>
         <li>Text: {{$presentation->text}}</li>
         <p> </p>
         <p> </p>

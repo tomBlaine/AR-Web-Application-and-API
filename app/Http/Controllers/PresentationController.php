@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Presentation;
+use App\Models\Slide;
 use Illuminate\Support\Facades\Auth;
 
 class PresentationController extends Controller
@@ -39,5 +40,12 @@ class PresentationController extends Controller
     {
         $presentations = Presentation::all();
         return view('presentations.index', ['presentations' => $presentations]);
+    }
+
+    public function show($id)
+    {
+        $presentation = Presentation::findOrFail($id);
+        $slides = Slide::where('pres_id', $id)->get();
+        return view('presentations.show', ['presentation' => $presentation, 'slides'=>$slides]);
     }
 }
