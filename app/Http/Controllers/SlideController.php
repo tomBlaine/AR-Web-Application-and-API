@@ -19,9 +19,9 @@ class SlideController extends Controller
             'obj' =>['max:2000']
         ]);
 
-        $text1 = $validatedData['text1'];
+        //$text1 = $validatedData['text1'];
 
-        $text1 = removeNewLines($validatedData['text1']);
+        $text1 = $this->removeNewLines($validatedData['text1']);
         //$text1 = getBoxType($text1) . $text1;
 
         //if(strlen($validatedData['text2']) > 0){
