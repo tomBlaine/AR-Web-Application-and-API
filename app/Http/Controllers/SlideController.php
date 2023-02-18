@@ -23,19 +23,19 @@ class SlideController extends Controller
         $text1 = removeNewLines($validatedData['text1']);
         $text1 = getBoxType($text1) . $text1;
 
-        if(strlen($validatedData['text2']) > 0){
-            $text2 = removeNewLines($validatedData['text2']);
-            $text2 = getBoxType($text2) . $text2;
-        }
-        if(strlen($validatedData['text3']) > 0){
-            $text3 = removeNewLines($validatedData['text3']);
-            $text3 = getBoxType($text3) . $text3;
-        }
+        //if(strlen($validatedData['text2']) > 0){
+            //$text2 = removeNewLines($validatedData['text2']);
+            //$text2 = getBoxType($text2) . $text2;
+        //}
+        //if(strlen($validatedData['text3']) > 0){
+        //    $text3 = removeNewLines($validatedData['text3']);
+        //    $text3 = getBoxType($text3) . $text3;
+        //}
 
         $a = new Slide;
         $a->text1 = $text1;
-        $a->text2 = $text2;
-        $a->text3 = $text3;
+        $a->text2 = $text1;
+        $a->text3 = $text1;
         $a->obj=$validatedData['obj'];
         $a->user_id = auth()->id();
         $a->pres_id = $id;
