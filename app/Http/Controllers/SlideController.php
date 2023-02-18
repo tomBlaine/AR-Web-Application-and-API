@@ -19,10 +19,23 @@ class SlideController extends Controller
             'obj' =>['max:2000']
         ]);
 
+
+        $text1 = removeNewLines($validatedData['text1']);
+        $text1 = getBoxType($text1) . $text1;
+
+        if(strlen($validatedData['text2']) > 0){
+            $text2 = removeNewLines($validatedData['text2']);
+            $text2 = getBoxType($text2) . $text2;
+        }
+        if(strlen($validatedData['text3']) > 0){
+            $text3 = removeNewLines($validatedData['text3']);
+            $text3 = getBoxType($text3) . $text3;
+        }
+
         $a = new Slide;
-        $a->text1 = $validatedData['text1'];
-        $a->text2 = $validatedData['text2'];
-        $a->text3 = $validatedData['text3'];
+        $a->text1 = $text1;
+        $a->text2 = $text2;
+        $a->text3 = $text3;
         $a->obj=$validatedData['obj'];
         $a->user_id = auth()->id();
         $a->pres_id = $id;
@@ -31,7 +44,36 @@ class SlideController extends Controller
         $a->save();
 
         session()->flash('message', 'Post was created.');
-        return redirect()->route('presentations.index');
+        return redirect()->route('presentations.show', ['id'=> $id]);
+    }
+
+    function removeNewLines($str){
+        $str = preg_replace('/^\n+/', '', $str);
+        // remove new lines from end of string
+        $str = preg_replace('/\n+$/', '', $str);
+        // return modified string
+        return $str;
+    }
+
+    function getBoxType($str) {
+        $result = "";
+
+        if (strlen($str) < 150) {
+            $result = 'F';
+        } else {
+            $length = strlen($str);
+            $newLines = 0;
+            for ($i = 0; $i < $length; $i++) {
+                if ($str[$i] == "\n") {
+                    $newLines = 1;
+                }
+            }
+            if($newLines==0){
+                $result = 'P';
+            } else{
+                $result = 'L';
+            }
+        }
     }
 
     public function edit($id)
