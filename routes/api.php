@@ -27,7 +27,9 @@ Route::get('/sayhello', function(){
     return "hello";
 });
 
-Route::get('/presentations/{id}', [APIController::class, 'show']);
+Route::get('/presentations/{id}', [APIController::class, 'showPres']);
+
+Route::get('/slides/{id}', [APIController::class, 'showSlides']);
 
 //protected routes
 Route::group(['middleware' => ['auth:sanctum']], function() {
