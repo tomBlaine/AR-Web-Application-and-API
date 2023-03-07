@@ -22,7 +22,7 @@ class APIController extends Controller
     public function editSlide(Request $request)
     {
         $validatedData = $request->validate([
-            'scale' => ['required', 'float'],
+            'scale' => ['required', 'numeric'],
         ]);
 
         $slide = Slide::findOrFail($id);
