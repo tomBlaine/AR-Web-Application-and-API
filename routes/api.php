@@ -31,7 +31,7 @@ Route::get('/presentations/{id}', [APIController::class, 'showPres']);
 
 Route::get('/slides/{id}', [APIController::class, 'showSlides']);
 
-Route::post('/slides/{id}/edit', [APIController::class, 'editSlide']);
+Route::put('/slides/{id}/edit', [APIController::class, 'editSlide']);
 
 //protected routes
 Route::group(['middleware' => ['auth:sanctum']], function() {

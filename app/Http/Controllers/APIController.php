@@ -28,5 +28,6 @@ class APIController extends Controller
         $slide = Slide::findOrFail($id);
         $slide->objScale = $validatedData['scale'];
         $slide->save();
+        return response()->json(['message' => 'Float saved successfully']);
     }
 }
