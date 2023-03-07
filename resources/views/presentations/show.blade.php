@@ -14,6 +14,7 @@
         <li>{{$slide->text2}}</li>
         <li>{{$slide->text3}}</li>
         <li>{{$slide->obj}}</li>
+        <li>{{$slide->objScale}}</li>
         <p> </p>
         <p> </p>
     @endforeach
