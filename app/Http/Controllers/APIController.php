@@ -19,11 +19,13 @@ class APIController extends Controller
         return Slide::where('pres_id', $id)->orderBy('created_at', 'asc')->get();
     }
 
-    public function editSlide(Request $request)
+    public function editSlide(Request $request, $id)
     {
+
         $validatedData = $request->validate([
             'scale' => ['required', 'numeric'],
         ]);
+        
 
         $slide = Slide::findOrFail($id);
         $slide->objScale = $validatedData['scale'];
