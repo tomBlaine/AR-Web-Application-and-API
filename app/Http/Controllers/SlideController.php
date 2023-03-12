@@ -33,6 +33,7 @@ class SlideController extends Controller
         }
         $text3="";
         if(strlen($validatedData['text3']) > 0){
+            $text3 = $validatedData['text3'];
             $text3 = removeNewLines($validatedData['text3']);
             $text3 = getBoxType($text3) . $text3;
         }
