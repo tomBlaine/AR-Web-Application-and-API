@@ -27,8 +27,7 @@ class SlideController extends Controller
         $text2 = "";
         if(strlen($validatedData['text2']) > 0){
             $text2 = $validatedData['text2'];
-            //$text2=$this->removeNewLines($validatedData['text2']);
-            $text2 =$this->getBoxType($text2).$text2;
+            $text2 =$this->getBoxType($text2) . $text2;
 
         }
         $text3="";
@@ -61,7 +60,7 @@ class SlideController extends Controller
 
     private function getBoxType($str) {
         $result = "";
-        $newlines = substr_count($str, "\n");
+        $newlines = 1;//substr_count($str, "\n");
 
         if (strlen($str) < 150) {
             $result = 'F';
