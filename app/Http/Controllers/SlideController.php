@@ -45,7 +45,7 @@ class SlideController extends Controller
         $a->obj=$validatedData['obj'];
         $a->user_id = auth()->id();
         $a->pres_id = $id;
-         
+        //comment
 
         $a->save();
 
