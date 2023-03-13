@@ -24,13 +24,13 @@ class SlideController extends Controller
         //$text1 = $this->removeNewLines($validatedData['text1']);
         $text1 = $this->getBoxType($text1) . $text1;
 
-        $text2 = "";
+        //$text2 = "";
         if(strlen($validatedData['text2']) > 0){
             $text2 = $validatedData['text2'];
             $text2 =$this->getBoxType($text2) . $text2;
 
         }
-        $text3="";
+        //$text3="";
         if(strlen($validatedData['text3']) > 0){
             $text3 = $validatedData['text3'];
             //$text3 =$this->removeNewLines($validatedData['text3']);
