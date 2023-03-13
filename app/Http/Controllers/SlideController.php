@@ -60,17 +60,17 @@ class SlideController extends Controller
 
     private function getBoxType($str) {
         $result = "";
-        $newlines = 1;//substr_count($str, "\n");
+        $newlines = substr_count($str, "\n");
 
         if (strlen($str) < 150) {
             $result = 'F';
         } else {
-            if($newlines<1){
-                $result = 'P';
-            } else{
-                $result = 'L';
+//            if($newlines < 1){
+            $result = 'P';
+//            } else{
+//                $result = 'L';
             }
-        }
+        
         return $result;
     }
 
