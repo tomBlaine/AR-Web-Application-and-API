@@ -21,20 +21,20 @@ class SlideController extends Controller
 
         $text1 = $validatedData['text1'];
 
-        $text1 = $this->removeNewLines($validatedData['text1']);
+        //$text1 = $this->removeNewLines($validatedData['text1']);
         $text1 = $this->getBoxType($text1) . $text1;
 
         $text2 = "";
         if(strlen($validatedData['text2']) > 0){
             $text2 = $validatedData['text2'];
-            $text2=$this->removeNewLines($validatedData['text2']);
+            //$text2=$this->removeNewLines($validatedData['text2']);
             $text2 =$this->getBoxType($text2).$text2;
 
         }
         $text3="";
         if(strlen($validatedData['text3']) > 0){
             $text3 = $validatedData['text3'];
-            $text3 =$this->removeNewLines($validatedData['text3']);
+            //$text3 =$this->removeNewLines($validatedData['text3']);
             $text3 =$this->getBoxType($text3) . $text3;
         }
 
@@ -66,7 +66,7 @@ class SlideController extends Controller
         if (strlen($str) < 150) {
             $result = 'F';
         } else {
-            if($newLines>1){
+            if($newLines<1){
                 $result = 'P';
             } else{
                 $result = 'L';
