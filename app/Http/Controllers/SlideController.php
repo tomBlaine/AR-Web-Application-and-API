@@ -65,12 +65,12 @@ class SlideController extends Controller
         if (strlen($str) < 150) {
             $result = 'F';
         } else {
-//            if($newlines < 1){
-            $result = 'P';
-//            } else{
-//                $result = 'L';
+            if($newlines < 1){
+                $result = 'P';
+            } else{
+                $result = 'L';
             }
-        
+        }
         return $result;
     }
 
