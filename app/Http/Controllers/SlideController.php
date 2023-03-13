@@ -66,7 +66,7 @@ class SlideController extends Controller
         if (strlen($str) < 150) {
             $result = 'F';
         } else {
-            if($newLines<1){
+            if($newlines<1){
                 $result = 'P';
             } else{
                 $result = 'L';
