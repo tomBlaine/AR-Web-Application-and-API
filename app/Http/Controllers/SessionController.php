@@ -13,7 +13,7 @@ class SessionController extends Controller
         return view('sessions.create');
     }
 
-
+/*
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -21,7 +21,7 @@ class SessionController extends Controller
         ]);
 
         $a = new Session;
-        $a->code=rand(100000, 999999);
+        $a->code=1000;
         $a->user_id = auth()->id();
         $a->pres_id = $validatedData['pres_id'];
         
@@ -38,4 +38,5 @@ class SessionController extends Controller
         $presentation = Presentation::findOrFail($session->pres_id);
         return view('sessions.show', ['presentation' => $presentation, 'session'=>$session]);
     }
+*/
 }
