@@ -14,7 +14,7 @@ class SessionController extends Controller
         return view('sessions.create');
     }
 
-/*
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -39,5 +39,5 @@ class SessionController extends Controller
         $presentation = Presentation::findOrFail($session->pres_id);
         return view('sessions.show', ['presentation' => $presentation, 'session'=>$session]);
     }
-*/
+
 }
