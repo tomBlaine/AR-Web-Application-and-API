@@ -20,4 +20,9 @@ class Presentation extends Model
     {
         return $this->hasMany('App\Models\Slide');
     }
+
+    public function session()
+    {
+        return $this->belongsTo('App\Models\Session');
+    }
 }

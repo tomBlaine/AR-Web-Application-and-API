@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PresentationController;
 use App\Http\Controllers\SlideController;
+use App\Http\Controllers\SessionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +31,15 @@ Route::get('/dashboard', function () {
 
 Route::get('/timeline', [PresentationController::class, 'index'])
     ->name('presentations.index');
+
+Route::get('/sessions/create', [SessionController::class, 'create'])
+    ->name('sessions.create')->middleware(['auth']);
+
+Route::get('/sessions/{id}', [SessionController::class, 'show'])
+    ->name('sessions.show')->middleware(['auth']);
+
+Route::post('/sessions/{id}', [SessionController::class, 'store'])
+    ->name('sessions.store')->middleware(['auth']);
 
 
 
