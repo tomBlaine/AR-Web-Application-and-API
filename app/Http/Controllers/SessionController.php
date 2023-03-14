@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Session;
 use App\Models\Presentation;
+use Illuminate\Support\Facades\Auth;
 
 class SessionController extends Controller
 {
