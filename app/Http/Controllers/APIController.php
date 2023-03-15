@@ -38,7 +38,7 @@ class APIController extends Controller
     {
         $session = Session::where('code', $code)->get()->first();
         $slides = Slide::where('pres_id', $session->pres_id)->orderBy('created_at', 'asc')->get();
-        $result = array_merge($slides->toArray(), ['sessionType' => $session->sessionType]);
+        $result = array_merge($slides->toArray(), [$session->sessionType]);
         return $result;
     }
 }
