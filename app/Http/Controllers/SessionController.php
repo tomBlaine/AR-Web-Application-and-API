@@ -23,7 +23,7 @@ class SessionController extends Controller
         ]);
 
         $a = new Session;
-        $a->code=1000;
+        $a->code=rand(100000, 999999);
         $a->user_id = auth()->id();
         $a->pres_id = $validatedData['pres_id'];
         
@@ -31,7 +31,7 @@ class SessionController extends Controller
         $a->save();
 
         //session()->flash('message', 'Presentation was created.');
-        return redirect()->route('presentations.index', [$a->id]);
+        return redirect()->route('sessions.show', [$a->id]);
     }
 
     public function show($id)
