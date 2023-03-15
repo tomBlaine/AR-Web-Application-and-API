@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class SessionController extends Controller
 {
+    /*
     public function create()
     {
         return view('sessions.create');
@@ -18,7 +19,7 @@ class SessionController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'pres_id' => ['required', 'int'],
+            'pres_id' => ['max:10'],
         ]);
 
         $a = new Session;
@@ -39,5 +40,6 @@ class SessionController extends Controller
         $presentation = Presentation::findOrFail($session->pres_id);
         return view('sessions.show', ['presentation' => $presentation, 'session'=>$session]);
     }
+    */
 
 }
