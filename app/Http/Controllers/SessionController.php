@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class SessionController extends Controller
 {
-    /*
+    
     public function create()
     {
         return view('sessions.create');
@@ -31,7 +31,7 @@ class SessionController extends Controller
         $a->save();
 
         //session()->flash('message', 'Presentation was created.');
-        return redirect()->route('presentations.index');
+        return redirect()->route('presentations.index', [$a->id]);
     }
 
     public function show($id)
@@ -40,6 +40,6 @@ class SessionController extends Controller
         $presentation = Presentation::findOrFail($session->pres_id);
         return view('sessions.show', ['presentation' => $presentation, 'session'=>$session]);
     }
-    */
+    
 
 }

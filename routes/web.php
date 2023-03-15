@@ -38,7 +38,7 @@ Route::get('/sessions/create', [SessionController::class, 'create'])
 Route::get('/sessions/{id}', [SessionController::class, 'show'])
     ->name('sessions.show')->middleware(['auth']);
 
-Route::post('/sessions/{id}', [SessionController::class, 'store'])
+Route::post('/sessions/store', [SessionController::class, 'store'])
     ->name('sessions.store')->middleware(['auth']);
 
 
