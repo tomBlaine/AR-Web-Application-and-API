@@ -10,6 +10,7 @@
     @csrf
     <p>Presentation ID: </p>
     <textarea name="pres_id" rows=2 style="width: 80%"></textarea>
+    <textarea name="session_type" rows=2 style="width: 80%"></textarea>
     <br>
     <br>
     <input type="submit" value="Post">

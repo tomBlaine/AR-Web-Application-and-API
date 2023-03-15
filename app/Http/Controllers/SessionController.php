@@ -19,13 +19,16 @@ class SessionController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'pres_id' => ['max:10'],
+            'pres_id' => ['required, max:10'],
+            'session_type' => ['required, max:5']
         ]);
 
         $a = new Session;
         $a->code=rand(100000, 999999);
         $a->user_id = auth()->id();
         $a->pres_id = $validatedData['pres_id'];
+        $a->sessionType = $validatedData['session_type'];
+        $a->currentSlide = 0;
         
 
         $a->save();
