@@ -37,6 +37,8 @@ class APIController extends Controller
     public function showSession($code)
     {
         $session = Session::where('code', $code)->get()->first();
-        return (Slide::where('pres_id', $session->pres_id)->orderBy('created_at', 'asc')->get()) . "SessionType: " . $session->sessionType;
+        $slides = Slide::where('pres_id', $session->pres_id)->orderBy('created_at', 'asc')->get();
+        $result = array_merge($slides->toArray(), ['sessionType' => $session->sessionType]);
+        return $result;
     }
 }
