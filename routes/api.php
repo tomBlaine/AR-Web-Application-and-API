@@ -33,7 +33,7 @@ Route::get('/presentations/{id}', [APIController::class, 'showPres']);
 
 Route::get('/slides/{id}', [APIController::class, 'showSlides']);
 
-
+Route::get('/sessions/{code}', [APIController::class, 'showSession']);
 
 //protected routes
 Route::group(['middleware' => ['auth:sanctum']], function() {

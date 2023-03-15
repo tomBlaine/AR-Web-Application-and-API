@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Presentation;
 use App\Models\Slide;
+use App\Models\Session;
 
 class APIController extends Controller
 {
@@ -31,5 +32,11 @@ class APIController extends Controller
         $slide->objScale = $validatedData['scale'];
         $slide->save();
         return response()->json(['message' => 'Float saved successfully']);
+    }
+
+    public function showSession($code)
+    {
+        $session = Session::where('code', $code)->get();
+        return Slide::where('pres_id', $session->pres_id)->orderBy('created_at', 'asc')->get();
     }
 }
