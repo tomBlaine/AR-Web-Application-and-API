@@ -34,11 +34,14 @@ class APIController extends Controller
         return response()->json(['message' => 'Float saved successfully']);
     }
 
-    public function showSession($code)
+    public function showSessionSlides($code)
     {
         $session = Session::where('code', $code)->get()->first();
-        $slides = Slide::where('pres_id', $session->pres_id)->orderBy('created_at', 'asc')->get();
-        $result = array_merge($slides->toArray(), ['sessionType' => $session->sessionType]);
-        return $result;
+        return Slide::where('pres_id', $session->pres_id)->orderBy('created_at', 'asc')->get();
+    }
+
+    public function showSessionInfo($code)
+    {
+        return Session::where('code', $code)->get()->first();
     }
 }
