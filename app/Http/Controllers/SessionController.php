@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Session;
+use App\Models\Slide;
 use App\Models\Presentation;
 use Illuminate\Support\Facades\Auth;
 
@@ -47,7 +48,7 @@ class SessionController extends Controller
     public function increment($id)
     {
         $session = Session::findOrFail($id);
-        $count = Session::where('pres_id', $session->pres_id)->count();
+        $count = Slide::where('pres_id', $session->pres_id)->count();
         if($count != $session->currentSlide)
         {
             $session->currentSlide = ($session->currentSlide) + 1;
