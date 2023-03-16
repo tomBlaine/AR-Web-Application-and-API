@@ -41,6 +41,9 @@ Route::get('/sessions/{id}', [SessionController::class, 'show'])
 Route::post('/sessions/{id}/plus', [SessionController::class, 'increment'])
     ->name('sessions.increment')->middleware(['auth']);
 
+Route::post('/sessions/{id}/minus', [SessionController::class, 'decrement'])
+    ->name('sessions.decrement')->middleware(['auth']);
+
 Route::post('/sessions/store', [SessionController::class, 'store'])
     ->name('sessions.store')->middleware(['auth']);
 

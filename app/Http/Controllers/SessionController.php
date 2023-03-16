@@ -49,7 +49,7 @@ class SessionController extends Controller
     {
         $session = Session::findOrFail($id);
         $count = Slide::where('pres_id', $session->pres_id)->count();
-        if($count != $session->currentSlide)
+        if(($count-1) != $session->currentSlide)
         {
             $session->currentSlide = ($session->currentSlide) + 1;
             $session->save();
@@ -57,5 +57,15 @@ class SessionController extends Controller
         return redirect()->route('sessions.show', [$session->id]);
     }
     
+    public function decrement($id)
+    {
+        $session = Session::findOrFail($id);
+        if(($session->currentSlide)!=0)
+        {
+            $session->currentSlide = ($session->currentSlide) - 1;
+            $session->save();
+        }
+        return redirect()->route('sessions.show', [$session->id]);
+    }
 
 }

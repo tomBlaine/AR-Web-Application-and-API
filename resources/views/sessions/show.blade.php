@@ -19,6 +19,11 @@
         @csrf
         <button type="submit">Next Slide</button>
     </form>
+
+    <form method="POST" action="{{route('sessions.decrement', ['id'=>$session->id])}}">
+        @csrf
+        <button type="submit">Prev Slide</button>
+    </form>
 @endif
 @endauth
 
