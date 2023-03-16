@@ -13,5 +13,14 @@
 
 <p>Current Slide: {{$session->currentSlide}}</p>
 
+@auth
+@if ($session->User->id == auth()->id())
+    <form method="POST" action="{{route('sessions.increment', ['id'=>$session->id])}}">
+        @csrf
+        <button type="submit">Next Slide</button>
+    </form>
+@endif
+@endauth
+
 
 @endsection

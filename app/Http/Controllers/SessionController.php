@@ -43,6 +43,17 @@ class SessionController extends Controller
         $presentation = Presentation::findOrFail($session->pres_id);
         return view('sessions.show', ['presentation' => $presentation, 'session'=>$session]);
     }
+
+    public function increment($id)
+    {
+        $session = Session::findOrFail($id);
+        if(Session::where('pres_id', $session->pres_id)->count() != $session->currentSlide)
+        {
+            $session->currentSlide = ($session->currentSlide) + 1;
+            $session->save();
+        }
+        return redirect()->route('sessions.show', [$session->id]);
+    }
     
 
 }
