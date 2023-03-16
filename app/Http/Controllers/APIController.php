@@ -44,4 +44,10 @@ class APIController extends Controller
     {
         return Session::where('code', $code)->get()->first();
     }
+
+    public function showSlideNumber($code)
+    {
+        $session = Session::where('code', $code)->get()->first();
+        return $session->currentSlide;
+    }
 }

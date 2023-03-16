@@ -4,10 +4,14 @@
 
 @section('content')
 <div>
-<p>{{$session->code}}</p>
+<p>Join Code: {{$session->code}}</p>
+<p>Session Type: {{$session->sessionType}}</p>
 <br><br>
-<p>{{$presentation->title}}</p>
+<p>Title: {{$presentation->title}}</p>
 <br>
-<p>{{$presentation->text}}
+<p>Description: {{$presentation->text}}
+
+<p>Current Slide: {{$session->currentSlide}}</p>
+
 
 @endsection

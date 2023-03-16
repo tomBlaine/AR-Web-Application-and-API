@@ -36,6 +36,8 @@ Route::get('/slides/{id}', [APIController::class, 'showSlides']);
 Route::get('/sessions/{code}/slides', [APIController::class, 'showSessionSlides']);
 
 Route::get('/sessions/{code}/info', [APIController::class, 'showSessionInfo']);
+
+Route::get('/sessions/{code}/getSlideNumber', [APIController::class, 'showSlideNumber']);
 //protected routes
 Route::group(['middleware' => ['auth:sanctum']], function() {
     
