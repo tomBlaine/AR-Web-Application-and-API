@@ -47,7 +47,8 @@ class SessionController extends Controller
     public function increment($id)
     {
         $session = Session::findOrFail($id);
-        if((Session::where('pres_id', $session->pres_id)->count())-1 != $session->currentSlide)
+        $count = Session::where('pres_id', $session->pres_id)->count();
+        if($count != $session->currentSlide)
         {
             $session->currentSlide = ($session->currentSlide) + 1;
             $session->save();
