@@ -14,9 +14,12 @@ return new class extends Migration
         Schema::create('slides', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("text1");
+            $table->string("text1")->nullable();
+            $table->string("text1Format")->nullable();
             $table->string("text2")->nullable();
+            $table->string("text2Format")->nullable();
             $table->string("text3")->nullable();
+            $table->string("text3Format")->nullable();
             $table->string("obj")->nullable();
             $table->string("objScale")->nullable();
             $table->bigInteger('user_id')->references('id')->on('User')->onDelete('cascade')->onUpdate('cascade');

@@ -16,6 +16,9 @@ class SlideController extends Controller
             'text1' => ['required', 'string', 'max:2550'],
             'text2' => ['max:3000'],
             'text3' => ['max:3000'],
+            'text1Format' => ['max:5'],
+            'text2Format' => ['max:5'],
+            'text3Format' => ['max:5'],
             'obj' =>['max:2000']
         ]);
 
@@ -41,6 +44,9 @@ class SlideController extends Controller
         $a->text1 = $text1;
         $a->text2 = $text2;
         $a->text3 = $text3;
+        $a->text1Format = $validatedData['text1Format'];
+        $a->text2Format = $validatedData['text2Format'];
+        $a->text3Format = $validatedData['text3Format'];
         $a->obj=$validatedData['obj'];
         $a->user_id = auth()->id();
         $a->pres_id = $id;
@@ -48,7 +54,7 @@ class SlideController extends Controller
 
         $a->save();
 
-        session()->flash('message', 'Post was created.');
+        session()->flash('message', 'Slide was created.');
         return redirect()->route('presentations.show', ['id'=> $id]);
     }
 
