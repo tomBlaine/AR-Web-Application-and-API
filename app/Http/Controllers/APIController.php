@@ -24,7 +24,7 @@ class APIController extends Controller
     {
 
         $validatedData = $request->validate([
-            'scale' => ['required', 'numeric'],
+            'scale' => ['required'],
         ]);
         
 
