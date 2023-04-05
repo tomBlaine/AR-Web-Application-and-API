@@ -24,7 +24,7 @@ class SessionController extends Controller
             'session_type' => ['max:5']
         ]);
 
-        $oldSession = Session::where('user_id', auth()->id())->get();
+        $oldSession = Session::where('user_id', auth()->id())->get()->first();
         $oldSession->delete();
 
         $a = new Session;
