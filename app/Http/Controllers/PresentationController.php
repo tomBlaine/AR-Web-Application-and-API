@@ -49,5 +49,12 @@ class PresentationController extends Controller
         return view('presentations.show', ['presentation' => $presentation, 'slides'=>$slides]);
     }
 
+    public function destroy($id)
+    {
+        $presentation = Presentation::findOrFail($id);
+        $presentation->delete();
+        return redirect()->route('presentations.index')->with('message', 'Post was deleted.');
+    }
+
 
 }

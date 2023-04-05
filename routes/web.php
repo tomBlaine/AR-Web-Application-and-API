@@ -47,7 +47,8 @@ Route::post('/sessions/{id}/minus', [SessionController::class, 'decrement'])
 Route::post('/sessions/store', [SessionController::class, 'store'])
     ->name('sessions.store')->middleware(['auth']);
 
-
+Route::delete('/presentations/{id}/delete', [PresentationController::class, 'destroy'])
+    ->name('presentations.destroy')->middleware(['auth']);
 
 Route::get('/presentations/create', [PresentationController::class, 'create'])
     ->name('presentations.create')->middleware(['auth']);

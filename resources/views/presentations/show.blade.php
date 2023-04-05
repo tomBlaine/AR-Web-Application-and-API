@@ -31,6 +31,17 @@
 @endif
 @endauth
 
+@auth
+@if ($presentation->User->id == auth()->id())
+    <form method="POST" action="{{route('presentations.destroy', ['id'=>$post])}}">
+        @csrf
+        @method('DELETE')
+        <button type="submit">Delete Presentation</button>
+    </form>
+@endif
+@endauth
+
+
 
 
 
