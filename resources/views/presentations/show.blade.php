@@ -26,32 +26,6 @@
 </div>
 
 
-<div class="accordion" id="accordionExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Accordion Item #1
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu magna sit amet tortor convallis fringilla. Donec ultricies elit vitae lectus volutpat, vel elementum metus laoreet. 
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Accordion Item #2
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          Sed bibendum lobortis urna eu lacinia. Nullam eu est vel turpis malesuada volutpat. Morbi sit amet velit ac eros pulvinar suscipit eget vel dolor. 
-        </div>
-      </div>
-    </div>
-  </div>
 
 
 @auth
@@ -70,8 +44,4 @@
 @endif
 @endauth
 
-@endsection
-
-@section
-    <script src="{{ asset('js/app.js') }}"></script>
 @endsection
