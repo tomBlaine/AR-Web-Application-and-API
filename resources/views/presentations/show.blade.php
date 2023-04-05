@@ -33,7 +33,7 @@
 
 @auth
 @if ($presentation->User->id == auth()->id())
-    <form method="POST" action="{{route('presentations.destroy', ['id'=>$post])}}">
+    <form method="POST" action="{{route('presentations.destroy', ['id'=>$presentation])}}">
         @csrf
         @method('DELETE')
         <button type="submit">Delete Presentation</button>
