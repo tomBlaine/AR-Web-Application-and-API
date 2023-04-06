@@ -172,6 +172,10 @@
 <script>
 tinymce.init({
     selector:'textarea.description',
+    plugins: 'link code table',
+    toolbar: 'undo redo | bold italic underline | forecolor backcolor | alignleft aligncenter alignright | bullist numlist outdent indent | table',
+    skin: 'oxide-dark',
+    content_css: 'dark',
     width: 900,
     height: 300
 });
