@@ -4,7 +4,8 @@
 
 @section('content')
 <head>
-    <script src="{{ asset('node_modules/tinymce/tinymce.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('vendor/tinymce/tinymce/skins/content/default/content.min.css') }}">
+
 
 
 </head>
@@ -12,6 +13,9 @@
 @php
     $count = 0; // Initialize count value
 @endphp
+<body>
+
+    <script src="{{ asset('node_modules/tinymce/tinymce.min.js') }}"></script>
 
 <div>
 <p>Title: {{$presentation->title}}</p>
@@ -191,3 +195,4 @@
 @endauth
 
 @endsection
+</body>
