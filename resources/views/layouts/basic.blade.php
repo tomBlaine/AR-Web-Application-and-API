@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+@vite('resources/css/app.css')
+@vite('resources/js/app.js')
 <head>
     <meta charset="utf-8">
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
