@@ -167,20 +167,15 @@
 </div>
 
 
+<textarea class="description" name="description"></textarea>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"></script>
 <script>
-    tinymce.init({
-        selector: 'textarea.textarea1', // ID of your textarea element
-        plugins: 'textcolor, colorpicker', // Include the textcolor and colorpicker plugins
-        toolbar: 'bold italic underline forecolor backcolor', // Define the toolbar options
-        menubar: false, // Hide the menubar if not needed
-        height: '200px', // Set the height of the editor
-        setup: function(editor) {
-            editor.on('change', function() {
-                editor.save(); // Save the content on change
-            });
-        }
-    });
-</script>
+tinymce.init({
+    selector:'textarea.description',
+    width: 900,
+    height: 300
+});
+</script>   
 
 
 
