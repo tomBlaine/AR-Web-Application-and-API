@@ -60,6 +60,10 @@
         id="collapse{{$count}}5"
         class="!visible hidden"
         data-te-collapse-item
+        @if ($count==1)
+          data-te-collapse-show
+        @endif
+        
         aria-labelledby="headingOne5">
         <div class="py-4 px-5">
           <ul>
@@ -85,7 +89,7 @@
           data-te-collapse-init
           data-te-target="#collapseNew5"
 
-          aria-expanded="true"
+          aria-expanded="false"
           aria-controls="collapseNew5">
           <strong>+ New Slide</strong>
           <span
