@@ -168,7 +168,7 @@
 
 
 <textarea class="description" name="description"></textarea>
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/3s25f92064mitguhdwcei3vhfm1a9qm2796065hlrtwm3irz/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
 tinymce.init({
     selector:'textarea.description',
