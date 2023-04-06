@@ -139,7 +139,7 @@
                     
 
 
-                    <textarea id="textArea1" type="text" name="text1" rows=3 style="width: 30%"></textarea>
+                    <textarea class="textarea1" id="textArea1" type="text" name="text1" rows=3 style="width: 30%"></textarea>
                     <p>Text1 Format: </p>
                     <textarea type="text" name="text1Format" rows=1 style="width: 30%"></textarea>
                     <br>
@@ -169,7 +169,7 @@
 
 <script>
     tinymce.init({
-        selector: 'textArea1', // ID of your textarea element
+        selector: 'textarea.textarea1', // ID of your textarea element
         plugins: 'textcolor, colorpicker', // Include the textcolor and colorpicker plugins
         toolbar: 'bold italic underline forecolor backcolor', // Define the toolbar options
         menubar: false, // Hide the menubar if not needed
