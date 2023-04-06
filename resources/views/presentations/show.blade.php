@@ -5,6 +5,7 @@
 @section('content')
 <head>
     <link rel="stylesheet" href="{{ asset('vendor/tinymce/tinymce/skins/content/default/content.min.css') }}">
+    <script src="https://cdn.tiny.cloud/1/3s25f92064mitguhdwcei3vhfm1a9qm2796065hlrtwm3irz/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
 
 
@@ -168,7 +169,6 @@
 
 
 <textarea class="description" name="description"></textarea>
-<script src="https://cdn.tiny.cloud/1/3s25f92064mitguhdwcei3vhfm1a9qm2796065hlrtwm3irz/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
 tinymce.init({
     selector:'textarea.description',
