@@ -5,20 +5,7 @@
 @section('content')
 <head>
     <script src="{{ asset('node_modules/tinymce/tinymce.min.js') }}"></script>
-    <script>
-        tinymce.init({
-            selector: 'textArea1', // ID of your textarea element
-            plugins: 'textcolor, colorpicker', // Include the textcolor and colorpicker plugins
-            toolbar: 'bold italic underline forecolor backcolor', // Define the toolbar options
-            menubar: false, // Hide the menubar if not needed
-            height: '200px', // Set the height of the editor
-            setup: function(editor) {
-                editor.on('change', function() {
-                    editor.save(); // Save the content on change
-                });
-            }
-        });
-    </script>
+
 
 </head>
 
@@ -176,7 +163,20 @@
 </div>
 
 
-
+<script>
+    tinymce.init({
+        selector: 'textArea1', // ID of your textarea element
+        plugins: 'textcolor, colorpicker', // Include the textcolor and colorpicker plugins
+        toolbar: 'bold italic underline forecolor backcolor', // Define the toolbar options
+        menubar: false, // Hide the menubar if not needed
+        height: '200px', // Set the height of the editor
+        setup: function(editor) {
+            editor.on('change', function() {
+                editor.save(); // Save the content on change
+            });
+        }
+    });
+</script>
 
 
 
