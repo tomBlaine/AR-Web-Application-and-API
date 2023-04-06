@@ -3,6 +3,11 @@
 @section('title', 'View')
 
 @section('content')
+
+@php
+    $count = 0; // Initialize count value
+@endphp
+
 <div>
 <p>{{$presentation->title}}</p>
 <p>{{$presentation->text}}</p>
@@ -27,6 +32,10 @@
 
 
 <div id="accordionExample5">
+    @foreach ($slides as $slide)
+    @php
+        $count++; // Increment the value
+    @endphp
     <div
       class="rounded-t-lg border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800">
       <h2 class="mb-0" id="headingOne5">
@@ -37,7 +46,7 @@
           data-te-target="#collapseOne5"
           aria-expanded="true"
           aria-controls="collapseOne5">
-          Accordion Item #1
+          Slide {{$count}}
           <span
             class="ml-auto -mr-1 h-5 w-5 shrink-0 rotate-[-180deg] fill-[#336dec] transition-transform duration-200 ease-in-out group-[[data-te-collapse-collapsed]]:mr-0 group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none dark:fill-blue-300 dark:group-[[data-te-collapse-collapsed]]:fill-white">
             <svg
@@ -62,17 +71,17 @@
         data-te-collapse-show
         aria-labelledby="headingOne5">
         <div class="py-4 px-5">
-          <strong>This is the first item's accordion body.</strong> It is
-          shown by default, until the collapse plugin adds the appropriate
-          classes that we use to style each element. These classes control
-          the overall appearance, as well as the showing and hiding via CSS
-          transitions. You can modify any of this with custom CSS or
-          overriding our default variables. It's also worth noting that just
-          about any HTML can go within the <code>.accordion-body</code>,
-          though the transition does limit overflow.
+          <ul>
+            <li>{{$slide->text1}}</li>
+            <li>{{$slide->text2}}</li>
+            <li>{{$slide->text3}}</li>
+            <li>{{$slide->obj}}</li>
+            <li>{{$slide->objScale}}</li>
+          </ul>
         </div>
       </div>
     </div>
+    @endforeach
 </div>
 
 
