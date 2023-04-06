@@ -44,7 +44,11 @@
           type="button"
           data-te-collapse-init
           data-te-target="#collapse{{$count}}5"
-          aria-expanded="true"
+          @if ($count==1)
+            aria-expanded="true"
+          @else
+            aria-expanded="false"
+          @endif
           aria-controls="collapse{{$count}}5">
           Slide {{$count}}
           <span
@@ -66,11 +70,8 @@
       </h2>
       <div
         id="collapse{{$count}}5"
-        class="!visible"
+        class="!visible hidden"
         data-te-collapse-item
-        @if ($count==1)
-        data-te-collapse-show
-        @endif
         aria-labelledby="headingOne5">
         <div class="py-4 px-5">
           <ul>
