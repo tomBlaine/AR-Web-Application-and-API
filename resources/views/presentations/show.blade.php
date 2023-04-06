@@ -58,7 +58,12 @@
       </h2>
       <div
         id="collapse{{$count}}5"
-        class="!visible hidden"
+        @if ($count==1)
+          class="!visible"
+        @else
+          class="!visible hidden"
+        @endif
+        
         data-te-collapse-item
         @if ($count==1)
           data-te-collapse-show
