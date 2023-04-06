@@ -83,6 +83,9 @@
       </div>
     </div>
     @endforeach
+    @auth
+    @if ($presentation->User->id == auth()->id())
+
     <div
       class="rounded-t-lg border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800">
       <h2 class="mb-0" id="headingOne5">
@@ -145,16 +148,14 @@
         </div>
       </div>
     </div>
+    @endif
+    @endauth
 </div>
 
 
 
 
-@auth
-@if ($presentation->User->id == auth()->id())
-    <p><a href={{route('slides.edit', ['id'=>$presentation])}}>Add Slide</a></p>
-@endif
-@endauth
+
 
 @auth
 @if ($presentation->User->id == auth()->id())
