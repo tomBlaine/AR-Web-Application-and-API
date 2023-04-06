@@ -3,6 +3,24 @@
 @section('title', 'View')
 
 @section('content')
+<head>
+    <script src="{{ asset('node_modules/tinymce/tinymce.min.js') }}"></script>
+    <script>
+        tinymce.init({
+            selector: 'textArea1', // ID of your textarea element
+            plugins: 'textcolor, colorpicker', // Include the textcolor and colorpicker plugins
+            toolbar: 'bold italic underline forecolor backcolor', // Define the toolbar options
+            menubar: false, // Hide the menubar if not needed
+            height: '200px', // Set the height of the editor
+            setup: function(editor) {
+                editor.on('change', function() {
+                    editor.save(); // Save the content on change
+                });
+            }
+        });
+    </script>
+
+</head>
 
 @php
     $count = 0; // Initialize count value
@@ -126,7 +144,11 @@
                 <form method="POST" action="{{route('slides.store', ['id'=>$presentation])}}">
                     @csrf
                     <p>Text1: </p>
-                    <textarea type="text" name="text1" rows=3 style="width: 30%"></textarea>
+
+                    
+
+
+                    <textarea id="textArea1" type="text" name="text1" rows=3 style="width: 30%"></textarea>
                     <p>Text1 Format: </p>
                     <textarea type="text" name="text1Format" rows=1 style="width: 30%"></textarea>
                     <br>
