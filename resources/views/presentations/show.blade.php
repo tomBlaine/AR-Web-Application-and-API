@@ -68,6 +68,9 @@
         id="collapse{{$count}}5"
         class="!visible"
         data-te-collapse-item
+        @if ($count==1)
+        data-te-collapse-show
+        @endif
         aria-labelledby="headingOne5">
         <div class="py-4 px-5">
           <ul>
