@@ -2,8 +2,10 @@
 @vite('resources/css/app.css')
 @vite('resources/js/app.js')
 <head>
-    <meta charset="utf-8">
-    <link href="{{asset('css/app.css')}}" rel="stylesheet">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/app.css" rel="stylesheet">
 </head>
 <body>
     <div>
