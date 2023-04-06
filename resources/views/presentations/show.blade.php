@@ -11,6 +11,7 @@
 <div>
 <p>Title: {{$presentation->title}}</p>
 <p>Description: {{$presentation->text}}</p>
+<p>User: {{$presentation->User->name}}</p>
 <br>
 
 
