@@ -62,11 +62,11 @@
         aria-labelledby="headingOne5">
         <div class="py-4 px-5">
           <ul>
-            <li>Text Box 1: <br> {{$slide->text1}}</li>
-            <li>Text Box 2: <br> {{$slide->text2}}</li>
-            <li>Text Box 3: <br> {{$slide->text3}}</li>
-            <li>Model Reference: <br> {{$slide->obj}}</li>
-            <li>Model Scale: <br> {{$slide->objScale}}</li>
+            <li>Text Box 1: <br><br> {{$slide->text1}}</li>
+            <li>Text Box 2: <br><br> {{$slide->text2}}</li>
+            <li>Text Box 3: <br><br> {{$slide->text3}}</li>
+            <li>Model Reference: <br><br> {{$slide->obj}}</li>
+            <li>Model Scale: <br><br> {{$slide->objScale}}</li>
           </ul>
         </div>
       </div>
