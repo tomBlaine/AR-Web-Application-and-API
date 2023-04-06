@@ -32,11 +32,9 @@
           type="button"
           data-te-collapse-init
           data-te-target="#collapse{{$count}}5"
-          @if ($count==1)
-            aria-expanded="true"
-          @else
-            aria-expanded="false"
-          @endif
+
+          aria-expanded="false"
+
           aria-controls="collapse{{$count}}5">
           Slide {{$count}}
           <span
