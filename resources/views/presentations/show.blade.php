@@ -9,21 +9,10 @@
 @endphp
 
 <div>
-<p>{{$presentation->title}}</p>
-<p>{{$presentation->text}}</p>
+<p>Title: {{$presentation->title}}</p>
+<p>Description: {{$presentation->text}}</p>
 <br>
-<ul>
-    <li>Slides:</li>
-    @foreach ($slides as $slide)
-        <li>{{$slide->text1}}</li>
-        <li>{{$slide->text2}}</li>
-        <li>{{$slide->text3}}</li>
-        <li>{{$slide->obj}}</li>
-        <li>{{$slide->objScale}}</li>
-        <p> </p>
-        <p> </p>
-    @endforeach
-</ul>
+
 
 
 </div>
@@ -73,11 +62,11 @@
         aria-labelledby="headingOne5">
         <div class="py-4 px-5">
           <ul>
-            <li>{{$slide->text1}}</li>
-            <li>{{$slide->text2}}</li>
-            <li>{{$slide->text3}}</li>
-            <li>{{$slide->obj}}</li>
-            <li>{{$slide->objScale}}</li>
+            <li>Text Box 1: <br> {{$slide->text1}}</li>
+            <li>Text Box 2: <br> {{$slide->text2}}</li>
+            <li>Text Box 3: <br> {{$slide->text3}}</li>
+            <li>Model Reference: <br> {{$slide->obj}}</li>
+            <li>Model Scale: <br> {{$slide->objScale}}</li>
           </ul>
         </div>
       </div>
