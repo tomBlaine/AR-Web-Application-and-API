@@ -4,9 +4,22 @@
 
 @section('content')
 <head>
-    <link rel="stylesheet" href="{{ asset('vendor/tinymce/tinymce/skins/content/default/content.min.css') }}">
-    <script src="https://cdn.ckeditor.com/ckeditor5/37.0.1/classic/ckeditor.js"></script>
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/37.0.1/multi-root/ckeditor.js"></script>
+        
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+            height: 100vh; 
+        }
+        
+        .grid-item {
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+    </style>
 
 </head>
 
@@ -167,14 +180,52 @@
 </div>
 
 
-<textarea class="editor" name="editor" id="editor"></textarea>
+<div class="grid-container">
+    <div class="grid-item" id="grid1"></div>
+    <div class="grid-item" id="grid2"></div>
+    <div class="grid-item" id="grid3"></div>
+    <div class="grid-item" id="grid4"></div>
+    <div class="grid-item" id="grid5"></div>
+    <div class="grid-item" id="grid6"></div>
+    <div class="grid-item" id="grid7"></div>
+    <div class="grid-item" id="grid8"></div>
+    <div class="grid-item" id="grid9"></div>
+</div>
+
 <script>
-    ClassicEditor
-        .create( document.querySelector( '#editor' ) )
+    MultiRootEditor
+        .create( {
+            // Define roots / editable areas:
+            grid1: document.getElementById( 'grid1' ),
+            grid2: document.getElementById( 'grid2' ),
+            grid3: document.getElementById( 'grid3' ),
+            grid4: document.getElementById( 'grid4' ),
+            grid5: document.getElementById( 'grid5' ),
+            grid6: document.getElementById( 'grid6' ),
+            grid7: document.getElementById( 'grid7' ),
+            grid8: document.getElementById( 'grid8' ),
+            grid9: document.getElementById( 'grid9' )
+        } )
+        .then( editor => {
+            window.editor = editor;
+
+            // Append toolbar to a proper container.
+            const toolbarContainer = document.getElementById( 'toolbar' );
+            toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+
+            // Make toolbar sticky when the editor is focused.
+            editor.ui.focusTracker.on( 'change:isFocused', () => {
+                if ( editor.ui.focusTracker.isFocused ) {
+                    toolbarContainer.classList.add( 'sticky' );
+                } else {
+                    toolbarContainer.classList.remove( 'sticky' );
+                }
+            } );
+        } )
         .catch( error => {
-            console.error( error );
+            console.error( 'There was a problem initializing the editor.', error );
         } );
-</script> 
+</script>
 
 
 
@@ -187,6 +238,5 @@
     </form>
 @endif
 @endauth
-
-@endsection
 </body>
+@endsection
