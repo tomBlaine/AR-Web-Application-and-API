@@ -219,7 +219,6 @@
                     19,
                     21
                 ]
-                supportAllValues: true
             },
             toolbar: [
                 'heading', 'bulletedList', 'numberedList', 'undo', 'redo', 'fontSize'
