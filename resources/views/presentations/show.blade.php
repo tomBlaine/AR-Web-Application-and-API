@@ -178,7 +178,8 @@
     @endif
     @endauth
 </div>
-
+<br><br><br>
+<div id="toolbar"></div>
 
 <div class="grid-container">
     <div class="grid-item" id="grid1"></div>
