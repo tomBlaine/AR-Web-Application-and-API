@@ -194,7 +194,7 @@
 </div>
 
 <script>
-    MultiRootEditor
+    ClasicEditor
         .create( {
             // Define roots / editable areas:
             grid1: document.getElementById( 'grid1' ),
