@@ -207,9 +207,23 @@
             grid8: document.getElementById( 'grid8' ),
             grid9: document.getElementById( 'grid9' ),
 
+
+        }, {
+            fontSize: {
+                options: [
+                    9,
+                    11,
+                    13,
+                    'default',
+                    17,
+                    19,
+                    21
+                ]
+            },
             toolbar: [
-            'heading', 'bulletedList', 'numberedList', 'undo', 'redo'
+                'heading', 'bulletedList', 'numberedList', 'undo', 'redo'
             ]
+
         } )
         .then( editor => {
             window.editor = editor;
