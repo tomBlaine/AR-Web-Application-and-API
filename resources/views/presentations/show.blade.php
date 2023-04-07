@@ -178,7 +178,7 @@
     @endif
     @endauth
 </div>
-<br><br><br>
+
 <div id="toolbar"></div>
 
 <div class="grid-container">
@@ -208,7 +208,13 @@
             grid9: document.getElementById( 'grid9' ),
             fontSize: {
             options: [
-                
+                9,
+                11,
+                13,
+                'default',
+                17,
+                19,
+                21
             ],
             supportAllValues: true
             },
