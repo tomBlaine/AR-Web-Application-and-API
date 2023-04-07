@@ -5,8 +5,7 @@
 @section('content')
 <head>
     <link rel="stylesheet" href="{{ asset('vendor/tinymce/tinymce/skins/content/default/content.min.css') }}">
-    <script src="https://cdn.tiny.cloud/1/3s25f92064mitguhdwcei3vhfm1a9qm2796065hlrtwm3irz/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/37.0.1/classic/ckeditor.js"></script>
 
 
 </head>
@@ -168,18 +167,14 @@
 </div>
 
 
-<textarea class="description" name="description"></textarea>
+<textarea class="editor" name="editor" id="editor"></textarea>
 <script>
-tinymce.init({
-    selector:'textarea.description',
-    plugins: 'link code table',
-    toolbar: 'undo redo | bold italic underline | forecolor backcolor | alignleft aligncenter alignright | bullist numlist outdent indent | table',
-    skin: 'oxide-dark',
-    content_css: 'dark',
-    width: 900,
-    height: 300
-});
-</script>   
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script> 
 
 
 
