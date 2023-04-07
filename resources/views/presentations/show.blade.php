@@ -206,20 +206,9 @@
             grid7: document.getElementById( 'grid7' ),
             grid8: document.getElementById( 'grid8' ),
             grid9: document.getElementById( 'grid9' ),
-            fontSize: {
-            options: [
-                9,
-                11,
-                13,
-                'default',
-                17,
-                19,
-                21
-            ],
-            supportAllValues: true
-            },
+
             toolbar: [
-            'heading', 'bulletedList', 'numberedList', 'fontSize', 'undo', 'redo'
+            'heading', 'bulletedList', 'numberedList', 'undo', 'redo'
             ]
         } )
         .then( editor => {
