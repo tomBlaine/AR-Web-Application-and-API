@@ -225,6 +225,19 @@
                 }
             } );
         } )
+
+        editor.ui.view.toolbar.items.add([
+        {
+            type: 'button',
+            label: 'Font Size',
+            icon: 'textStyle',
+            tooltip: 'Font Size',
+            onExecute: () => {
+                // Open the Font Size dropdown
+                editor.execute('fontSize');
+            }
+        },]);
+
         .catch( error => {
             console.error( 'There was a problem initializing the editor.', error );
         } );
