@@ -227,16 +227,30 @@
         } )
 
         editor.ui.view.toolbar.items.add([
-        {
-            type: 'button',
-            label: 'Font Size',
-            icon: 'textStyle',
-            tooltip: 'Font Size',
-            onExecute: () => {
-                // Open the Font Size dropdown
-                editor.execute('fontSize');
+            {
+                type: 'button',
+                label: 'Font Size',
+                icon: 'fontSize',
+                tooltip: 'Font Size',
+                onExecute: () => {
+                    const dropdownView = editor.ui.view.createDropdown({
+                        element: document.createElement('div'),
+                        getLabel: () => 'Font Size',
+                        items: [
+                            { value: 'small', label: 'Small' },
+                            { value: 'normal', label: 'Normal' },
+                            { value: 'large', label: 'Large' }
+                        ],
+                        onSelect: event => {
+                            editor.execute('fontSize', { value: event.item.value });
+                            dropdownView.isOpen = false;
+                        }
+                    });
+                    dropdownView.render();
+                    editor.ui.view.toolbar.dropdownContainer.appendChild(dropdownView.element);
+                }
             }
-        },]);
+        ]);
 
         .catch( error => {
             console.error( 'There was a problem initializing the editor.', error );
