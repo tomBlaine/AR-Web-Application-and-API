@@ -208,23 +208,7 @@
             grid9: document.getElementById( 'grid9' ),
 
 
-        }, {
-            fontSize: {
-                options: [
-                    9,
-                    11,
-                    13,
-                    'default',
-                    17,
-                    19,
-                    21
-                ]
-            },
-            toolbar: [
-                'heading', 'bulletedList', 'numberedList', 'undo', 'redo', 'fontSize'
-            ]
-
-        } )
+        },)
         .then( editor => {
             window.editor = editor;
 
