@@ -150,15 +150,15 @@
 
 
                     <div class="grid-container">
-                      <div><textarea class="text1" name="text1" id="text1"></textarea></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
+                      <div class="editor1" id="grid1" name="grid1"></div>
+                      <div class="editor2" id="grid2" name="grid2"></div>
+                      <div class="editor3" id="grid3" name="grid3"></div>
+                      <div class="editor4" id="grid4" name="grid4"></div>
+                      <div class="editor5" id="grid5" name="grid5"></div>
+                      <div class="editor6" id="grid6" name="grid6"></div>
+                      <div class="editor7" id="grid7" name="grid7"></div>
+                      <div class="editor8" id="grid8" name="grid8"></div>
+                      <div class="editor9" id="grid9" name="grid9"></div>
                     </div>
                     <br>
 
@@ -181,7 +181,7 @@
 <script>
   for (var i = 1; i <= 9; i++) {
     BalloonEditor
-				.create( document.querySelector( '.text'+i ), {
+				.create( document.querySelector( '.editor'+i ), {
 					
 					licenseKey: '',
 					
