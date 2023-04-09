@@ -182,20 +182,21 @@
 <div id="toolbar"></div>
 
 <div class="grid-container">
-    <div class="editor" id="grid1"></div>
-    <div class="editor" id="grid2"></div>
-    <div class="editor" id="grid3"></div>
-    <div class="editor" id="grid4"></div>
-    <div class="editor" id="grid5"></div>
-    <div class="editor" id="grid6"></div>
-    <div class="editor" id="grid7"></div>
-    <div class="editor" id="grid8"></div>
-    <div class="editor" id="grid9"></div>
+    <div class="editor1" id="grid1"></div>
+    <div class="editor2" id="grid2"></div>
+    <div class="editor3" id="grid3"></div>
+    <div class="editor4" id="grid4"></div>
+    <div class="editor5" id="grid5"></div>
+    <div class="editor6" id="grid6"></div>
+    <div class="editor7" id="grid7"></div>
+    <div class="editor8" id="grid8"></div>
+    <div class="editor9" id="grid9"></div>
 </div>
 
 <script>
+  for (var i = 1; i <= 9; i++) {
     BalloonEditor
-				.create( document.querySelector( '.editor' ), {
+				.create( document.querySelector( '.editor'+i ), {
 					
 					licenseKey: '',
 					
@@ -215,6 +216,7 @@
 					console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
 					console.error( error );
 				} );
+  }
 </script>
 
 
