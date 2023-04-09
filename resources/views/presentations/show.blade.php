@@ -147,9 +147,28 @@
             <div>
                 <form method="POST" action="{{route('slides.store', ['id'=>$presentation])}}">
                     @csrf
-                    <div class="editor1" id="grid1" name="grid1"></div>
-                    <input type="hidden" name="grid1_data" id="grid1_data" value="">
+                    
+                    <div class="grid-container">
+                      <div class="editor1" id="grid1" name="grid1"></div>
+                      <div class="editor2" id="grid2" name="grid2"></div>
+                      <div class="editor3" id="grid3" name="grid3"></div>
+                      <div class="editor4" id="grid4" name="grid4"></div>
+                      <div class="editor5" id="grid5" name="grid5"></div>
+                      <div class="editor6" id="grid6" name="grid6"></div>
+                      <div class="editor7" id="grid7" name="grid7"></div>
+                      <div class="editor8" id="grid8" name="grid8"></div>
+                      <div class="editor9" id="grid9" name="grid9"></div>
+                    </div>
 
+                    <input type="hidden" name="grid1_data" id="grid1_data" value="">
+                    <input type="hidden" name="grid2_data" id="grid2_data" value="">
+                    <input type="hidden" name="grid3_data" id="grid3_data" value="">
+                    <input type="hidden" name="grid4_data" id="grid4_data" value="">
+                    <input type="hidden" name="grid5_data" id="grid5_data" value="">
+                    <input type="hidden" name="grid6_data" id="grid6_data" value="">
+                    <input type="hidden" name="grid7_data" id="grid7_data" value="">
+                    <input type="hidden" name="grid8_data" id="grid8_data" value="">
+                    <input type="hidden" name="grid9_data" id="grid9_data" value="">
                     <br>
 
                     <br>
@@ -168,17 +187,7 @@
 
 
 <br><br>
-<div class="grid-container">
-  
-  <div class="editor2" id="grid2" name="grid2"></div>
-  <div class="editor3" id="grid3" name="grid3"></div>
-  <div class="editor4" id="grid4" name="grid4"></div>
-  <div class="editor5" id="grid5" name="grid5"></div>
-  <div class="editor6" id="grid6" name="grid6"></div>
-  <div class="editor7" id="grid7" name="grid7"></div>
-  <div class="editor8" id="grid8" name="grid8"></div>
-  <div class="editor9" id="grid9" name="grid9"></div>
-</div>
+
 
 
 <script>
@@ -214,7 +223,6 @@
     document.querySelector('form').addEventListener('submit', function() {
     // Get the data from the 'grid1' div element
     var grid1Data = document.getElementById('grid1').innerHTML;
-    // Update the value of the hidden input field with the 'grid1' data
     document.getElementById('grid1_data').value = grid1Data;
   });
 </script>
