@@ -148,7 +148,7 @@
                 <form method="POST" action="{{route('slides.store', ['id'=>$presentation])}}">
                     @csrf
 
-                    <textarea class="text1" id="text1" name="text1"></textarea>
+                    <textarea id="text1" name="text1"></textarea>
 
                     <br>
 
@@ -158,6 +158,29 @@
                     <input type="submit" value="Save">
                     <a href="{{route('presentations.index')}}">Cancel</a>
                 </form>
+                <script>
+                      BalloonEditor
+				                  .create( document.querySelector( '#text1' ), {
+					
+					                licenseKey: '',
+					
+					
+					
+				                  } )
+				                  .then( editor => {
+					                window.editor = editor;
+			
+					
+					
+					
+				                  } )
+				                  .catch( error => {
+				                	console.error( 'Oops, something went wrong!' );
+				                	console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+				                	console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
+				                	console.error( error );
+				                  } );
+              </script>
             </div>
         </div>
       </div>
@@ -206,27 +229,7 @@
 				} );
   }
 
-    BalloonEditor
-				.create( document.querySelector( 'text1' ), {
-					
-					licenseKey: '',
-					
-					
-					
-				} )
-				.then( editor => {
-					window.editor = editor;
-			
-					
-					
-					
-				} )
-				.catch( error => {
-					console.error( 'Oops, something went wrong!' );
-					console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
-					console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
-					console.error( error );
-				} );
+
 </script>
 
 
