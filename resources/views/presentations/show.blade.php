@@ -148,7 +148,7 @@
                 <form method="POST" action="{{route('slides.store', ['id'=>$presentation])}}">
                     @csrf
                     <div class="editor1" id="grid1" name="grid1"></div>
-                    
+                    <input type="hidden" name="grid1_data" id="grid1_data" value="">
 
                     <br>
 
@@ -209,7 +209,15 @@
 
 </script>
 
-
+<script>
+  // Add an event listener to the form submit event
+    document.querySelector('form').addEventListener('submit', function() {
+    // Get the data from the 'grid1' div element
+    var grid1Data = document.getElementById('grid1').innerHTML;
+    // Update the value of the hidden input field with the 'grid1' data
+    document.getElementById('grid1_data').value = grid1Data;
+  });
+</script>
 
 @auth
 @if ($presentation->User->id == auth()->id())
