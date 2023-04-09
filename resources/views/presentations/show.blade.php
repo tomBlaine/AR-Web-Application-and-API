@@ -182,15 +182,15 @@
 <div id="toolbar"></div>
 
 <div class="grid-container">
-    <div class="editor"></div>
-    <div class="grid-item" id="grid2"></div>
-    <div class="grid-item" id="grid3"></div>
-    <div class="grid-item" id="grid4"></div>
-    <div class="grid-item" id="grid5"></div>
-    <div class="grid-item" id="grid6"></div>
-    <div class="grid-item" id="grid7"></div>
-    <div class="grid-item" id="grid8"></div>
-    <div class="grid-item" id="grid9"></div>
+    <div class="editor" id="grid1"></div>
+    <div class="editor" id="grid2"></div>
+    <div class="editor" id="grid3"></div>
+    <div class="editor" id="grid4"></div>
+    <div class="editor" id="grid5"></div>
+    <div class="editor" id="grid6"></div>
+    <div class="editor" id="grid7"></div>
+    <div class="editor" id="grid8"></div>
+    <div class="editor" id="grid9"></div>
 </div>
 
 <script>
