@@ -147,11 +147,21 @@
             <div>
                 <form method="POST" action="{{route('slides.store', ['id'=>$presentation])}}">
                     @csrf
+
+
+                    <div class="grid-container">
+                      <div class="editor1" id="grid1"></div>
+                      <div class="editor2" id="grid2"></div>
+                      <div class="editor3" id="grid3"></div>
+                      <div class="editor4" id="grid4"></div>
+                      <div class="editor5" id="grid5"></div>
+                      <div class="editor6" id="grid6"></div>
+                      <div class="editor7" id="grid7"></div>
+                      <div class="editor8" id="grid8"></div>
+                      <div class="editor9" id="grid9"></div>
+                    </div>
+                    <br>
                     <p>Text1: </p>
-
-                    
-
-
                     <textarea class="textarea1" id="textArea1" type="text" name="text1" rows=3 style="width: 30%"></textarea>
                     <p>Text1 Format: </p>
                     <textarea type="text" name="text1Format" rows=1 style="width: 30%"></textarea>
@@ -179,19 +189,7 @@
     @endauth
 </div>
 
-<div id="toolbar"></div>
 
-<div class="grid-container">
-    <div class="editor1" id="grid1"></div>
-    <div class="editor2" id="grid2"></div>
-    <div class="editor3" id="grid3"></div>
-    <div class="editor4" id="grid4"></div>
-    <div class="editor5" id="grid5"></div>
-    <div class="editor6" id="grid6"></div>
-    <div class="editor7" id="grid7"></div>
-    <div class="editor8" id="grid8"></div>
-    <div class="editor9" id="grid9"></div>
-</div>
 
 <script>
   for (var i = 1; i <= 9; i++) {

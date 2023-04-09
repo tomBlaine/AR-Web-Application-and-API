@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class SlideController extends Controller
 {
+    /*
     public function store(Request $request, $id)
     {
         $validatedData = $request->validate([
@@ -56,6 +57,23 @@ class SlideController extends Controller
 
         session()->flash('message', 'Slide was created.');
         return redirect()->route('presentations.show', ['id'=> $id]);
+    }
+    */
+
+    public function store(Request $request, $id){
+        $a = new Slide;
+        $a->text1 = $request->input('editor1');
+        $a->text2 = $request->input('editor2');
+        $a->text3 = $request->input('editor3');
+        //$a->text1Format = $validatedData['text1Format'];
+        //$a->text2Format = $validatedData['text2Format'];
+        //$a->text3Format = $validatedData['text3Format'];
+        $a->obj=$request['obj'];
+        $a->user_id = auth()->id();
+        $a->pres_id = $id;
+        //comment
+
+        $a->save();
     }
 
     private function removeNewLines($str){
