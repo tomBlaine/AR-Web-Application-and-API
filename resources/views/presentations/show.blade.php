@@ -182,7 +182,7 @@
 <div id="toolbar"></div>
 
 <div class="grid-container">
-    <div class="grid-item" id="grid1"></div>
+    <div class="editor"></div>
     <div class="grid-item" id="grid2"></div>
     <div class="grid-item" id="grid3"></div>
     <div class="grid-item" id="grid4"></div>
@@ -195,7 +195,7 @@
 
 <script>
     BalloonEditor
-				.create( document.querySelector( 'grid1' ), {
+				.create( document.querySelector( '.editor' ), {
 					
 					licenseKey: '',
 					
