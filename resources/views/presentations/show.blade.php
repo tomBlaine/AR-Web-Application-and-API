@@ -147,8 +147,8 @@
             <div>
                 <form method="POST" action="{{route('slides.store', ['id'=>$presentation])}}">
                     @csrf
-
-                    <textarea id="textt1" name="text1"></textarea>
+                    <div class="editor1" id="grid1" name="grid1"><textarea></textarea></div>
+                    
 
                     <br>
 
@@ -158,29 +158,6 @@
                     <input type="submit" value="Save">
                     <a href="{{route('presentations.index')}}">Cancel</a>
                 </form>
-                <script>
-                      BalloonEditor
-				                  .create( document.getElementByID( 'textt1' ), {
-					
-					                licenseKey: '',
-					
-					
-					
-				                  } )
-				                  .then( editor => {
-					                window.editor = editor;
-			
-					
-					
-					
-				                  } )
-				                  .catch( error => {
-				                	console.error( 'Oops, something went wrong!' );
-				                	console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
-				                	console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
-				                	console.error( error );
-				                  } );
-              </script>
             </div>
         </div>
       </div>
@@ -192,7 +169,7 @@
 
 <br><br>
 <div class="grid-container">
-  <div class="editor1" id="grid1" name="grid1"></div>
+  
   <div class="editor2" id="grid2" name="grid2"></div>
   <div class="editor3" id="grid3" name="grid3"></div>
   <div class="editor4" id="grid4" name="grid4"></div>
