@@ -62,15 +62,11 @@ class SlideController extends Controller
 
     public function store(Request $request, $id){
 
-        $validatedData = $request->validate([
-            'text1' => ['required', 'max:2550'],
-            'obj' =>['max:2000']
-        ]);
 
         $a = new Slide;
-        $a->text1 = $validatedData['text1'];
+        $a->text1 = $request->input('grid1');
 
-        $a->obj=$validatedData['obj'];
+        $a->obj=$request->all();
         $a->user_id = auth()->id();
         $a->pres_id = $id;
         //comment
