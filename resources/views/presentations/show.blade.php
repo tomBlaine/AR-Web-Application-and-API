@@ -194,11 +194,27 @@
 </div>
 
 <script>
-    ClassicEditor
-        .create( document.querySelector( 'grid1' ) )
-        .catch( error => {
-            console.error( error );
-        } );
+    BalloonEditor
+				.create( document.querySelector( 'grid1' ), {
+					
+					licenseKey: '',
+					
+					
+					
+				} )
+				.then( editor => {
+					window.editor = editor;
+			
+					
+					
+					
+				} )
+				.catch( error => {
+					console.error( 'Oops, something went wrong!' );
+					console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+					console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
+					console.error( error );
+				} );
 </script>
 
 
