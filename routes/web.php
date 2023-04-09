@@ -52,7 +52,7 @@ Route::delete('/presentations/{id}/delete', [PresentationController::class, 'des
 
 Route::get('/presentations/create', [PresentationController::class, 'create'])
     ->name('presentations.create')->middleware(['auth']);
-
+//hi
 Route::get('/presentations/{id}', [PresentationController::class, 'show'])
     ->name('presentations.show');
 
