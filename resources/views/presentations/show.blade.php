@@ -148,18 +148,8 @@
                 <form method="POST" action="{{route('slides.store', ['id'=>$presentation])}}">
                     @csrf
 
+                    <textarea class="text1" id="text1" name="text1"></textarea>
 
-                    <div class="grid-container">
-                      <div class="editor1" id="grid1" name="grid1"></div>
-                      <div class="editor2" id="grid2" name="grid2"></div>
-                      <div class="editor3" id="grid3" name="grid3"></div>
-                      <div class="editor4" id="grid4" name="grid4"></div>
-                      <div class="editor5" id="grid5" name="grid5"></div>
-                      <div class="editor6" id="grid6" name="grid6"></div>
-                      <div class="editor7" id="grid7" name="grid7"></div>
-                      <div class="editor8" id="grid8" name="grid8"></div>
-                      <div class="editor9" id="grid9" name="grid9"></div>
-                    </div>
                     <br>
 
                     <br>
@@ -176,6 +166,19 @@
     @endauth
 </div>
 
+
+<br><br>
+<div class="grid-container">
+  <div class="editor1" id="grid1" name="grid1"></div>
+  <div class="editor2" id="grid2" name="grid2"></div>
+  <div class="editor3" id="grid3" name="grid3"></div>
+  <div class="editor4" id="grid4" name="grid4"></div>
+  <div class="editor5" id="grid5" name="grid5"></div>
+  <div class="editor6" id="grid6" name="grid6"></div>
+  <div class="editor7" id="grid7" name="grid7"></div>
+  <div class="editor8" id="grid8" name="grid8"></div>
+  <div class="editor9" id="grid9" name="grid9"></div>
+</div>
 
 
 <script>
@@ -202,6 +205,28 @@
 					console.error( error );
 				} );
   }
+
+    BalloonEditor
+				.create( document.querySelector( 'text1' ), {
+					
+					licenseKey: '',
+					
+					
+					
+				} )
+				.then( editor => {
+					window.editor = editor;
+			
+					
+					
+					
+				} )
+				.catch( error => {
+					console.error( 'Oops, something went wrong!' );
+					console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+					console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
+					console.error( error );
+				} );
 </script>
 
 
