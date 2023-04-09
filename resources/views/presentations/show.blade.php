@@ -150,7 +150,7 @@
 
 
                     <div class="grid-container">
-                      <div><textarea name="text1" id="text1"></textarea></div>
+                      <div><textarea class="text1" name="text1" id="text1"></textarea></div>
                       <div></div>
                       <div></div>
                       <div></div>
@@ -181,7 +181,7 @@
 <script>
   for (var i = 1; i <= 9; i++) {
     BalloonEditor
-				.create( document.querySelector( '#text'+i ), {
+				.create( document.querySelector( '.text'+i ), {
 					
 					licenseKey: '',
 					
