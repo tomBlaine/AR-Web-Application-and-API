@@ -64,9 +64,10 @@ class SlideController extends Controller
 
 
         $a = new Slide;
-        $a->text1 = $request->input('grid1');
+        $jsonString = json_encode($request->all());
+        $a->text1 = "hi";
 
-        $a->obj=$request->all();
+        $a->obj=$jsonString;
         $a->user_id = auth()->id();
         $a->pres_id = $id;
         //comment
