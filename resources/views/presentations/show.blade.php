@@ -148,7 +148,7 @@
                 <form method="POST" action="{{route('slides.store', ['id'=>$presentation])}}">
                     @csrf
 
-                    <textarea id="text1" name="text1"></textarea>
+                    <textarea id="textt1" name="text1"></textarea>
 
                     <br>
 
@@ -160,7 +160,7 @@
                 </form>
                 <script>
                       BalloonEditor
-				                  .create( document.querySelector( '#text1' ), {
+				                  .create( document.getElementByID( 'textt1' ), {
 					
 					                licenseKey: '',
 					
