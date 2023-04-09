@@ -150,31 +150,18 @@
 
 
                     <div class="grid-container">
-                      <div class="editor1" id="grid1"></div>
-                      <div class="editor2" id="grid2"></div>
-                      <div class="editor3" id="grid3"></div>
-                      <div class="editor4" id="grid4"></div>
-                      <div class="editor5" id="grid5"></div>
-                      <div class="editor6" id="grid6"></div>
-                      <div class="editor7" id="grid7"></div>
-                      <div class="editor8" id="grid8"></div>
-                      <div class="editor9" id="grid9"></div>
+                      <div><textarea name="text1" id="text1"></textarea></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
                     </div>
                     <br>
-                    <p>Text1: </p>
-                    <textarea class="textarea1" id="textArea1" type="text" name="text1" rows=3 style="width: 30%"></textarea>
-                    <p>Text1 Format: </p>
-                    <textarea type="text" name="text1Format" rows=1 style="width: 30%"></textarea>
-                    <br>
-                    <p>Text2: </p>
-                    <textarea type="text" name="text2" rows=3 style="width: 30%"></textarea>
-                    <p>Text2 Format: </p>
-                    <textarea type="text" name="text2Format" rows=1 style="width: 30%"></textarea>
-                    <br>
-                    <p>Text3: </p>
-                    <textarea type="text" name="text3" rows=3 style="width: 30%"></textarea>
-                    <p>Text3 Format: </p>
-                    <textarea type="text" name="text3Format" rows=1 style="width: 30%"></textarea>
+
                     <br>
                     <p>Obj Ref: </p>
                     <textarea  type="text" name="obj" rows=3 style="width: 30%"></textarea>
@@ -194,7 +181,7 @@
 <script>
   for (var i = 1; i <= 9; i++) {
     BalloonEditor
-				.create( document.querySelector( '.editor'+i ), {
+				.create( document.querySelector( '#text'+i ), {
 					
 					licenseKey: '',
 					
