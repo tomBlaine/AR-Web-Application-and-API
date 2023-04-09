@@ -147,7 +147,7 @@
             <div>
                 <form method="POST" action="{{route('slides.store', ['id'=>$presentation])}}">
                     @csrf
-                    <div class="editor1" id="grid1" name="grid1"><textarea></textarea></div>
+                    <div class="editor1" id="grid1" name="grid1"><textarea name="text1" id="text1"></textarea></div>
                     
 
                     <br>
