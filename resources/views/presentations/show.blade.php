@@ -224,10 +224,10 @@
     // Get the data from the 'grid1' div element
     var grid1Data = document.getElementById('grid1').innerHTML;
     document.getElementById('grid1_data').value = grid1Data;
-    var grid2Data = document.getElementById('grid2').innerHTML;
-    document.getElementById('grid2_data').value = grid2Data;
-    var grid3Data = document.getElementById('grid3').innerHTML;
-    document.getElementById('grid3_data').value = grid3Data;
+    //var grid2Data = document.getElementById('grid2').innerHTML;
+    //document.getElementById('grid2_data').value = grid2Data;
+    //var grid3Data = document.getElementById('grid3').innerHTML;
+    //document.getElementById('grid3_data').value = grid3Data;
   });
 </script>
 
