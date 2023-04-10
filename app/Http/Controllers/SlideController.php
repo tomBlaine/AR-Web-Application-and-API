@@ -62,12 +62,14 @@ class SlideController extends Controller
 
     public function store(Request $request, $id){
 
+        $text1data = removeParagraphTags($request->input('grid1_data'));
+
 
         $a = new Slide;
         
-        $a->text1 = $request->input('grid1_data');
-        //$a->text2 = $request['grid1_data'];
-        //$a->text3 = $request['grid1_data'];
+        $a->text1 = $text1data;
+        //$a->text2 = $request->input('grid2_data');
+        //$a->text3 = $request->input('grid3_data');
         $a->text1Format = "S1";
         //$a->text2Format = "S2";
         //$a->text3Format = "S3";
@@ -83,10 +85,22 @@ class SlideController extends Controller
         return redirect()->route('presentations.show', ['id'=> $id]);
     }
 
-    private function removeNewLines($str){
-        $str = preg_replace('/^\n+/', '', $str);
-        $str = preg_replace('/\n+$/', '', $str);
-        return $str;
+    private function removeParagraphTags($string) {
+
+        while (strpos($string, "<p>") !== false) {
+            
+            $startPos = strpos($string, "<p>");
+            $endPos = strpos($string, "</p>");
+            
+            if ($endPos === false) {
+                break; 
+            }
+            
+            $string = substr_replace($string, "", $startPos, 3); 
+            $string = substr_replace($string, "\n", $endPos, 4); 
+        }
+        
+        return $string;
     }
 
     private function getBoxType($str) {
