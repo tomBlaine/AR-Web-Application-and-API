@@ -27,7 +27,7 @@
         }
 
         .small {
-          border-radius: 50%;
+          border-radius: 10%;
           width: 100px;
           height: 100px;
         }
@@ -177,7 +177,7 @@
                 <form method="POST" action="{{route('slides.store', ['id'=>$presentation])}}">
                     @csrf
 
-                    <div id="sectionToToggle1" style="display: none;">
+                    <div id="sectionToToggle1" class="defaultShape" style="display: none;">
                       <input type="checkbox" id="checkbox1"> Small Square
                       <input type="checkbox" id="checkbox2"> Vertical Rectangle
                       <input type="checkbox" id="checkbox3"> Horizontal Rectangle
@@ -246,35 +246,6 @@
 
 
 <script>
-  for (var i = 1; i <= 3; i++) {
-    BalloonEditor
-				.create( document.querySelector( '.editor'+i ), {
-					
-					licenseKey: '',
-					
-					
-					
-				} )
-				.then( editor => {
-					window.editor = editor;
-			
-					
-					
-					
-				} )
-				.catch( error => {
-					console.error( 'Oops, something went wrong!' );
-					console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
-					console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
-					console.error( error );
-				} );
-  }
-
-
-</script>
-
-
-<script>
   $(document).ready(function() {
     var counter = 0;
       $('#toggleButton').click(function() {
@@ -301,6 +272,7 @@
       smallCheckbox.addEventListener('change', () => {
         if (smallCheckbox.checked) {
             textDiv.className = 'defaultShape small';
+            addCKEditor("1");
         }
       });
 
@@ -308,6 +280,7 @@
         if (vertCheckbox.checked) {
           // Set the div's class to 'square' and remove other classes
           textDiv.className = 'defaultShape vert';
+          addCKEditor("1");
         }
       });
 
@@ -315,6 +288,7 @@
         if (horCheckbox.checked) {
           // Set the div's class to 'triangle' and remove other classes
           textDiv.className = 'defaultShape hor';
+          addCKEditor("1");
         }
       });
 
@@ -322,8 +296,34 @@
         if (bigCheckbox.checked) {
           // Set the div's class to 'triangle' and remove other classes
           textDiv.className = 'defaultShape big';
+          addCKEditor("1");
         }
       });
+
+
+      function addCKEditor(editorNum) {
+        BalloonEditor
+				.create( document.querySelector( '.editor'+editorNum ), {
+					
+					licenseKey: '',
+					
+					
+					
+				} )
+				.then( editor => {
+					window.editor = editor;
+			
+					
+					
+					
+				} )
+				.catch( error => {
+					console.error( 'Oops, something went wrong!' );
+					console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+					console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
+					console.error( error );
+				} );
+      }
 </script>
 
 @auth
