@@ -191,7 +191,7 @@
                           <div class="editor1 ck-editor__editable outlined-div" id="grid1" style="width=100%;"></div>
                           <br>
                           <label for="boxColour1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour:</label>
-                          <select id="boxColour1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <select id="boxColour1"  name="boxColour1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected value="null">Choose a colour</option>
                             <option value="green">Light Green</option>
                             <option value="purple">Light Purple</option>
@@ -247,7 +247,7 @@
                           <div class="editor2 ck-editor__editable outlined-div" id="grid2" style="width=100%;"></div>
                           <br>
                           <label for="boxColour2" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour:</label>
-                          <select id="boxColour2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <select id="boxColour2"  name="boxColour2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected value="null">Choose a colour</option>
                             <option value="green">Light Green</option>
                             <option value="purple">Light Purple</option>
@@ -303,7 +303,7 @@
                           <div class="editor3 ck-editor__editable outlined-div" id="grid3" style="width=100%;"></div>
                           <br>
                           <label for="boxColour3" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour:</label>
-                          <select id="boxColour3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <select id="boxColour3" name="boxColour3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected value="null">Choose a colour</option>
                             <option value="green">Light Green</option>
                             <option value="purple">Light Purple</option>
@@ -336,11 +336,7 @@
                     <input type="hidden" name="grid1_data" id="grid1_data" value="null">
                     <input type="hidden" name="grid2_data" id="grid2_data" value="null">
                     <input type="hidden" name="grid3_data" id="grid3_data" value="null">
-                    
-                    <input type="hidden" name="colorSelection1" id="colorSelection1" value="null">
-                    <input type="hidden" name="colorSelection2" id="colorSelection2" value="null">
-                    <input type="hidden" name="colorSelection3" id="colorSelection3" value="null">
-                    
+
                     <br>
 
                     <br>
@@ -392,13 +388,7 @@
         }
         document.getElementById('grid3_data').value = grid3Data;
 
-        var colorSelect1 = document.getElementById('boxColour1');
-        document.getElementById('colorSelection1').value = colorSelect1.value;
-        var colorSelect2 = document.getElementById('boxColour2');
-        document.getElementById('colorSelection2').value = colorSelect2.value;
-        var colorSelect3 = document.getElementById('boxColour3');
-        document.getElementById('colorSelection3').value = colorSelect3.value;
-        form.submit();
+
       });
     </script>
     @endauth
