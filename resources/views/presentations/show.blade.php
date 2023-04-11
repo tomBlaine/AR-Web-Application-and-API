@@ -20,11 +20,6 @@
             padding: 20px;
         }
 
-        #grid1,
-        #grid2,
-        #grid3 {
-           display: none;
-        }
 
     </style>
 
@@ -155,11 +150,19 @@
                 <form method="POST" action="{{route('slides.store', ['id'=>$presentation])}}">
                     @csrf
 
-                    <div class="editor1" id="grid1" name="grid1"></div>
-                    <div class="editor2" id="grid2" name="grid2"></div>
-                    <div class="editor3" id="grid3" name="grid3"></div>
+                    <div id="sectionToToggle1" style="display: none;">
+                      <div class="editor1" id="grid1" name="grid1"></div>
+                    </div>
+                   
+                    <div id="sectionToToggle2" style="display: none;">
+                      <div class="editor2" id="grid2" name="grid2"></div>
+                    </div>
+
+                    <div id="sectionToToggle3" style="display: none;">
+                      <div class="editor3" id="grid3" name="grid3"></div>
+                    </div>
                     
-                    <button id="addInputButton" type="button">Add Text Box</button>
+                    <button id="toggleButton">Toggle Section</button>
 
                     <input type="hidden" name="grid1_data" id="grid1_data" value="">
                     <input type="hidden" name="grid2_data" id="grid2_data" value="">
@@ -212,7 +215,7 @@
 
 
 <script>
-  for (var i = 1; i <= 9; i++) {
+  for (var i = 1; i <= 3; i++) {
     BalloonEditor
 				.create( document.querySelector( '.editor'+i ), {
 					
@@ -239,22 +242,16 @@
 
 </script>
 
+
 <script>
   $(document).ready(function() {
     var counter = 0;
-      $('#addInputButton').on('click', function() {
+      $('#toggleButton').click(function() {
           counter++;
-          if (counter === 1) {
-              $('#grid1').show();
-          } else if (counter === 2) {
-              $('#grid2').show();
-          } else if (counter === 3) {
-              $('#grid3').show();
-              counter = 0;
-          }
+          $('#sectionToToggle'+(counter)).toggle(); // Toggle the visibility of the section
       });
   });
-</script>
+  </script>
 
 @auth
 @if ($presentation->User->id == auth()->id())
