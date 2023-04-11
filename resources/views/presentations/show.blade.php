@@ -204,7 +204,6 @@
                               id="boxPos1"
                               rows="1"
                               name="boxPos1"
-                              type="text"
                               placeholder="Text box grid position"></textarea>
                             <label
                               for="boxPos1"
@@ -260,7 +259,6 @@
                               id="boxPos2"
                               rows="1"
                               name="boxPos2"
-                              type="text"
                               placeholder="Text box grid position"></textarea>
                             <label
                               for="boxPos2"
@@ -315,7 +313,6 @@
                               id="boxPos3"
                               rows="1"
                               name="boxPos3"
-                              type="text"
                               placeholder="Text box grid position"></textarea>
                             <label
                               for="boxPos3"
