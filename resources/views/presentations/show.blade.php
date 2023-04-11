@@ -160,7 +160,7 @@
         aria-labelledby="headingOne5">
         <div class="py-4 px-5">
             <div>
-                <form method="POST" action="{{route('slides.store', ['id'=>$presentation])}}">
+                <form id="form1" method="POST" action="{{route('slides.store', ['id'=>$presentation])}}">
                     @csrf
 
 
@@ -369,17 +369,10 @@
 
     <script>
       // Add an event listener to the form submit event
-        document.querySelector('form').addEventListener('submit', function() {
+      var form = document.getElementById('form1');
+        form.addEventListener('submit', function(event) {
         event.preventDefault();
         var grid1Data = document.getElementById('grid1').innerHTML;
-
-        if (grid1Data === null || grid1Data.trim() === '') {
-
-            grid1Data = "<p><br data-cke-filler=\"true\"><\/p>";
-        }
-
-
-
         document.getElementById('grid1_data').value = grid1Data;
         var grid2Data = document.getElementById('grid2').innerHTML;
         document.getElementById('grid2_data').value = grid2Data;
