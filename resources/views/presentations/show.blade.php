@@ -175,12 +175,26 @@
                 <form method="POST" action="{{route('slides.store', ['id'=>$presentation])}}">
                     @csrf
 
-                    <div id="sectionToToggle1" style="display: none;">
-                      <input type="checkbox" id="checkbox1" class="checkboxes1"> Small Square
-                      <input type="checkbox" id="checkbox2" class="checkboxes1"> Vertical Rectangle
-                      <input type="checkbox" id="checkbox3" class="checkboxes1"> Horizontal Rectangle
-                      <input type="checkbox" id="checkbox4" class="checkboxes1"> Big Square
-                      <div class="editor1" id="grid1" name="grid1"></div>
+
+                    <div style="display: flex; align-items: center; justify-content: center; display: none;" id="sectionToToggle1">
+                      <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%;">
+                        <!-- Left side with 4 checkboxes and text area -->
+                        <div style="flex: 1; padding: 20px;">
+                          <input type="checkbox" id="checkbox1">
+                          <label for="checkbox1">Small Square</label><br>
+                          <input type="checkbox" id="checkbox2">
+                          <label for="checkbox2">Vertical Rectangle</label><br>
+                          <input type="checkbox" id="checkbox3">
+                          <label for="checkbox3">Horizontal Rectangle</label><br>
+                          <input type="checkbox" id="checkbox4">
+                          <label for="checkbox4">Big Square</label><br>
+                          <div class="editor1" id="grid1" name="grid1"></div>
+                        </div>
+                        <!-- Right side with large image -->
+                        <div style="flex: 1;">
+                          <img src="image.jpg" alt="Large Image" style="width: 100%; height: auto;">
+                        </div>
+                      </div>
                     </div>
                    
                     <div id="sectionToToggle2" style="display: none;">
@@ -218,8 +232,8 @@
 
     <div class="grid-container">
 
-      <div class="editor4" id="grid4" name="grid4"></div>
-      <div class="editor5" id="grid5" name="grid5"></div>
+      <div class="viewer1" id="grid4" name="grid4"></div>
+      <div class="viewer2" id="grid5" name="grid5"></div>
       <div class="editor6" id="grid6" name="grid6"></div>
       <div class="editor7" id="grid7" name="grid7"></div>
       <div class="editor8" id="grid8" name="grid8"></div>
@@ -314,6 +328,12 @@ checkboxes.forEach(checkbox => {
     </form>
 @endif
 @endauth
+
+
+
+
+
+
 </body>
 
 
