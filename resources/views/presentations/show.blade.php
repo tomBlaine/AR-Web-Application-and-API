@@ -187,7 +187,7 @@
                           </div>
                           <br>
                           <p>Your Text (select text to edit style):</p>
-                          <div class="editor1 ck-editor__editable outlined-div" id="grid1" name="grid1" style="width=100%;"></div>
+                          <div class="editor1 ck-editor__editable outlined-div" id="grid1" style="width=100%;"></div>
                           <br>
                           <label for="boxColour1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour:</label>
                           <select id="boxColour1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -242,7 +242,7 @@
                           </div>
                           <br>
                           <p>Your Text (select text to edit style):</p>
-                          <div class="editor2 ck-editor__editable outlined-div" id="grid2" name="grid2" style="width=100%;"></div>
+                          <div class="editor2 ck-editor__editable outlined-div" id="grid2" style="width=100%;"></div>
                           <br>
                           <label for="boxColour2" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour:</label>
                           <select id="boxColour2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -296,7 +296,7 @@
                           </div>
                           <br>
                           <p>Your Text (select text to edit style):</p>
-                          <div class="editor3 ck-editor__editable outlined-div" id="grid3" name="grid3" style="width=100%;"></div>
+                          <div class="editor3 ck-editor__editable outlined-div" id="grid3" style="width=100%;"></div>
                           <br>
                           <label for="boxColour3" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour:</label>
                           <select id="boxColour3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
