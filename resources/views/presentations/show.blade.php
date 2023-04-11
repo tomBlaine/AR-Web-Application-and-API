@@ -170,27 +170,27 @@
                           <p><strong>Text Box 1:</strong></p><br>
                           <p>Choose a box shape:</p>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox11" class="checkboxes1">
+                            <input type="checkbox" id="checkbox11" class="checkboxes1" name="boxes1[]">
                             <label for="checkbox1">  Small Box</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox12" class="checkboxes1">
+                            <input type="checkbox" id="checkbox12" class="checkboxes1" name="boxes1[]">
                             <label for="checkbox2">  Vertical Rectangle</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox13" class="checkboxes1">
+                            <input type="checkbox" id="checkbox13" class="checkboxes1" name="boxes1[]">
                             <label for="checkbox3">  Horizontal Rectangle</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox14" class="checkboxes1">
+                            <input type="checkbox" id="checkbox14" class="checkboxes1" name="boxes1[]">
                             <label for="checkbox4">  Big Square</label>
                           </div>
                           <br>
                           <p>Your Text (select text to edit style):</p>
                           <div class="editor1 ck-editor__editable outlined-div" id="grid1" name="grid1" style="width=100%;"></div>
                           <br>
-                          <label for="boxColour" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour:</label>
-                          <select id="boxColour" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <label for="boxColour1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour:</label>
+                          <select id="boxColour1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Choose a colour</option>
                             <option value="green">Light Green</option>
                             <option value="purple">Light Purple</option>
@@ -201,13 +201,13 @@
                           <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
                             <textarea
                               class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outlined-div transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                              id="boxPos"
+                              id="boxPos1"
                               rows="1"
-                              name="boxPos"
+                              name="boxPos1"
                               type="text"
                               placeholder="Text box grid position"></textarea>
                             <label
-                              for="boxPos"
+                              for="boxPos1"
                               class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                               >Text Box Position (e.g 1)</label
                             >
@@ -226,27 +226,27 @@
                           <p><strong>Text Box 2:</strong></p><br>
                           <p>Choose a box shape:</p>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox21" class="checkboxes2">
+                            <input type="checkbox" id="checkbox21" class="checkboxes2" name="boxes2[]">
                             <label for="checkbox1">  Small Box</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox22" class="checkboxes2">
+                            <input type="checkbox" id="checkbox22" class="checkboxes2" name="boxes2[]">
                             <label for="checkbox2">  Vertical Rectangle</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox23" class="checkboxes2">
+                            <input type="checkbox" id="checkbox23" class="checkboxes2" name="boxes2[]">
                             <label for="checkbox3">  Horizontal Rectangle</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox24" class="checkboxes2">
+                            <input type="checkbox" id="checkbox24" class="checkboxes2" name="boxes2[]">
                             <label for="checkbox4">  Big Square</label>
                           </div>
                           <br>
                           <p>Your Text (select text to edit style):</p>
                           <div class="editor2 ck-editor__editable outlined-div" id="grid2" name="grid2" style="width=100%;"></div>
                           <br>
-                          <label for="boxColour" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour:</label>
-                          <select id="boxColour" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <label for="boxColour2" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour:</label>
+                          <select id="boxColour2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Choose a colour</option>
                             <option value="green">Light Green</option>
                             <option value="purple">Light Purple</option>
@@ -257,13 +257,13 @@
                           <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
                             <textarea
                               class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outlined-div transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                              id="boxPos"
+                              id="boxPos2"
                               rows="1"
-                              name="boxPos"
+                              name="boxPos2"
                               type="text"
                               placeholder="Text box grid position"></textarea>
                             <label
-                              for="boxPos"
+                              for="boxPos2"
                               class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                               >Text Box Position (e.g 1):</label
                             >
@@ -281,27 +281,27 @@
                           <p><strong>Text Box 3:</strong></p><br>
                           <p>Choose a box shape:</p>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox31" class="checkboxes3">
+                            <input type="checkbox" id="checkbox31" class="checkboxes3" name="boxes3[]">
                             <label for="checkbox1">  Small Box</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox32" class="checkboxes3">
+                            <input type="checkbox" id="checkbox32" class="checkboxes3" name="boxes3[]">
                             <label for="checkbox2">  Vertical Rectangle</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox33" class="checkboxes3">
+                            <input type="checkbox" id="checkbox33" class="checkboxes3" name="boxes3[]">
                             <label for="checkbox3">  Horizontal Rectangle</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox34" class="checkboxes3">
+                            <input type="checkbox" id="checkbox34" class="checkboxes3" name="boxes3[]">
                             <label for="checkbox4">  Big Square</label>
                           </div>
                           <br>
                           <p>Your Text (select text to edit style):</p>
                           <div class="editor3 ck-editor__editable outlined-div" id="grid3" name="grid3" style="width=100%;"></div>
                           <br>
-                          <label for="boxColour" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour:</label>
-                          <select id="boxColour" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <label for="boxColour3" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour:</label>
+                          <select id="boxColour3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Choose a colour</option>
                             <option value="green">Light Green</option>
                             <option value="purple">Light Purple</option>
@@ -312,13 +312,13 @@
                           <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
                             <textarea
                               class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outlined-div transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                              id="boxPos"
+                              id="boxPos3"
                               rows="1"
-                              name="boxPos"
+                              name="boxPos3"
                               type="text"
                               placeholder="Text box grid position"></textarea>
                             <label
-                              for="boxPos"
+                              for="boxPos3"
                               class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                               >Text Box Position (e.g 1):</label
                             >
