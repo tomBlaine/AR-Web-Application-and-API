@@ -24,6 +24,11 @@
           min-height: 300px;
         }
 
+        .outlined-div {
+          border: 1px solid #000; /* optional: add a border for reference */
+          outline: 2px solid red; /* specify the outline color, width, and style */
+        }
+
 
 
     </style>
@@ -179,7 +184,7 @@
                           </div>
                           <br>
                           <p>Your Text (select text to edit style):</p>
-                          <div class="editor1 ck-editor__editable" id="grid1" name="grid1" style="width=100%;"></div>
+                          <div class="editor1 ck-editor__editable outlined-div" id="grid1" name="grid1" style="width=100%;"></div>
                           <br>
                           
                           <label for="boxColour" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour</label>
