@@ -377,13 +377,19 @@
         form.addEventListener('submit', function(event) {
         event.preventDefault();
         var grid1Data = document.getElementById('grid1').innerHTML;
-
-
-        grid1Data = "<hello>";
+        if (grid1Data === null || grid1Data === "<p><br data-cke-filler=\"true\"></p>") {
+              grid1Data = "null";
+        }
         document.getElementById('grid1_data').value = grid1Data;
         var grid2Data = document.getElementById('grid2').innerHTML;
+        if (grid2Data === null || grid2Data === "<p><br data-cke-filler=\"true\"></p>") {
+              grid2Data = "null";
+        }
         document.getElementById('grid2_data').value = grid2Data;
         var grid3Data = document.getElementById('grid3').innerHTML;
+        if (grid3Data === null || grid3Data === "<p><br data-cke-filler=\"true\"></p>") {
+              grid3Data = "null";
+        }
         document.getElementById('grid3_data').value = grid3Data;
 
         //var colorSelect1 = document.getElementById('boxColour1');
@@ -450,7 +456,7 @@
 
 
 <script>
-  const checkboxesClass1 = document.querySelectorAll('.checkboxes1');
+  const checkboxesClass1 = document.querySelectorAll('.checkboxes1'); // only one from each class can be selected
   const checkboxesClass2 = document.querySelectorAll('.checkboxes2');
   const checkboxesClass3 = document.querySelectorAll('.checkboxes3');
 
