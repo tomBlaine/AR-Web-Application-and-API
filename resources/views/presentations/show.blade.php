@@ -370,8 +370,16 @@
     <script>
       // Add an event listener to the form submit event
         document.querySelector('form').addEventListener('submit', function() {
-        // Get the data from the 'grid1' div element
+        event.preventDefault();
         var grid1Data = document.getElementById('grid1').innerHTML;
+
+        if (grid1Data === null || grid1Data.trim() === '') {
+
+            grid1Data = "<p><br data-cke-filler=\"true\"><\/p>";
+        }
+
+
+
         document.getElementById('grid1_data').value = grid1Data;
         var grid2Data = document.getElementById('grid2').innerHTML;
         document.getElementById('grid2_data').value = grid2Data;
@@ -384,7 +392,7 @@
         //document.getElementById('colorSelection2').value = colorSelect2.value;
         //var colorSelect3 = document.getElementById('boxColour3');
         //document.getElementById('colorSelection3').value = colorSelect3.value;
-        
+        form.submit();
       });
     </script>
     @endauth
