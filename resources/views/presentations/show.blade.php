@@ -20,6 +20,33 @@
             padding: 20px;
         }
 
+        .defaultShape {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+        }
+
+        .small {
+          border-radius: 50%;
+          width: 100px;
+          height: 100px;
+        }
+
+        .big {
+            width: 200px;
+            height: 200px;
+        }
+
+        .hor {
+            width: 200px;
+            height: 100px;
+        }
+
+        .vert {
+            width: 100px;
+            height: 200px;
+        }
+
 
     </style>
 
@@ -151,6 +178,10 @@
                     @csrf
 
                     <div id="sectionToToggle1" style="display: none;">
+                      <input type="checkbox" id="checkbox1"> Small Square
+                      <input type="checkbox" id="checkbox2"> Vertical Rectangle
+                      <input type="checkbox" id="checkbox3"> Horizontal Rectangle
+                      <input type="checkbox" id="checkbox4"> Big Square
                       <div class="editor1" id="grid1" name="grid1"></div>
                     </div>
                    
@@ -250,9 +281,50 @@
         event.preventDefault();
           counter++;
           $('#sectionToToggle'+(counter)).toggle(); // Toggle the visibility of the section
+
+          if (counter === 3) {
+            $('#toggleButton').hide();
+          }
       });
   });
   </script>
+
+  <script>
+    // Get the div element
+      const textDiv = document.getElementById('grid1');
+
+      const smallCheckbox = document.getElementById('checkbox1');
+      const horCheckbox = document.getElementById('checkbox2');
+      const vertCheckbox = document.getElementById('checkbox3');
+      const bigCheckbox = document.getElementById('checkbox4');
+      // Add event listeners to the checkboxes
+      smallCheckbox.addEventListener('change', () => {
+        if (smallCheckbox.checked) {
+            textDiv.className = 'defaultShape small';
+        }
+      });
+
+      vertCheckbox.addEventListener('change', () => {
+        if (vertCheckbox.checked) {
+          // Set the div's class to 'square' and remove other classes
+          textDiv.className = 'defaultShape vert';
+        }
+      });
+
+      horCheckbox.addEventListener('change', () => {
+        if (horCheckbox.checked) {
+          // Set the div's class to 'triangle' and remove other classes
+          textDiv.className = 'defaultShape hor';
+        }
+      });
+
+      bigCheckbox.addEventListener('change', () => {
+        if (bigCheckbox.checked) {
+          // Set the div's class to 'triangle' and remove other classes
+          textDiv.className = 'defaultShape big';
+        }
+      });
+</script>
 
 @auth
 @if ($presentation->User->id == auth()->id())
