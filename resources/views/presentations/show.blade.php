@@ -147,18 +147,12 @@
             <div>
                 <form method="POST" action="{{route('slides.store', ['id'=>$presentation])}}">
                     @csrf
+
+                    <div class="editor1" id="grid1" name="grid1" style="display:none;"></div>
+                    <div class="editor2" id="grid2" name="grid2" style="display:none;"></div>
+                    <div class="editor3" id="grid3" name="grid3" style="display:none;"></div>
                     
-                    <div class="grid-container">
-                      <div class="editor1" id="grid1" name="grid1"></div>
-                      <div class="editor2" id="grid2" name="grid2"></div>
-                      <div class="editor3" id="grid3" name="grid3"></div>
-                      <div class="editor4" id="grid4" name="grid4"></div>
-                      <div class="editor5" id="grid5" name="grid5"></div>
-                      <div class="editor6" id="grid6" name="grid6"></div>
-                      <div class="editor7" id="grid7" name="grid7"></div>
-                      <div class="editor8" id="grid8" name="grid8"></div>
-                      <div class="editor9" id="grid9" name="grid9"></div>
-                    </div>
+                    <button id="addInputBtn" type="button">Add Text Box</button>
 
                     <input type="hidden" name="grid1_data" id="grid1_data" value="">
                     <input type="hidden" name="grid2_data" id="grid2_data" value="">
@@ -182,6 +176,17 @@
       </div>
     </div>
     @endif
+
+    <div class="grid-container">
+
+      <div class="editor4" id="grid4" name="grid4"></div>
+      <div class="editor5" id="grid5" name="grid5"></div>
+      <div class="editor6" id="grid6" name="grid6"></div>
+      <div class="editor7" id="grid7" name="grid7"></div>
+      <div class="editor8" id="grid8" name="grid8"></div>
+      <div class="editor9" id="grid9" name="grid9"></div>
+    </div>
+
     <script>
       // Add an event listener to the form submit event
         document.querySelector('form').addEventListener('submit', function() {
@@ -227,7 +232,26 @@
 
 </script>
 
+<script>
+  $(document).ready(function() {
+      // Counter to keep track of visible div
+      var counter = 0;
 
+      // Event listener for button click
+      $('#addInputButton').on('click', function() {
+          // Show the div corresponding to the current counter value
+          $('#grid' + (counter + 1)).show();
+          
+          // Increment the counter
+          counter++;
+
+          // Reset the counter if it reaches 3
+          if (counter === 3) {
+              counter = 0;
+          }
+      });
+  });
+</script>
 
 @auth
 @if ($presentation->User->id == auth()->id())
