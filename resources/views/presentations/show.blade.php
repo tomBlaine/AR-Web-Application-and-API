@@ -26,7 +26,7 @@
 
         .outlined-div {
           border: 1px solid #000; /* optional: add a border for reference */
-          outline: 2px solid red; /* specify the outline color, width, and style */
+          outline: 2px solid #000; /* specify the outline color, width, and style */
         }
 
 
@@ -163,24 +163,25 @@
 
                     <div style="display: flex; align-items: center; justify-content: center; display: none;" id="sectionToToggle1">
                       <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%;">
-                        <!-- Left side with 4 checkboxes and text area -->
+
                         <div style="flex: 1; padding: 20px;">
-                          <p>Choose a box shape</p><br>
+                          <p><strong>Text Box 1:</strong></p><br>
+                          <p>Choose a box shape:</p>
                           <div style="display: flex; flex-direction: row; align-items: center;">
                             <input type="checkbox" id="checkbox1" class="checkboxes1">
-                            <label for="checkbox1">Small Box</label>
+                            <label for="checkbox1">  Small Box</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
                             <input type="checkbox" id="checkbox2" class="checkboxes1">
-                            <label for="checkbox2">Vertical Rectangle</label>
+                            <label for="checkbox2">  Vertical Rectangle</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
                             <input type="checkbox" id="checkbox3" class="checkboxes1">
-                            <label for="checkbox3">Horizontal Rectangle</label>
+                            <label for="checkbox3">  Horizontal Rectangle</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
                             <input type="checkbox" id="checkbox4" class="checkboxes1">
-                            <label for="checkbox4">Big Square</label>
+                            <label for="checkbox4">  Big Square</label>
                           </div>
                           <br>
                           <p>Your Text (select text to edit style):</p>
@@ -194,6 +195,8 @@
                             <option value="purple">Light Purple</option>
                             <option value="white">White</option>
                           </select>
+
+                          
 
 
                         </div>
@@ -230,15 +233,15 @@
                     <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
                       <textarea
                         class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                        id="objID"
+                        id="boxPos"
                         rows="1"
                         name="obj"
                         type="text"
-                        placeholder="Your sketchfab link"></textarea>
+                        placeholder="Text box grid position"></textarea>
                       <label
-                        for="objID"
+                        for="boxPos"
                         class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                        >3D Model Sketchfab Link</label
+                        >Text Box Position (look right for explanation ->)</label
                       >
                     </div>
 
