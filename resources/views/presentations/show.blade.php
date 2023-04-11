@@ -176,10 +176,10 @@
                     @csrf
 
                     <div id="sectionToToggle1" style="display: none;">
-                      <input type="checkbox" id="checkbox1"> Small Square
-                      <input type="checkbox" id="checkbox2"> Vertical Rectangle
-                      <input type="checkbox" id="checkbox3"> Horizontal Rectangle
-                      <input type="checkbox" id="checkbox4"> Big Square
+                      <input type="checkbox" id="checkbox1" class="checkboxes1"> Small Square
+                      <input type="checkbox" id="checkbox2" class="checkboxes1"> Vertical Rectangle
+                      <input type="checkbox" id="checkbox3" class="checkboxes1"> Horizontal Rectangle
+                      <input type="checkbox" id="checkbox4" class="checkboxes1"> Big Square
                       <div class="editor1" id="grid1" name="grid1"></div>
                     </div>
                    
@@ -288,47 +288,21 @@
   });
   </script>
 
-  <script>
-    // Get the div element
-      const textDiv = document.getElementById('grid1');
+<script>
+  const checkboxes = document.querySelectorAll('.checkboxes1'); // Select checkboxes with class "myCheckbox"
 
-      const smallCheckbox = document.getElementById('checkbox1');
-      const horCheckbox = document.getElementById('checkbox2');
-      const vertCheckbox = document.getElementById('checkbox3');
-      const bigCheckbox = document.getElementById('checkbox4');
-      // Add event listeners to the checkboxes
-      smallCheckbox.addEventListener('change', () => {
-        if (smallCheckbox.checked) {
-          var editor = CKEDITOR.instances['editor1'];
-          if (editor) {
-              editor.resize('200px', '200px');
-          }
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', (event) => { // Add change event listener to each checkbox
+    if (event.target.checked) { // If the checkbox is checked
+      checkboxes.forEach(otherCheckbox => {
+        if (otherCheckbox !== event.target) { // Uncheck all other checkboxes
+          otherCheckbox.checked = false;
         }
       });
+    }
+  });
+});
 
-      vertCheckbox.addEventListener('change', () => {
-        if (vertCheckbox.checked) {
-            var editor = CKEDITOR.instances['editor1'];
-            if (editor) {
-                editor.resize('400px', '200px');
-            }
-        
-        }
-      });
-
-      horCheckbox.addEventListener('change', () => {
-        if (horCheckbox.checked) {
-          // Set the div's class to 'triangle' and remove other classes
-          textDiv.className = 'defaultShape hor';
-        }
-      });
-
-      bigCheckbox.addEventListener('change', () => {
-        if (bigCheckbox.checked) {
-          // Set the div's class to 'triangle' and remove other classes
-          textDiv.className = 'defaultShape big';
-        }
-      });
 </script>
 
 @auth
