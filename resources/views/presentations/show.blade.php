@@ -169,6 +169,7 @@
                         <div style="flex: 1; padding: 20px;">
                           <p><strong>Text Box 1:</strong></p><br>
                           <p>Choose a box shape:</p>
+                          <input type="hidden" name="checkbox1" value="">
                           <div style="display: flex; flex-direction: row; align-items: center;">
                             <input type="checkbox" class="checkboxes1" value="sb" name="checkbox1[]">
                             <label for="checkbox1">  Small Box</label>
@@ -224,20 +225,21 @@
                         <div style="flex: 1; padding: 20px;">
                           <p><strong>Text Box 2:</strong></p><br>
                           <p>Choose a box shape:</p>
+                          <input type="hidden" name="checkbox2" value="">
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox21" class="checkboxes2" value="sb" name="checkbox2[]">
+                            <input type="checkbox" class="checkboxes2" value="sb" name="checkbox2[]">
                             <label for="checkbox1">  Small Box</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox22" class="checkboxes2" value="vb" name="checkbox2[]">
+                            <input type="checkbox" class="checkboxes2" value="vb" name="checkbox2[]">
                             <label for="checkbox2">  Vertical Rectangle</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox23" class="checkboxes2" value="hb" name="checkbox2[]">
+                            <input type="checkbox" class="checkboxes2" value="hb" name="checkbox2[]">
                             <label for="checkbox3">  Horizontal Rectangle</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox24" class="checkboxes2" value="bb" name="checkbox2[]">
+                            <input type="checkbox" class="checkboxes2" value="bb" name="checkbox2[]">
                             <label for="checkbox4">  Big Square</label>
                           </div>
                           <br>
@@ -278,20 +280,22 @@
                         <div style="flex: 1; padding: 20px;">
                           <p><strong>Text Box 3:</strong></p><br>
                           <p>Choose a box shape:</p>
+                          <input type="hidden" name="checkbox3" value="">
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox31" class="checkboxes3" value="sb" name="checkbox3[]">
+                            <input type="checkbox" class="checkboxes3" value="sb" name="checkbox3[]">
                             <label for="checkbox1">  Small Box</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox32" class="checkboxes3" value="vb" name="checkbox3[]">
+                            <input type="checkbox" class="checkboxes3" value="vb" name="checkbox3[]">
                             <label for="checkbox2">  Vertical Rectangle</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox33" class="checkboxes3" value="hb" name="checkbox3[]">
+                            <input type="checkbox"
+                             class="checkboxes3" value="hb" name="checkbox3[]">
                             <label for="checkbox3">  Horizontal Rectangle</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox34" class="checkboxes3" value="bb" name="checkbox3[]">
+                            <input type="checkbox" class="checkboxes3" value="bb" name="checkbox3[]">
                             <label for="checkbox4">  Big Square</label>
                           </div>
                           <br>
