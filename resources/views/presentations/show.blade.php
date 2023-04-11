@@ -29,6 +29,11 @@
           outline: 2px solid #000; /* specify the outline color, width, and style */
         }
 
+        .outlined-div2 {
+          border: 1px solid #000; /* optional: add a border for reference */
+          outline: 4px solid #00000090; /* specify the outline color, width, and style */
+        }
+
 
 
     </style>
@@ -161,33 +166,31 @@
                     @csrf
 
 
-                    <div style="display: flex; align-items: center; justify-content: center; display: none;" id="sectionToToggle1">
+                    <div class="outlined-div2" style="display: flex; align-items: center; justify-content: center; display: none;" id="sectionToToggle1">
                       <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%;">
-
                         <div style="flex: 1; padding: 20px;">
                           <p><strong>Text Box 1:</strong></p><br>
                           <p>Choose a box shape:</p>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox1" class="checkboxes1">
+                            <input type="checkbox" id="checkbox11" class="checkboxes1">
                             <label for="checkbox1">  Small Box</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox2" class="checkboxes1">
+                            <input type="checkbox" id="checkbox12" class="checkboxes1">
                             <label for="checkbox2">  Vertical Rectangle</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox3" class="checkboxes1">
+                            <input type="checkbox" id="checkbox13" class="checkboxes1">
                             <label for="checkbox3">  Horizontal Rectangle</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox4" class="checkboxes1">
+                            <input type="checkbox" id="checkbox14" class="checkboxes1">
                             <label for="checkbox4">  Big Square</label>
                           </div>
                           <br>
                           <p>Your Text (select text to edit style):</p>
                           <div class="editor1 ck-editor__editable outlined-div" id="grid1" name="grid1" style="width=100%;"></div>
                           <br>
-                          
                           <label for="boxColour" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour</label>
                           <select id="boxColour" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Choose a colour</option>
@@ -195,24 +198,131 @@
                             <option value="purple">Light Purple</option>
                             <option value="white">White</option>
                           </select>
-
-                          
-
-
+                          <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
+                            <textarea
+                              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                              id="boxPos"
+                              rows="1"
+                              name="boxPos"
+                              type="text"
+                              placeholder="Text box grid position"></textarea>
+                            <label
+                              for="boxPos"
+                              class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                              >Text Box Position (look right for explanation ->)</label
+                            >
+                          </div>
                         </div>
-
                         <div style="flex: 1;">
                           <img src="image.jpg" alt="Large Image" style="width: 100%; height: 300px;">
                         </div>
                       </div>
                     </div>
                    
-                    <div id="sectionToToggle2" style="display: none;">
-                      <div class="editor2" id="grid2" name="grid2"></div>
+                    <div class="outlined-div2" style="display: flex; align-items: center; justify-content: center; display: none;" id="sectionToToggle2">
+                      <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%;">
+                        <div style="flex: 1; padding: 20px;">
+                          <p><strong>Text Box 2:</strong></p><br>
+                          <p>Choose a box shape:</p>
+                          <div style="display: flex; flex-direction: row; align-items: center;">
+                            <input type="checkbox" id="checkbox21" class="checkboxes2">
+                            <label for="checkbox1">  Small Box</label>
+                          </div>
+                          <div style="display: flex; flex-direction: row; align-items: center;">
+                            <input type="checkbox" id="checkbox22" class="checkboxes2">
+                            <label for="checkbox2">  Vertical Rectangle</label>
+                          </div>
+                          <div style="display: flex; flex-direction: row; align-items: center;">
+                            <input type="checkbox" id="checkbox23" class="checkboxes2">
+                            <label for="checkbox3">  Horizontal Rectangle</label>
+                          </div>
+                          <div style="display: flex; flex-direction: row; align-items: center;">
+                            <input type="checkbox" id="checkbox24" class="checkboxes2">
+                            <label for="checkbox4">  Big Square</label>
+                          </div>
+                          <br>
+                          <p>Your Text (select text to edit style):</p>
+                          <div class="editor2 ck-editor__editable outlined-div" id="grid2" name="grid2" style="width=100%;"></div>
+                          <br>
+                          <label for="boxColour" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour</label>
+                          <select id="boxColour" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected>Choose a colour</option>
+                            <option value="green">Light Green</option>
+                            <option value="purple">Light Purple</option>
+                            <option value="white">White</option>
+                          </select>
+                          <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
+                            <textarea
+                              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                              id="boxPos"
+                              rows="1"
+                              name="boxPos"
+                              type="text"
+                              placeholder="Text box grid position"></textarea>
+                            <label
+                              for="boxPos"
+                              class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                              >Text Box Position (look right for explanation ->)</label
+                            >
+                          </div>
+                        </div>
+                        <div style="flex: 1;">
+                          <img src="image.jpg" alt="Large Image" style="width: 100%; height: 300px;">
+                        </div>
+                      </div>
                     </div>
 
-                    <div id="sectionToToggle3" style="display: none;">
-                      <div class="editor3" id="grid3" name="grid3"></div>
+                    <div class="outlined-div2" style="display: flex; align-items: center; justify-content: center; display: none;" id="sectionToToggle3">
+                      <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%;">
+                        <div style="flex: 1; padding: 20px;">
+                          <p><strong>Text Box 3:</strong></p><br>
+                          <p>Choose a box shape:</p>
+                          <div style="display: flex; flex-direction: row; align-items: center;">
+                            <input type="checkbox" id="checkbox31" class="checkboxes3">
+                            <label for="checkbox1">  Small Box</label>
+                          </div>
+                          <div style="display: flex; flex-direction: row; align-items: center;">
+                            <input type="checkbox" id="checkbox32" class="checkboxes3">
+                            <label for="checkbox2">  Vertical Rectangle</label>
+                          </div>
+                          <div style="display: flex; flex-direction: row; align-items: center;">
+                            <input type="checkbox" id="checkbox33" class="checkboxes3">
+                            <label for="checkbox3">  Horizontal Rectangle</label>
+                          </div>
+                          <div style="display: flex; flex-direction: row; align-items: center;">
+                            <input type="checkbox" id="checkbox34" class="checkboxes3">
+                            <label for="checkbox4">  Big Square</label>
+                          </div>
+                          <br>
+                          <p>Your Text (select text to edit style):</p>
+                          <div class="editor3 ck-editor__editable outlined-div" id="grid3" name="grid3" style="width=100%;"></div>
+                          <br>
+                          <label for="boxColour" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour</label>
+                          <select id="boxColour" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected>Choose a colour</option>
+                            <option value="green">Light Green</option>
+                            <option value="purple">Light Purple</option>
+                            <option value="white">White</option>
+                          </select>
+                          <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
+                            <textarea
+                              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                              id="boxPos"
+                              rows="1"
+                              name="boxPos"
+                              type="text"
+                              placeholder="Text box grid position"></textarea>
+                            <label
+                              for="boxPos"
+                              class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                              >Text Box Position (look right for explanation ->)</label
+                            >
+                          </div>
+                        </div>
+                        <div style="flex: 1;">
+                          <img src="image.jpg" alt="Large Image" style="width: 100%; height: 300px;">
+                        </div>
+                      </div>
                     </div>
                     
                     <button id="toggleButton">Add text box</button>
@@ -220,12 +330,7 @@
                     <input type="hidden" name="grid1_data" id="grid1_data" value="">
                     <input type="hidden" name="grid2_data" id="grid2_data" value="">
                     <input type="hidden" name="grid3_data" id="grid3_data" value="">
-                    <input type="hidden" name="grid4_data" id="grid4_data" value="">
-                    <input type="hidden" name="grid5_data" id="grid5_data" value="">
-                    <input type="hidden" name="grid6_data" id="grid6_data" value="">
-                    <input type="hidden" name="grid7_data" id="grid7_data" value="">
-                    <input type="hidden" name="grid8_data" id="grid8_data" value="">
-                    <input type="hidden" name="grid9_data" id="grid9_data" value="">
+
                     <br>
 
                     <br>
@@ -233,15 +338,15 @@
                     <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
                       <textarea
                         class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                        id="boxPos"
+                        id="objID"
                         rows="1"
                         name="obj"
                         type="text"
-                        placeholder="Text box grid position"></textarea>
+                        placeholder="Sketchfab Model Link"></textarea>
                       <label
-                        for="boxPos"
+                        for="objID"
                         class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                        >Text Box Position (look right for explanation ->)</label
+                        >Sketchfab Model Link</label
                       >
                     </div>
 
@@ -255,15 +360,6 @@
     </div>
     @endif
 
-    <div class="grid-container">
-
-      <div class="viewer1" id="grid4" name="grid4"></div>
-      <div class="viewer2" id="grid5" name="grid5"></div>
-      <div class="editor6" id="grid6" name="grid6"></div>
-      <div class="editor7" id="grid7" name="grid7"></div>
-      <div class="editor8" id="grid8" name="grid8"></div>
-      <div class="editor9" id="grid9" name="grid9"></div>
-    </div>
 
     <script>
       // Add an event listener to the form submit event
@@ -271,7 +367,10 @@
         // Get the data from the 'grid1' div element
         var grid1Data = document.getElementById('grid1').innerHTML;
         document.getElementById('grid1_data').value = grid1Data;
-        
+        var grid2Data = document.getElementById('grid2').innerHTML;
+        document.getElementById('grid2_data').value = grid2Data;
+        var grid3Data = document.getElementById('grid3').innerHTML;
+        document.getElementById('grid3_data').value = grid3Data;
       });
     </script>
     @endauth
@@ -329,6 +428,38 @@
 
 <script>
   const checkboxes = document.querySelectorAll('.checkboxes1'); // Select checkboxes with class "myCheckbox"
+
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', (event) => { // Add change event listener to each checkbox
+    if (event.target.checked) { // If the checkbox is checked
+      checkboxes.forEach(otherCheckbox => {
+        if (otherCheckbox !== event.target) { // Uncheck all other checkboxes
+          otherCheckbox.checked = false;
+        }
+      });
+    }
+  });
+});
+
+</script>
+<script>
+  const checkboxes = document.querySelectorAll('.checkboxes2'); // Select checkboxes with class "myCheckbox"
+
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', (event) => { // Add change event listener to each checkbox
+    if (event.target.checked) { // If the checkbox is checked
+      checkboxes.forEach(otherCheckbox => {
+        if (otherCheckbox !== event.target) { // Uncheck all other checkboxes
+          otherCheckbox.checked = false;
+        }
+      });
+    }
+  });
+});
+
+</script>
+<script>
+  const checkboxes = document.querySelectorAll('.checkboxes3'); // Select checkboxes with class "myCheckbox"
 
 checkboxes.forEach(checkbox => {
   checkbox.addEventListener('change', (event) => { // Add change event listener to each checkbox
