@@ -196,7 +196,7 @@
                             <input type="checkbox" id="checkbox4" class="checkboxes1">
                             <label for="checkbox4">Big Square</label>
                           </div>
-                        </div>
+                        
                           <div class="editor1" id="grid1" name="grid1" style="width=100%; height=200px"></div>
                         </div>
                         <!-- Right side with large image -->
