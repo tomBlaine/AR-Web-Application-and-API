@@ -27,24 +27,22 @@
         }
 
         .small {
-          border-radius: 10%;
+          border-radius: 50%;
           width: 100px;
           height: 100px;
         }
 
         .big {
-            width: 200px;
-            height: 200px;
-        }
-
-        .hor {
-            width: 200px;
+          width: 00px;
             height: 100px;
         }
 
-        .vert {
-            width: 100px;
-            height: 200px;
+        .triangle {
+          width: 0;
+          height: 0;
+          border-left: 50px solid transparent;
+          border-right: 50px solid transparent;
+          border-bottom: 87px solid gray;
         }
 
 
@@ -182,7 +180,7 @@
                       <input type="checkbox" id="checkbox2"> Vertical Rectangle
                       <input type="checkbox" id="checkbox3"> Horizontal Rectangle
                       <input type="checkbox" id="checkbox4"> Big Square
-                      <div class="editor1 defaultShape" id="grid1" name="grid1"></div>
+                      <div class="editor1" id="grid1" name="grid1"></div>
                     </div>
                    
                     <div id="sectionToToggle2" style="display: none;">
@@ -246,6 +244,36 @@
 
 
 <script>
+  for (var i = 1; i <= 3; i++) {
+    BalloonEditor
+				.create( document.querySelector( '.editor'+i ), {
+					
+					licenseKey: '',
+					
+					
+					
+				} )
+				.then( editor => {
+					window.editor = editor;
+          editor.name = 'editor' + i;
+			
+					
+					
+					
+				} )
+				.catch( error => {
+					console.error( 'Oops, something went wrong!' );
+					console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+					console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
+					console.error( error );
+				} );
+  }
+
+
+</script>
+
+
+<script>
   $(document).ready(function() {
     var counter = 0;
       $('#toggleButton').click(function() {
@@ -271,16 +299,20 @@
       // Add event listeners to the checkboxes
       smallCheckbox.addEventListener('change', () => {
         if (smallCheckbox.checked) {
-            textDiv.className = 'defaultShape small';
-            addCKEditor("1");
+          var editor = CKEDITOR.instances['editor1'];
+          if (editor) {
+              editor.resize('200px', '200px');
+          }
         }
       });
 
       vertCheckbox.addEventListener('change', () => {
         if (vertCheckbox.checked) {
-          // Set the div's class to 'square' and remove other classes
-          textDiv.className = 'defaultShape vert';
-          addCKEditor("1");
+            var editor = CKEDITOR.instances['editor1'];
+            if (editor) {
+                editor.resize('400px', '200px');
+            }
+        
         }
       });
 
@@ -288,7 +320,6 @@
         if (horCheckbox.checked) {
           // Set the div's class to 'triangle' and remove other classes
           textDiv.className = 'defaultShape hor';
-          addCKEditor("1");
         }
       });
 
@@ -296,34 +327,8 @@
         if (bigCheckbox.checked) {
           // Set the div's class to 'triangle' and remove other classes
           textDiv.className = 'defaultShape big';
-          addCKEditor("1");
         }
       });
-
-
-      function addCKEditor(editorNum) {
-        BalloonEditor
-				.create( document.querySelector( '.editor'+editorNum ), {
-					
-					licenseKey: '',
-					
-					
-					
-				} )
-				.then( editor => {
-					window.editor = editor;
-			
-					
-					
-					
-				} )
-				.catch( error => {
-					console.error( 'Oops, something went wrong!' );
-					console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
-					console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
-					console.error( error );
-				} );
-      }
 </script>
 
 @auth
