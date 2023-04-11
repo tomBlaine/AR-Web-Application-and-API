@@ -446,11 +446,23 @@ checkboxes.forEach(checkbox => {
   });
 });
 
-</script>
-<script>
-  const checkboxes = document.querySelectorAll('.checkboxes2'); // Select checkboxes with class "myCheckbox"
+const checkboxes2 = document.querySelectorAll('.checkboxes2'); // Select checkboxes with class "myCheckbox"
 
-checkboxes.forEach(checkbox => {
+checkboxes2.forEach(checkbox => {
+  checkbox.addEventListener('change', (event) => { // Add change event listener to each checkbox
+    if (event.target.checked) { // If the checkbox is checked
+      checkboxes.forEach(otherCheckbox => {
+        if (otherCheckbox !== event.target) { // Uncheck all other checkboxes
+          otherCheckbox.checked = false;
+        }
+      });
+    }
+  });
+});
+
+const checkboxes3 = document.querySelectorAll('.checkboxes3'); // Select checkboxes with class "myCheckbox"
+
+checkboxes3.forEach(checkbox => {
   checkbox.addEventListener('change', (event) => { // Add change event listener to each checkbox
     if (event.target.checked) { // If the checkbox is checked
       checkboxes.forEach(otherCheckbox => {
@@ -463,22 +475,7 @@ checkboxes.forEach(checkbox => {
 });
 
 </script>
-<script>
-  const checkboxes = document.querySelectorAll('.checkboxes3'); // Select checkboxes with class "myCheckbox"
 
-checkboxes.forEach(checkbox => {
-  checkbox.addEventListener('change', (event) => { // Add change event listener to each checkbox
-    if (event.target.checked) { // If the checkbox is checked
-      checkboxes.forEach(otherCheckbox => {
-        if (otherCheckbox !== event.target) { // Uncheck all other checkboxes
-          otherCheckbox.checked = false;
-        }
-      });
-    }
-  });
-});
-
-</script>
 
 @auth
 @if ($presentation->User->id == auth()->id())
