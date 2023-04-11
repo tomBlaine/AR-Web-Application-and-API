@@ -234,19 +234,15 @@
 
 <script>
   $(document).ready(function() {
-      // Counter to keep track of visible div
-      var counter = 0;
-
-      // Event listener for button click
+    var counter = 0;
       $('#addInputButton').on('click', function() {
-          // Show the div corresponding to the current counter value
-          $('#grid' + (counter + 1)).show();
-          
-          // Increment the counter
           counter++;
-
-          // Reset the counter if it reaches 3
-          if (counter === 3) {
+          if (counter === 1) {
+              $('#grid1').show();
+          } else if (counter === 2) {
+              $('#grid2').show();
+          } else if (counter === 3) {
+              $('#grid3').show();
               counter = 0;
           }
       });
