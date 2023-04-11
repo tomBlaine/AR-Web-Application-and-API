@@ -373,6 +373,9 @@
         form.addEventListener('submit', function(event) {
         event.preventDefault();
         var grid1Data = document.getElementById('grid1').innerHTML;
+
+
+        grid1Data = "<hello>";
         document.getElementById('grid1_data').value = grid1Data;
         var grid2Data = document.getElementById('grid2').innerHTML;
         document.getElementById('grid2_data').value = grid2Data;
