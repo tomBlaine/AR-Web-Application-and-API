@@ -431,50 +431,30 @@
   });
   </script>
 
+
 <script>
-  const checkboxes = document.querySelectorAll('.checkboxes1'); // Select checkboxes with class "myCheckbox"
+  const checkboxesClass1 = document.querySelectorAll('.checkboxes1');
+  const checkboxesClass2 = document.querySelectorAll('.checkboxes2');
+  const checkboxesClass3 = document.querySelectorAll('.checkboxes3');
 
-checkboxes.forEach(checkbox => {
-  checkbox.addEventListener('change', (event) => { // Add change event listener to each checkbox
-    if (event.target.checked) { // If the checkbox is checked
-      checkboxes.forEach(otherCheckbox => {
-        if (otherCheckbox !== event.target) { // Uncheck all other checkboxes
-          otherCheckbox.checked = false;
-        }
+  function limitCheckboxSelection(checkboxes) {
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        checkboxes.forEach(cb => {
+          if (cb !== checkbox) {
+            cb.checked = false;
+          }
+        });
       });
-    }
-  });
-});
+    });
+  }
 
-const checkboxes2 = document.querySelectorAll('.checkboxes2'); // Select checkboxes with class "myCheckbox"
-
-checkboxes2.forEach(checkbox => {
-  checkbox.addEventListener('change', (event) => { // Add change event listener to each checkbox
-    if (event.target.checked) { // If the checkbox is checked
-      checkboxes.forEach(otherCheckbox => {
-        if (otherCheckbox !== event.target) { // Uncheck all other checkboxes
-          otherCheckbox.checked = false;
-        }
-      });
-    }
-  });
-});
-
-const checkboxes3 = document.querySelectorAll('.checkboxes3'); // Select checkboxes with class "myCheckbox"
-
-checkboxes3.forEach(checkbox => {
-  checkbox.addEventListener('change', (event) => { // Add change event listener to each checkbox
-    if (event.target.checked) { // If the checkbox is checked
-      checkboxes.forEach(otherCheckbox => {
-        if (otherCheckbox !== event.target) { // Uncheck all other checkboxes
-          otherCheckbox.checked = false;
-        }
-      });
-    }
-  });
-});
-
+  limitCheckboxSelection(checkboxesClass1);
+  limitCheckboxSelection(checkboxesClass2);
+  limitCheckboxSelection(checkboxesClass3);
 </script>
+
+
 
 
 @auth
