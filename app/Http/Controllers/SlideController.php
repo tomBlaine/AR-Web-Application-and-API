@@ -19,7 +19,7 @@ class SlideController extends Controller
 
         $a = new Slide;
         
-        $a->text1 = $request->all();
+        $a->text1 = json_encode($request->all());
         //$a->text2 = $request->input('grid2_data');
         //$a->text3 = $request->input('grid3_data');
         $a->text1Format = "S1";
