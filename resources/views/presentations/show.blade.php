@@ -180,15 +180,24 @@
                       <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%;">
                         <!-- Left side with 4 checkboxes and text area -->
                         <div style="flex: 1; padding: 20px;">
-                          <input type="checkbox" id="checkbox1">
-                          <label for="checkbox1">Small Square</label><br>
-                          <input type="checkbox" id="checkbox2">
-                          <label for="checkbox2">Vertical Rectangle</label><br>
-                          <input type="checkbox" id="checkbox3">
-                          <label for="checkbox3">Horizontal Rectangle</label><br>
-                          <input type="checkbox" id="checkbox4">
-                          <label for="checkbox4">Big Square</label><br>
-                          <div class="editor1" id="grid1" name="grid1"></div>
+                          <div style="display: flex; flex-direction: row; align-items: center;">
+                            <input type="checkbox" id="checkbox1" class="checkboxes1">
+                            <label for="checkbox1">Small Box</label>
+                          </div>
+                          <div style="display: flex; flex-direction: row; align-items: center;">
+                            <input type="checkbox" id="checkbox2" class="checkboxes1">
+                            <label for="checkbox2">Vertical Rectangle</label>
+                          </div>
+                          <div style="display: flex; flex-direction: row; align-items: center;">
+                            <input type="checkbox" id="checkbox3" class="checkboxes1">
+                            <label for="checkbox3">Horizontal Rectangle</label>
+                          </div>
+                          <div style="display: flex; flex-direction: row; align-items: center;">
+                            <input type="checkbox" id="checkbox4" class="checkboxes1">
+                            <label for="checkbox4">Big Square</label>
+                          </div>
+                        </div>
+                          <div class="editor1" id="grid1" name="grid1" style="width=100%; height=200px"></div>
                         </div>
                         <!-- Right side with large image -->
                         <div style="flex: 1;">
