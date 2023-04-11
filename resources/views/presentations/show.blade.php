@@ -25,13 +25,13 @@
         }
 
         .outlined-div {
-          border: 1px solid #000; /* optional: add a border for reference */
-          outline: 2px solid #000; /* specify the outline color, width, and style */
+          border: 1px solid #000; 
+          outline: 1px solid #00000072; 
         }
 
         .outlined-div2 {
-          border: 1px solid #000; /* optional: add a border for reference */
-          outline: 4px solid #00000090; /* specify the outline color, width, and style */
+          border: 1px solid #000; 
+          outline: 2px solid #00000090; 
         }
 
 
@@ -41,11 +41,9 @@
 </head>
 
 @php
-    $count = 0; // Initialize count value
+    $count = 0; 
 @endphp
 <body>
-
-    <script src="{{ asset('node_modules/tinymce/tinymce.min.js') }}"></script>
 
 <div>
 <p>Title: {{$presentation->title}}</p>
@@ -191,13 +189,15 @@
                           <p>Your Text (select text to edit style):</p>
                           <div class="editor1 ck-editor__editable outlined-div" id="grid1" name="grid1" style="width=100%;"></div>
                           <br>
-                          <label for="boxColour" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour</label>
+                          <label for="boxColour" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour:</label>
                           <select id="boxColour" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Choose a colour</option>
                             <option value="green">Light Green</option>
                             <option value="purple">Light Purple</option>
                             <option value="white">White</option>
                           </select>
+                          <br>
+                          <p>Choose a position for your text box (visual tutorial for help->):</p>
                           <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
                             <textarea
                               class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -209,9 +209,10 @@
                             <label
                               for="boxPos"
                               class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                              >Text Box Position (look right for explanation ->)</label
+                              >Text Box Position (e.g 1)</label
                             >
                           </div>
+                          <br>
                         </div>
                         <div style="flex: 1;">
                           <img src="image.jpg" alt="Large Image" style="width: 100%; height: 300px;">
@@ -244,13 +245,15 @@
                           <p>Your Text (select text to edit style):</p>
                           <div class="editor2 ck-editor__editable outlined-div" id="grid2" name="grid2" style="width=100%;"></div>
                           <br>
-                          <label for="boxColour" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour</label>
+                          <label for="boxColour" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour:</label>
                           <select id="boxColour" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Choose a colour</option>
                             <option value="green">Light Green</option>
                             <option value="purple">Light Purple</option>
                             <option value="white">White</option>
                           </select>
+                          <br>
+                          <p>Choose a position for your text box (visual tutorial for help->):</p>
                           <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
                             <textarea
                               class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -262,7 +265,7 @@
                             <label
                               for="boxPos"
                               class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                              >Text Box Position (look right for explanation ->)</label
+                              >Text Box Position (e.g 1):</label
                             >
                           </div>
                         </div>
@@ -297,13 +300,15 @@
                           <p>Your Text (select text to edit style):</p>
                           <div class="editor3 ck-editor__editable outlined-div" id="grid3" name="grid3" style="width=100%;"></div>
                           <br>
-                          <label for="boxColour" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour</label>
+                          <label for="boxColour" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour:</label>
                           <select id="boxColour" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Choose a colour</option>
                             <option value="green">Light Green</option>
                             <option value="purple">Light Purple</option>
                             <option value="white">White</option>
                           </select>
+                          <br>
+                          <p>Choose a position for your text box (visual tutorial for help->):</p>
                           <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
                             <textarea
                               class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -315,7 +320,7 @@
                             <label
                               for="boxPos"
                               class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                              >Text Box Position (look right for explanation ->)</label
+                              >Text Box Position (e.g 1):</label
                             >
                           </div>
                         </div>
@@ -334,7 +339,7 @@
                     <br>
 
                     <br>
-                    
+                    <p>Add a 3D Model:</p>
                     <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
                       <textarea
                         class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -349,7 +354,7 @@
                         >Sketchfab Model Link</label
                       >
                     </div>
-
+                    <br>
 
                     <input type="submit" value="Save">
                     <a href="{{route('presentations.index')}}">Cancel</a>
