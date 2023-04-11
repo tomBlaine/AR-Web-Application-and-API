@@ -170,19 +170,19 @@
                           <p><strong>Text Box 1:</strong></p><br>
                           <p>Choose a box shape:</p>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox11" class="checkboxes1" value="sb" name="checkbox1[]">
+                            <input type="checkbox" class="checkboxes1" value="sb" name="checkbox1[]">
                             <label for="checkbox1">  Small Box</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox12" class="checkboxes1" value="vb" name="checkbox1[]">
+                            <input type="checkbox" class="checkboxes1" value="vb" name="checkbox1[]">
                             <label for="checkbox2">  Vertical Rectangle</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox13" class="checkboxes1" value="hb" name="checkbox1[]">
+                            <input type="checkbox" class="checkboxes1" value="hb" name="checkbox1[]">
                             <label for="checkbox3">  Horizontal Rectangle</label>
                           </div>
                           <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" id="checkbox14" class="checkboxes1" value="bb" name="checkbox1[]">
+                            <input type="checkbox" class="checkboxes1" value="bb" name="checkbox1[]">
                             <label for="checkbox4">  Big Square</label>
                           </div>
                           <br>
