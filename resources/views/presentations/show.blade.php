@@ -177,12 +177,12 @@
                 <form method="POST" action="{{route('slides.store', ['id'=>$presentation])}}">
                     @csrf
 
-                    <div id="sectionToToggle1" class="defaultShape" style="display: none;">
+                    <div id="sectionToToggle1" style="display: none;">
                       <input type="checkbox" id="checkbox1"> Small Square
                       <input type="checkbox" id="checkbox2"> Vertical Rectangle
                       <input type="checkbox" id="checkbox3"> Horizontal Rectangle
                       <input type="checkbox" id="checkbox4"> Big Square
-                      <div class="editor1" id="grid1" name="grid1"></div>
+                      <div class="editor1 defaultShape" id="grid1" name="grid1"></div>
                     </div>
                    
                     <div id="sectionToToggle2" style="display: none;">
