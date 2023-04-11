@@ -335,11 +335,11 @@
                     <input type="hidden" name="grid1_data" id="grid1_data" value="">
                     <input type="hidden" name="grid2_data" id="grid2_data" value="">
                     <input type="hidden" name="grid3_data" id="grid3_data" value="">
-
+                    <!--
                     <input type="hidden" name="colorSelection1" id="colorSelection1" value="">
                     <input type="hidden" name="colorSelection2" id="colorSelection2" value="">
                     <input type="hidden" name="colorSelection3" id="colorSelection3" value="">
-
+                    !-->
                     <br>
 
                     <br>
@@ -380,13 +380,13 @@
         document.getElementById('grid2_data').value = grid2Data;
         var grid3Data = document.getElementById('grid3').innerHTML;
         document.getElementById('grid3_data').value = grid3Data;
-        
-        var colorSelect1 = document.getElementById('boxColour1');
-        document.getElementById('colorSelection1').value = colorSelect1.value;
-        var colorSelect2 = document.getElementById('boxColour2');
-        document.getElementById('colorSelection2').value = colorSelect2.value;
-        var colorSelect3 = document.getElementById('boxColour3');
-        document.getElementById('colorSelection3').value = colorSelect3.value;
+
+        //var colorSelect1 = document.getElementById('boxColour1');
+        //document.getElementById('colorSelection1').value = colorSelect1.value;
+        //var colorSelect2 = document.getElementById('boxColour2');
+        //document.getElementById('colorSelection2').value = colorSelect2.value;
+        //var colorSelect3 = document.getElementById('boxColour3');
+        //document.getElementById('colorSelection3').value = colorSelect3.value;
         
       });
     </script>
