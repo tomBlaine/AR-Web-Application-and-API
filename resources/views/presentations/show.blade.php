@@ -152,7 +152,7 @@
                     <div class="editor2" id="grid2" name="grid2" style="display:none;"></div>
                     <div class="editor3" id="grid3" name="grid3" style="display:none;"></div>
                     
-                    <button id="addInputBtn" type="button">Add Text Box</button>
+                    <button id="addInputButton" type="button">Add Text Box</button>
 
                     <input type="hidden" name="grid1_data" id="grid1_data" value="">
                     <input type="hidden" name="grid2_data" id="grid2_data" value="">
