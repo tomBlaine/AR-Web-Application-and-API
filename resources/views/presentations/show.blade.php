@@ -387,7 +387,7 @@
               grid3Data = "null";
         }
         document.getElementById('grid3_data').value = grid3Data;
-
+        form.submit();
 
       });
     </script>
