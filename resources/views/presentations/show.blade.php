@@ -19,6 +19,13 @@
             background-color: #f0f0f0;
             padding: 20px;
         }
+
+        #grid1,
+        #grid2,
+        #grid3 {
+           display: none;
+        }
+
     </style>
 
 </head>
@@ -148,9 +155,9 @@
                 <form method="POST" action="{{route('slides.store', ['id'=>$presentation])}}">
                     @csrf
 
-                    <div class="editor1" id="grid1" name="grid1" style="display:none;"></div>
-                    <div class="editor2" id="grid2" name="grid2" style="display:none;"></div>
-                    <div class="editor3" id="grid3" name="grid3" style="display:none;"></div>
+                    <div class="editor1" id="grid1" name="grid1"></div>
+                    <div class="editor2" id="grid2" name="grid2"></div>
+                    <div class="editor3" id="grid3" name="grid3"></div>
                     
                     <button id="addInputButton" type="button">Add Text Box</button>
 
