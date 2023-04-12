@@ -191,7 +191,7 @@
                           <div class="editor1 ck-editor__editable outlined-div" id="grid1" style="width=100%;"></div>
                           <br>
                           <label for="boxColour1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour:</label>
-                          <select id="boxColour1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <select id="boxColour1" name="boxColour1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected value="null">Choose a colour</option>
                             <option value="g">Light Green</option>
                             <option value="p">Light Purple</option>
@@ -247,7 +247,7 @@
                           <div class="editor2 ck-editor__editable outlined-div" id="grid2" style="width=100%;"></div>
                           <br>
                           <label for="boxColour2" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a box colour:</label>
-                          <select id="boxColour2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <select id="boxColour2" name="boxColour2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected value="null">Choose a colour</option>
                             <option value="g">Light Green</option>
                             <option value="p">Light Purple</option>

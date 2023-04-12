@@ -14,7 +14,7 @@ class SlideController extends Controller
 
     public function store(Request $request, $id){
 
-        $checkedValue = null;
+        $checkedValue = "null";
         if($request->has('checkbox1'))
         {
             $checkboxes = $request->input('checkbox1'); // Get the array of checkboxes
@@ -33,7 +33,7 @@ class SlideController extends Controller
         $a = new Slide;
         //hello
         
-        $a->text1 = json_encode($request->all());
+        $a->text1 = $request['boxColour3'];
 
         $a->text1Format = "S1";
 
