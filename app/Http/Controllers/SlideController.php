@@ -14,22 +14,17 @@ class SlideController extends Controller
 
     public function store(Request $request, $id){
 
-        /*
-        $checkedValue = null;
-        $checkboxes = [];
-        if($request->has('checkbox1'))
-        {
-            $checkboxes = $request->input('checkbox1'); // Get the array of checkboxes
+
+        $checkboxes = $request->input('checkbox1'); // Get the array of checkboxes
         
-            // Loop through the array to find the checked checkbox
-            foreach ($checkboxes as $checkbox) {
-                if ($checkbox) { // Assumes the checkbox value is a boolean
-                    $checkedValue = $checkbox;
-                    break; // Exit the loop after finding the checked checkbox
-                }
-            }
+        // Loop through the array to find the checked checkbox
+        foreach ($checkboxes as $checkbox) {
+            if ($checkbox) { // Assumes the checkbox value is a boolean
+                $checkedValue = $checkbox;
+                break; // Exit the loop after finding the checked checkbox
+            }    
         }
-        */
+
 
 
         $a = new Slide;
@@ -42,6 +37,7 @@ class SlideController extends Controller
         $a->obj=$request->input('grid1_data', null);
         $a->user_id = auth()->id();
         $a->pres_id = $id;
+        $a->text2 = $checkedValue;
         
         
 
