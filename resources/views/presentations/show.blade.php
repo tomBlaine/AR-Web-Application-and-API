@@ -108,7 +108,7 @@
         <div class="py-4 px-5">
           <ul>
             <li><b>Text Box 1:</b> <br><br> {{$slide->text1}}
-              <div class="viewer1{{$count}} ck-editor__editable" id="viewer1{{$count}}" style="width=100%;"></div>
+              <div class="viewer1{{$count}} ck-editor__editable outlined-div" id="viewer1{{$count}}" style="width=100%;"></div>
             </li>
             <br><br>
             <li><b>Text Box 2:</b> <br><br> {{$slide->text2}}
@@ -139,6 +139,7 @@
         .then( editor => {
            window.editor = editor;
            editor.name = 'viewer' + 1 + {{ $count }};
+           editor.setReadOnly( true);
            editor.isReadOnly = true;
   
   
