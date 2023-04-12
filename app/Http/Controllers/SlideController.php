@@ -16,10 +16,7 @@ class SlideController extends Controller
 
         
         $boxType = $request->input('checkbox1');
-        if($boxType!=null)
-        {
-            $boxType = substr($boxType, 2, 1);
-        }
+
 
         $a = new Slide;
         //hello
