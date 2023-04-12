@@ -14,6 +14,7 @@ class SlideController extends Controller
 
     public function store(Request $request, $id){
 
+        /*
         $checkedValue = null;
         $checkboxes = [];
         if($request->has('checkbox1'))
@@ -28,7 +29,7 @@ class SlideController extends Controller
                 }
             }
         }
-
+        */
 
 
         $a = new Slide;
@@ -38,7 +39,7 @@ class SlideController extends Controller
 
         $a->text1Format = "S1";
 
-        $a->obj=$checkedValue;
+        $a->obj=$request->input('grid1_data', null);
         $a->user_id = auth()->id();
         $a->pres_id = $id;
         
