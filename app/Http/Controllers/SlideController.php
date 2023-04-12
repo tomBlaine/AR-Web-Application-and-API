@@ -18,7 +18,7 @@ class SlideController extends Controller
 
 
         $a = new Slide;
-        
+        //hello
         
         $a->text1 = $request['boxColour1'];
         $a->text2 = $request['boxColour2'];
