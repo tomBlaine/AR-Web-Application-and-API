@@ -132,15 +132,14 @@
   
           licenseKey: '',
           isReadOnly: true,
+          initialData: {!! json_encode($slide->text1) !!},
   
   
   
       } )
         .then( editor => {
            window.editor = editor;
-           editor.name = 'viewer' + 1 + k;
-           var data1 = {!!json_encode($slide->text1)!!}
-           editor.setData($data1);
+           editor.name = 'viewer' + 1 + {{ $count }};
       
   
   
