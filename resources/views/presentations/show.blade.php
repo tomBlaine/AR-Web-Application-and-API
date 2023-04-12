@@ -130,7 +130,7 @@
             <li><b>Model Scale:</b> <br><br> {{$slide->objScale}}</li>
             <br>
 
-            <form method="POST" action="{{route('slides.destroy', ['id'=>$slide])}}">
+            <form method="POST" action="{{route('slides.destroy', ['id'=>$slide->id])}}">
                 @csrf
                 @method('DELETE')
                 <button
