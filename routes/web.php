@@ -56,6 +56,9 @@ Route::get('/presentations/create', [PresentationController::class, 'create'])
 Route::get('/presentations/{id}', [PresentationController::class, 'show'])
     ->name('presentations.show');
 
+Route::delete('/presentations/slide/{id}/delete', [SlideController::class, 'destroy'])
+    ->name('slides.destroy')->middleware(['auth']);
+
 Route::get('/presentations/{id}/slide', [SlideController::class, 'edit'])
     ->name('slides.edit')->middleware(['auth']);
 

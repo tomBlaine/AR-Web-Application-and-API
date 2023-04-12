@@ -84,5 +84,12 @@ class SlideController extends Controller
         return view('slides.create', ['slides'=>$slides, 'presentation'=>$presentation]);
     }
 
+    public function destroy($id)
+    {
+        $slide = Slide::findOrFail($id);
+        $slide->delete();
+        return redirect()->route('presentations.show', ['$id'=>$slide->pres_ID])->with('message', 'slide was deleted.');
+    }
+
     
 }

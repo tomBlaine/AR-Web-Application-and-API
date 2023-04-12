@@ -108,26 +108,40 @@
         <div class="py-4 px-5">
           <ul>
             @if($slide->text1!=null && $slide->text1!="null")
-            <li><b>Text Box 1:</b> <br><br> {{$slide->text1}}
-              <div class="viewer1{{$count}} ck-editor__editable outlined-div" id="viewer1{{$count}}" style="width=100%;"></div>
+            <li><b>Text Box 1:</b> <br>
+              <div class="viewer1{{$count}} ck-editor__editable outlined-div" id="viewer1{{$count}}" style="width=50%;"></div>
             </li>
             <br><br>
             @endif
             @if($slide->text2!=null && $slide->text2!="null")
-            <li><b>Text Box 2:</b> <br><br> {{$slide->text2}}
-              <div class="viewer2{{$count}} ck-editor__editable" id="viewer2{{$count}}" style="width=100%;"></div>
+            <li><b>Text Box 2:</b> <br>
+              <div class="viewer2{{$count}} ck-editor__editable outlined-div" id="viewer2{{$count}}" style="width=50%;"></div>
             </li>
             <br><br>
             @endif
             @if($slide->text3!=null && $slide->text3!="null")
-            <li><b>Text Box 3:</b> <br><br> {{$slide->text3}}
-            <div class="viewer3{{$count}} ck-editor__editable" id="viewer3{{$count}}" style="width=100%;"></div>
+            <li><b>Text Box 3:</b> <br>
+            <div class="viewer3{{$count}} ck-editor__editable outlined-div" id="viewer3{{$count}}" style="width=50%;"></div>
             </li>
             <br><br>
             @endif
             <li><b>Model Reference:</b> <br><br> {{$slide->obj}}</li>
-            <br><br>
+            <br>
             <li><b>Model Scale:</b> <br><br> {{$slide->objScale}}</li>
+            <br>
+
+            <form method="POST" action="{{route('slides.destroy', ['id'=>$slide])}}">
+                @csrf
+                @method('DELETE')
+                <button
+                type="submit"
+                class="inline-block rounded-full border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
+                data-te-ripple-init>
+                  Delete Slide
+                </button>
+            </form>
+
+
           </ul>
         </div>
       </div>
@@ -514,39 +528,6 @@
 					console.error( error );
 				} );
   }
-/*
-  for(var k = 1; k <= {{$count}}; k++) {
-      for(var j = 1; j <= 3; j++) {
-
-        BalloonEditor
-			    	.create( document.querySelector( '.viewer'+j+k ), {
-					
-			    		licenseKey: '',
-              isReadOnly: true,
-					
-					
-					
-		    		} )
-		    		.then( editor => {
-		    			window.editor = editor;
-              editor.name = 'viewer' + i + k;
-              editor.setData('Your initial text goes here');
-              
-					
-					
-					
-		    		} )
-		    		.catch( error => {
-		    			console.error( 'Oops, something went wrong!' );
-		    			console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
-		    			console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
-		    			console.error( error );
-		    		} );
-
-           }
-
-  }
-  */
 
 
 </script>
