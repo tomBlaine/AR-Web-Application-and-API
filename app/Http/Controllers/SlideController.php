@@ -18,10 +18,12 @@ class SlideController extends Controller
 
 
         $a = new Slide;
+
+        if($request['checkbox2'])
         
-        $a->text1 = $request['boxColour1'];
-        $a->text2 = $request['boxColour2'];
-        $a->text3 = $request['boxColour3'];
+        $a->text1 = $request['checkbox1'];
+        $a->text2 = $request['checkbox2'];
+        $a->text3 = $request['checkbox3'];
         $a->text1Format = "S1";
 
         $a->obj=$request['obj'];
