@@ -152,6 +152,55 @@
               console.error( error );
       } );
 
+      BalloonEditor
+          .create( document.querySelector( '.viewer' + 2 + {{ $count }} ), {
+  
+          licenseKey: '',
+          initialData: {!! json_encode($slide->text2) !!},
+  
+  
+  
+      } )
+        .then( editor => {
+           
+           var name = 'viewer' + 2 + {{ $count }};
+           editor.name = name;
+           editor.enableReadOnlyMode(name);
+           window.editor = editor;
+  
+  
+          } )
+            .catch( error => {
+              console.error( 'Oops, something went wrong!' );
+              console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+             console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
+              console.error( error );
+      } );
+
+      BalloonEditor
+          .create( document.querySelector( '.viewer' + 3 + {{ $count }} ), {
+  
+          licenseKey: '',
+          initialData: {!! json_encode($slide->text3) !!},
+  
+  
+  
+      } )
+        .then( editor => {
+           
+           var name = 'viewer' + 3 + {{ $count }};
+           editor.name = name;
+           editor.enableReadOnlyMode(name);
+           window.editor = editor;
+  
+  
+          } )
+            .catch( error => {
+              console.error( 'Oops, something went wrong!' );
+              console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+             console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
+              console.error( error );
+      } );
 
 
     </script>
