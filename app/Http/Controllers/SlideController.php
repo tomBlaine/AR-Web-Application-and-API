@@ -19,7 +19,7 @@ class SlideController extends Controller
 
         $a = new Slide;
         
-        $a->text1 = json_encode($request->all());
+        $a->text1 = $request['boxColour3'];
 
         $a->text1Format = "S1";
 
