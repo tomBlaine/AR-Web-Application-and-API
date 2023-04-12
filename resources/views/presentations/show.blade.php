@@ -139,9 +139,11 @@
         .then( editor => {
            
            editor.name = 'viewer' + 1 + {{ $count }};
-           editor.setReadOnly( true);
-           editor.isReadOnly = true;
-           window.editor = editor;
+           editor.isReady
+            .then(() => {
+                editor.setReadOnly(true);
+                window.editor = editor;
+            })
   
   
           } )
