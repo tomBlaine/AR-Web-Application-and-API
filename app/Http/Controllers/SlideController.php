@@ -20,9 +20,8 @@ class SlideController extends Controller
         $a = new Slide;
         //hello
         
-        $a->text1 = $request['boxColour1'];
-        $a->text2 = $request['boxColour2'];
-        $a->text3 = $request['boxColour3'];
+        $a->text1 = json_encode($request->all());
+
         $a->text1Format = "S1";
 
         $a->obj=$request['checkbox1[]'];
