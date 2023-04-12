@@ -25,7 +25,7 @@ class SlideController extends Controller
         $a->text3 = $request['boxColour3'];
         $a->text1Format = "S1";
 
-        $a->obj=$request['obj'];
+        $a->obj=$request['checkbox1[]'];
         $a->user_id = auth()->id();
         $a->pres_id = $id;
         
