@@ -107,19 +107,19 @@
         aria-labelledby="headingOne5">
         <div class="py-4 px-5">
           <ul>
-            @if($slide->text1!=null)
+            @if($slide->text1!=null && $slide->text1!="null")
             <li><b>Text Box 1:</b> <br><br> {{$slide->text1}}
               <div class="viewer1{{$count}} ck-editor__editable outlined-div" id="viewer1{{$count}}" style="width=100%;"></div>
             </li>
             <br><br>
             @endif
-            @if($slide->text2!=null)
+            @if($slide->text2!=null && $slide->text2!="null")
             <li><b>Text Box 2:</b> <br><br> {{$slide->text2}}
               <div class="viewer2{{$count}} ck-editor__editable" id="viewer2{{$count}}" style="width=100%;"></div>
             </li>
             <br><br>
             @endif
-            @if($slide->text3!=null)
+            @if($slide->text3!=null && $slide->text3!="null")
             <li><b>Text Box 3:</b> <br><br> {{$slide->text3}}
             <div class="viewer3{{$count}} ck-editor__editable" id="viewer3{{$count}}" style="width=100%;"></div>
             </li>
