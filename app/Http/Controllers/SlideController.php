@@ -16,13 +16,17 @@ class SlideController extends Controller
 
 
         $checkboxes = $request->input('checkbox1'); // Get the array of checkboxes
+
+        $checkedValue = null; // Set a default value for checked value
         
-        // Loop through the array to find the checked checkbox
-        foreach ($checkboxes as $checkbox) {
-            if ($checkbox) { // Assumes the checkbox value is a boolean
-                $checkedValue = $checkbox;
-                break; // Exit the loop after finding the checked checkbox
-            }    
+        if ($checkboxes && is_array($checkboxes)) { // Check if checkboxes array is not empty and is an array
+            // Loop through the array to find the checked checkbox
+            foreach ($checkboxes as $checkbox) {
+                if ($checkbox) { // Assumes the checkbox value is a boolean
+                    $checkedValue = $checkbox;
+                    break; // Exit the loop after finding the checked checkbox
+                }    
+            }
         }
 
 
