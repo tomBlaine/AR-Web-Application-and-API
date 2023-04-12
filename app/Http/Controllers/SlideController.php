@@ -15,7 +15,7 @@ class SlideController extends Controller
     public function store(Request $request, $id){
 
 
-        $checkboxes = $request->input('checkbox1'); 
+        $checkboxes = $request->input('checkbox3'); 
         $checkedValue1 = null; 
         if ($checkboxes && is_array($checkboxes)) {
             foreach ($checkboxes as $checkbox) {
@@ -25,6 +25,7 @@ class SlideController extends Controller
                 }    
             }
         }
+        /*
         $checkboxes = $request->input('checkbox2'); 
         $checkedValue2 = null; 
         if ($checkboxes && is_array($checkboxes)) {
@@ -45,7 +46,7 @@ class SlideController extends Controller
                 }    
             }
         }
-
+        */
 
 
 
@@ -59,8 +60,8 @@ class SlideController extends Controller
         $a->obj=$request->input('grid1_data', null);
         $a->user_id = auth()->id();
         $a->pres_id = $id;
-        $a->text2 = $checkedValue2;
-        $a->text3 = $checkedValue3;
+        $a->text2 = $checkedValue1;
+        //$a->text3 = $checkedValue3;
         
         
 
