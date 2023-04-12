@@ -128,7 +128,7 @@
     </div>
     <script>
       BalloonEditor
-          .create( document.querySelector( '.viewer'+1+{{$count}} ), {
+          .create( document.querySelector( '.viewer' + 1 + {{ $count }} ), {
   
           licenseKey: '',
           isReadOnly: true,
@@ -139,7 +139,7 @@
         .then( editor => {
            window.editor = editor;
            editor.name = 'viewer' + 1 + k;
-          var data1 = {{$slide->text1}}
+           var data1 = {!!json_encode($slide->text1)!!}
            editor.setData($data1);
       
   
