@@ -107,11 +107,17 @@
         aria-labelledby="headingOne5">
         <div class="py-4 px-5">
           <ul>
-            <li><b>Text Box 1:</b> <br><br> {{$slide->text1}}</li>
+            <li><b>Text Box 1:</b> <br><br> {{$slide->text1}}
+              <div class="viewer1{{$count}} ck-editor__editable" id="viewer1{{$count}}" style="width=100%;"></div>
+            </li>
             <br><br>
-            <li><b>Text Box 2:</b> <br><br> {{$slide->text2}}</li>
+            <li><b>Text Box 2:</b> <br><br> {{$slide->text2}}
+              <div class="viewer2{{$count}} ck-editor__editable" id="viewer2{{$count}}" style="width=100%;"></div>
+            </li>
             <br><br>
-            <li><b>Text Box 3:</b> <br><br> {{$slide->text3}}</li>
+            <li><b>Text Box 3:</b> <br><br> {{$slide->text3}}
+            <div class="viewer3{{$count}} ck-editor__editable" id="viewer3{{$count}}" style="width=100%;"></div>
+            </li>
             <br><br>
             <li><b>Model Reference:</b> <br><br> {{$slide->obj}}</li>
             <br><br>
@@ -120,6 +126,7 @@
         </div>
       </div>
     </div>
+
     @endforeach
     @auth
     @if ($presentation->User->id == auth()->id())
@@ -422,6 +429,36 @@
 					console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
 					console.error( error );
 				} );
+  }
+
+  for(var k = 1; k <= {{$count}}; k++) {
+      for(var j = 1; j <= 3; j++) {
+
+        BalloonEditor
+			    	.create( document.querySelector( '.viewer'+j+k ), {
+					
+			    		licenseKey: '',
+					
+					
+					
+		    		} )
+		    		.then( editor => {
+		    			window.editor = editor;
+              editor.name = 'viewer' + i + k;
+              
+					
+					
+					
+		    		} )
+		    		.catch( error => {
+		    			console.error( 'Oops, something went wrong!' );
+		    			console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+		    			console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
+		    			console.error( error );
+		    		} );
+
+      }
+
   }
 
 

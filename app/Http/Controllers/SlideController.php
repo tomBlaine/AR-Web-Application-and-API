@@ -62,7 +62,7 @@ class SlideController extends Controller
         $a->text3 = $request->input('grid3_data', "");
         $a->text3Format = $checkedValue3.($request->input('boxPos3', ""));
 
-        $a->obj= $checkedValue2.($request->input('boxPos2', ""));;
+        $a->obj= $request['obj'];
         $a->user_id = auth()->id();
         $a->pres_id = $id;
 
