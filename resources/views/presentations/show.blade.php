@@ -138,12 +138,10 @@
       } )
         .then( editor => {
            
-           editor.name = 'viewer' + 1 + {{ $count }};
-           editor.isReady
-            .then(() => {
-                editor.setReadOnly(true);
-                window.editor = editor;
-            })
+           var name = 'viewer' + 1 + {{ $count }};
+           editor.name = name;
+           editor.enableReadOnlyMode(name);
+           window.editor = editor;
   
   
           } )
