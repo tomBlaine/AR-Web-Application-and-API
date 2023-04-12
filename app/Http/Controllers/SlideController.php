@@ -20,11 +20,9 @@ class SlideController extends Controller
         $a = new Slide;
         
         $a->text1 = json_encode($request->all());
-        //$a->text2 = $request->input('grid2_data');
-        //$a->text3 = $request->input('grid3_data');
+
         $a->text1Format = "S1";
-        //$a->text2Format = "S2";
-        //$a->text3Format = "S3";
+
         $a->obj=$request['obj'];
         $a->user_id = auth()->id();
         $a->pres_id = $id;
