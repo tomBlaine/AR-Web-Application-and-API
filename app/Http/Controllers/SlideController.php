@@ -15,11 +15,13 @@ class SlideController extends Controller
     public function store(Request $request, $id){
 
         
-
+        $validatedData = $request->validate([
+            'obj' => ['min:5']
+        ]);
 
         $a = new Slide;
 
-        if($request['checkbox2'])
+        
         
         $a->text1 = $request['checkbox1'];
         $a->text2 = $request['checkbox2'];
