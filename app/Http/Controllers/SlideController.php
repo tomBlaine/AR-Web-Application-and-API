@@ -15,53 +15,53 @@ class SlideController extends Controller
     public function store(Request $request, $id){
 
 
-        $checkboxes = $request->input('checkbox3'); 
+        $checkboxes1 = $request->input('checkbox3'); 
         $checkedValue1 = null; 
-        if ($checkboxes && is_array($checkboxes)) {
-            foreach ($checkboxes as $checkbox) {
-                if ($checkbox) { 
-                    $checkedValue1 = $checkbox;
+        if ($checkboxes1 && is_array($checkboxes1)) {
+            foreach ($checkboxes1 as $checkbox1) {
+                if ($checkbox1) { 
+                    $checkedValue1 = $checkbox1;
                     break; 
                 }    
             }
         }
-        /*
-        $checkboxes = $request->input('checkbox2'); 
+        
+        $checkboxes2 = $request->input('checkbox2'); 
         $checkedValue2 = null; 
-        if ($checkboxes && is_array($checkboxes)) {
-            foreach ($checkboxes as $checkbox) {
-                if ($checkbox) { 
-                    $checkedValue2 = $checkbox;
+        if ($checkboxes2 && is_array($checkboxes2)) {
+            foreach ($checkboxes2 as $checkbox2) {
+                if ($checkbox2) { 
+                    $checkedValue2 = $checkbox2;
                     break; 
                 }    
             }
         }
-        $checkboxes = $request->input('checkbox3'); 
+        $checkboxes3 = $request->input('checkbox3'); 
         $checkedValue3 = null; 
-        if ($checkboxes && is_array($checkboxes)) {
-            foreach ($checkboxes as $checkbox) {
-                if ($checkbox) { 
-                    $checkedValue3 = $checkbox;
+        if ($checkboxes3 && is_array($checkboxes3)) {
+            foreach ($checkboxes3 as $checkbox3) {
+                if ($checkbox3) { 
+                    $checkedValue3 = $checkbox3;
                     break; 
                 }    
             }
         }
-        */
+        
 
 
 
         $a = new Slide;
         //hello
         
-        $a->text1 = $request->input('boxColour3',null);
+        $a->text1 = $checkedValue1;
 
         $a->text1Format = "S1";
 
         $a->obj=$request->input('grid1_data', null);
         $a->user_id = auth()->id();
         $a->pres_id = $id;
-        $a->text2 = $checkedValue1;
-        //$a->text3 = $checkedValue3;
+        $a->text2 = $checkedValue2;
+        $a->text3 = $checkedValue3;
         
         
 
