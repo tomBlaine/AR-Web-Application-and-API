@@ -131,7 +131,6 @@
           .create( document.querySelector( '.viewer' + 1 + {{ $count }} ), {
   
           licenseKey: '',
-          isReadOnly: true,
           initialData: {!! json_encode($slide->text1) !!},
   
   
@@ -140,7 +139,7 @@
         .then( editor => {
            window.editor = editor;
            editor.name = 'viewer' + 1 + {{ $count }};
-      
+           editor.isReadOnly = true;
   
   
   
