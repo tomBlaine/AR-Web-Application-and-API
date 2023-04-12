@@ -15,19 +15,37 @@ class SlideController extends Controller
     public function store(Request $request, $id){
 
 
-        $checkboxes = $request->input('checkbox1'); // Get the array of checkboxes
-
-        $checkedValue = null; // Set a default value for checked value
-        
-        if ($checkboxes && is_array($checkboxes)) { // Check if checkboxes array is not empty and is an array
-            // Loop through the array to find the checked checkbox
+        $checkboxes = $request->input('checkbox1'); 
+        $checkedValue1 = null; 
+        if ($checkboxes && is_array($checkboxes)) {
             foreach ($checkboxes as $checkbox) {
-                if ($checkbox) { // Assumes the checkbox value is a boolean
-                    $checkedValue = $checkbox;
-                    break; // Exit the loop after finding the checked checkbox
+                if ($checkbox) { 
+                    $checkedValue1 = $checkbox;
+                    break; 
                 }    
             }
         }
+        $checkboxes = $request->input('checkbox2'); 
+        $checkedValue2 = null; 
+        if ($checkboxes && is_array($checkboxes)) {
+            foreach ($checkboxes as $checkbox) {
+                if ($checkbox) { 
+                    $checkedValue2 = $checkbox;
+                    break; 
+                }    
+            }
+        }
+        $checkboxes = $request->input('checkbox3'); 
+        $checkedValue3 = null; 
+        if ($checkboxes && is_array($checkboxes)) {
+            foreach ($checkboxes as $checkbox) {
+                if ($checkbox) { 
+                    $checkedValue3 = $checkbox;
+                    break; 
+                }    
+            }
+        }
+
 
 
 
@@ -41,7 +59,8 @@ class SlideController extends Controller
         $a->obj=$request->input('grid1_data', null);
         $a->user_id = auth()->id();
         $a->pres_id = $id;
-        $a->text2 = $checkedValue;
+        $a->text2 = $checkedValue2;
+        $a->text3 = $checkedValue3;
         
         
 
@@ -50,6 +69,7 @@ class SlideController extends Controller
         session()->flash('message', 'Slide was created.');
         return redirect()->route('presentations.show', ['id'=> $id]);
     }
+
 
 
     public function edit($id)
