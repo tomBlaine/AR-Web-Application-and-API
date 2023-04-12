@@ -15,7 +15,11 @@ class SlideController extends Controller
     public function store(Request $request, $id){
 
         
-
+        $boxType = $request->input('checkbox1');
+        if($boxType!=null)
+        {
+            $boxType = substr($boxType, 2, 1);
+        }
 
         $a = new Slide;
         //hello
@@ -24,7 +28,7 @@ class SlideController extends Controller
 
         $a->text1Format = "S1";
 
-        $a->obj=$request['checkbox1[]'];
+        $a->obj=$boxType;
         $a->user_id = auth()->id();
         $a->pres_id = $id;
         
