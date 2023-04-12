@@ -15,7 +15,7 @@ class SlideController extends Controller
     public function store(Request $request, $id){
 
 
-        $checkboxes1 = $request->input('checkbox3'); 
+        $checkboxes1 = $request->input('checkbox1'); 
         $checkedValue1 = null; 
         if ($checkboxes1 && is_array($checkboxes1)) {
             foreach ($checkboxes1 as $checkbox1) {
@@ -53,15 +53,19 @@ class SlideController extends Controller
         $a = new Slide;
         //hello
         
-        $a->text1 = $checkedValue1;
+        $a->text1 = $request->input('grid1_data', "");
+        $a->text1Format = $checkedValue1.($request->input('boxPos1', ""));
 
-        $a->text1Format = "S1";
+        $a->text2 = $request->input('grid2_data', "");
+        $a->text2Format = $checkedValue2.($request->input('boxPos2', ""));
 
-        $a->obj=$request->input('grid1_data', null);
+        $a->text3 = $request->input('grid3_data', "");
+        $a->text3Format = $checkedValue3.($request->input('boxPos3', ""));
+
+        $a->obj= $checkedValue2.($request->input('boxPos2', ""));;
         $a->user_id = auth()->id();
         $a->pres_id = $id;
-        $a->text2 = $checkedValue2;
-        $a->text3 = $checkedValue3;
+
         
         
 
