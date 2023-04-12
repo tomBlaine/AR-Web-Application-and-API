@@ -126,6 +126,36 @@
         </div>
       </div>
     </div>
+    <script>
+      BalloonEditor
+          .create( document.querySelector( '.viewer'+1+{{$count}} ), {
+  
+          licenseKey: '',
+          isReadOnly: true,
+  
+  
+  
+      } )
+        .then( editor => {
+           window.editor = editor;
+           editor.name = 'viewer' + 1 + k;
+          var data1 = {{$slide->text1}}
+           editor.setData($data1);
+      
+  
+  
+  
+          } )
+            .catch( error => {
+              console.error( 'Oops, something went wrong!' );
+              console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+             console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
+              console.error( error );
+      } );
+
+
+
+    </script>
 
     @endforeach
     @auth
@@ -430,7 +460,7 @@
 					console.error( error );
 				} );
   }
-
+/*
   for(var k = 1; k <= {{$count}}; k++) {
       for(var j = 1; j <= 3; j++) {
 
@@ -438,6 +468,7 @@
 			    	.create( document.querySelector( '.viewer'+j+k ), {
 					
 			    		licenseKey: '',
+              isReadOnly: true,
 					
 					
 					
@@ -445,6 +476,7 @@
 		    		.then( editor => {
 		    			window.editor = editor;
               editor.name = 'viewer' + i + k;
+              editor.setData('Your initial text goes here');
               
 					
 					
@@ -457,9 +489,10 @@
 		    			console.error( error );
 		    		} );
 
-      }
+           }
 
   }
+  */
 
 
 </script>
