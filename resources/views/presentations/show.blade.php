@@ -515,6 +515,30 @@
 
           
             event.preventDefault();
+
+            var element1 = document.getElementById('viewerEdit1' + {{$count}});
+            var data1 = "null";
+            if (element1) {
+                data1 = element1.innerHTML;
+            }
+            document.getElementById('editData1'+{{$count}}).value = data1;
+
+            var element2 = document.getElementById('viewerEdit2' + {{$count}});
+            var data2 = "null";
+            if (element2) {
+                data2 = element2.innerHTML;
+            }
+            document.getElementById('editData2'+{{$count}}).value = data2;
+
+            var element3 = document.getElementById('viewerEdit3' + {{$count}});
+            var data3 = "null";
+            if (element3) {
+                data3 = element3.innerHTML;
+            }
+            document.getElementById('editData3'+{{$count}}).value = data3;
+
+
+
         /*
             var data1 = document.getElementById('viewerEdit1'+{{$count}}).innerHTML;
             document.getElementById('editData1'+{{$count}}).value = data1;
