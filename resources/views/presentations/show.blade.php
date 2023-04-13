@@ -107,7 +107,7 @@
         aria-labelledby="headingOne5">
         <div id="viewSlide{{ $count }}" class="py-4 px-5">
           <ul>
-            <form id="editForm{{$count}}" method="POST" action="{{route('slides.update', ['id'=>$presentation])}}">
+            <form id="editForm{{$count}}" method="POST" action="{{route('slides.update', ['id'=>$slide])}}">
               @csrf
               @method('PUT')
             @if($slide->text1!=null && $slide->text1!="null")
@@ -281,8 +281,10 @@
             </div>
             </div>
 
-
-
+            
+            <input type="hidden" name="text1" id="editData1{{$count}}" value="null">
+            <input type="hidden" name="text2" id="editData2{{$count}}" value="null">
+            <input type="hidden" name="text3" id="editData3{{$count}}" value="null">
             
             <input id="updateSlide{{$count}}" type="submit" value="Update Slide" style="display: none;">
 
@@ -468,7 +470,7 @@
     </script>
 
     <script>
-      $(document).ready(function() {
+        $(document).ready(function() {
           $('#editSlideButton'+{{ $count }}).click(function() {
             event.preventDefault();
               
@@ -495,7 +497,29 @@
               }
 
           });
-      });
+        });
+      </script>
+
+      <script>
+
+        var form = document.getElementById('editForm'+{{$count}});
+        form.addEventListener('submit', function(event) {
+
+            event.preventDefault();
+            var data1 = document.getElementById('viewerEdit1'+{{$count}}).innerHTML;
+            document.getElementById('editData1'+{{$count}}).value = data1;
+
+            var data2 = document.getElementById('viewerEdit2'+{{$count}}).innerHTML;
+            document.getElementById('editData2'+{{$count}}).value = data2;
+
+            var data3 = document.getElementById('viewerEdit3'+{{$count}}).innerHTML;
+            document.getElementById('editData3'+{{$count}}).value = data3;
+
+            form.submit();
+
+        });
+        
+
       </script>
 
     @endforeach

@@ -97,7 +97,7 @@ class SlideController extends Controller
     {
         
         $slide = Slide::findOrFail($id);
-        return redirect()->route('presentations.show', ['id'=>$presentationID])->with('message', 'slide was deleted.');
+        return redirect()->route('presentations.show', ['id'=>$slide->pres_id])->with('message', 'slide was deleted.');
     }
 
     
