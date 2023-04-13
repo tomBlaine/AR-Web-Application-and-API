@@ -287,6 +287,26 @@
             event.preventDefault();
               
               $('#editDiv1'+{{$count}}).toggle(); // Toggle the visibility of the section
+              // Find the CKEditor instance by name
+              var editor = CKEDITOR.instances['viewer1' + {{ $count }}]; // Replace 'viewer1' with the name of your CKEditor instance
+
+              // Check if the editor instance exists
+              if (editor) {
+                // Set the editor mode to 'design', which makes it editable
+                editor.setMode('wysiwyg');
+  
+                // Remove the 'readOnly' attribute to enable editing
+                var editorElement = editor.element;
+                editorElement.removeAttribute('readOnly');
+  
+                // Refresh the editor to apply the changes
+                editor.fire('contentDom');
+  
+                console.log('CKEditor is now editable.');
+              } else {
+                console.error('CKEditor instance not found.');
+              }
+
 
           });
       });
