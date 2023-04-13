@@ -513,7 +513,9 @@
         var form = document.getElementById('editForm'+{{$count}});
         form.addEventListener('submit', function(event) {
 
+          
             event.preventDefault();
+        /*
             var data1 = document.getElementById('viewerEdit1'+{{$count}}).innerHTML;
             document.getElementById('editData1'+{{$count}}).value = data1;
 
@@ -522,6 +524,7 @@
 
             var data3 = document.getElementById('viewerEdit3'+{{$count}}).innerHTML;
             document.getElementById('editData3'+{{$count}}).value = data3;
+          */
 
             form.submit();
 
