@@ -267,16 +267,32 @@
             <br><br>
             </div>
             @endif
+
+            <li id="modelLink{{$count}}"><b>3D Model Sketchfab Link:</b> <br><br> {{$slide->obj}}</li>
+            <div id="editLink{{$count}}" style="display: none;">
+            <p>3D Model link:</p>
+            <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
+              <textarea
+                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outlined-div transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                id="edioOjID"
+                rows="1"
+                name="editObj"
+                type="text">{{$slide->obj}}</textarea>
+            </div>
+            </div>
+
+
+
+
             <input type="submit" value="Update Slide">
+
           </form>
 
 
 
 
-            <li><b>Model Reference:</b> <br><br> {{$slide->obj}}</li>
-            <br>
-            <li><b>Model Scale:</b> <br><br> {{$slide->objScale}}</li>
-            <br>
+
+            
 
             <form method="POST" action="{{route('slides.destroy', ['id'=>$slide])}}">
                 @csrf
@@ -465,6 +481,9 @@
               $('#editDiv3'+{{$count}}).toggle(); // Toggle the visibility of the section
               $('#editable3'+{{$count}}).toggle();
               $('#readOnly3'+{{$count}}).toggle();
+
+              $('#modelLink'+{{$count}}).toggle();
+              $('#editLink'+{{$count}}).toggle();
 
           });
       });
