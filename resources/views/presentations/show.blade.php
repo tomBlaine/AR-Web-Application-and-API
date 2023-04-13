@@ -486,12 +486,12 @@
               $('#modelLink'+{{$count}}).toggle();
               $('#editLink'+{{$count}}).toggle();
 
-
-              var buttonText = $('#updateSlide'+{{$count}}).textContent.trim();
+              var button1 = document.getElementById('editSlideButton'+{{$count}});
+              var buttonText = button1.textContent.trim();
               if (buttonText === 'Edit Slide') {
-                $('#updateSlide'+{{$count}}).textContent = 'Cancel Edit';
+                  button1.textContent = 'Cancel Edit';
               } else if (buttonText === 'Cancel Edit') {
-                $('#updateSlide'+{{$count}}).textContent = 'Edit Slide';
+                  button1.textContent = 'Edit Slide';
               }
 
           });
