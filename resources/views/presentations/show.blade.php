@@ -264,6 +264,7 @@
                 >
               </div>
             <br><br>
+            </div>
             @endif
             <input type="submit" value="Update Slide">
           </form>
@@ -448,6 +449,7 @@
               console.error( error );
       } );
     </script>
+
     <script>
       $(document).ready(function() {
           $('#editSlideButton'+{{ $count }}).click(function() {
