@@ -286,7 +286,7 @@
           $('#editSlideButton'+{{ $count }}).click(function() {
             event.preventDefault();
               
-              $('#editDiv1'+($count)).toggle(); // Toggle the visibility of the section
+              $('#editDiv1'+{{$count}}).toggle(); // Toggle the visibility of the section
 
           });
       });
