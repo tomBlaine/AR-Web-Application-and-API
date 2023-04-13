@@ -289,7 +289,7 @@
               $('#editDiv1'+{{$count}}).toggle(); // Toggle the visibility of the section
               var editor = window.editor; // Assuming you have stored the CKEditor instance in the window object as 'editor'
               var name = 'viewer' + 1 + {{ $count }}; // Assuming you have stored the editor name in a variable called 'name' as in your initial script
-              editor.setReadOnly(false, name);
+              editor.disableReadOnlyMode(name);
 
 
           });
