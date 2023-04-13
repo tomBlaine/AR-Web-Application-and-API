@@ -105,12 +105,59 @@
         @endif
         
         aria-labelledby="headingOne5">
-        <div class="py-4 px-5">
+        <div id="viewSlide{{ $count }}" class="py-4 px-5">
           <ul>
+            <form id="editForm{{$count}}" method="POST" action="{{route('slides.update', ['id'=>$presentation])}}">
             @if($slide->text1!=null && $slide->text1!="null")
             <li><b>Text Box 1:</b> <br>
               <div class="viewer1{{$count}} ck-editor__editable outlined-div" id="viewer1{{$count}}" style="width=50%;"></div>
             </li>
+            <div id="editDiv1{{$count}}" type="hidden">
+              <p>Change text box shape:</p>
+              <input type="hidden" name="checkbox1" value="">
+              <div style="display: flex; flex-direction: row; align-items: center;">
+                <input type="checkbox" class="checkboxes1" value="S" name="editCheckbox1[]">
+                <label for="checkbox1">  Small Box</label>
+              </div>
+              <div style="display: flex; flex-direction: row; align-items: center;">
+                <input type="checkbox" class="checkboxes1" value="V" name="editCheckbox1[]">
+                <label for="checkbox2">  Vertical Rectangle</label>
+              </div>
+              <div style="display: flex; flex-direction: row; align-items: center;">
+                <input type="checkbox" class="checkboxes1" value="H" name="editCheckbox1[]">
+                <label for="checkbox3">  Horizontal Rectangle</label>
+              </div>
+              <div style="display: flex; flex-direction: row; align-items: center;">
+                <input type="checkbox" class="checkboxes1" value="B" name="editCheckbox1[]">
+                <label for="checkbox4">  Big Square</label>
+              </div>
+              <label for="editBoxColour1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Change box colour:</label>
+              <select id="editBoxColour1" name="editBoxColour1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected value="null">No change</option>
+                <option value="g">Light Green</option>
+                <option value="p">Light Purple</option>
+                <option value="w">White</option>
+              </select>
+              <br>
+              <p>Change position for your text box (leave blank for no change):</p>
+              <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
+                <textarea
+                  class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outlined-div transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                  id="editBoxPos1"
+                  rows="1"
+                  name="editBoxPos1"
+                  placeholder="Change text box position"></textarea>
+                <label
+                  for="editBoxPos1"
+                  class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                  >Change text box position (e.g 1)</label
+                >
+              </div>
+
+              <input type="submit" value="Update Slide">
+
+            </div>
+
             <br><br>
             @endif
             @if($slide->text2!=null && $slide->text2!="null")
@@ -140,6 +187,14 @@
                   Delete Slide
                 </button>
             </form>
+
+            <button
+            type="submit"
+            id="editSlideButton{{$count}}"
+            class="inline-block rounded-full border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
+            data-te-ripple-init>
+              Edit Slide
+            </button>
 
 
           </ul>
@@ -224,6 +279,16 @@
 
 
     </script>
+    <script>
+      $(document).ready(function() {
+          $('#editSlideButton'+{{ $count }}).click(function() {
+            event.preventDefault();
+              
+              $('#editDiv1'+($count)).toggle(); // Toggle the visibility of the section
+
+          });
+      });
+      </script>
 
     @endforeach
     @auth
