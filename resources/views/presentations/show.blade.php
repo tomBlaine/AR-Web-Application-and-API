@@ -108,6 +108,8 @@
         <div id="viewSlide{{ $count }}" class="py-4 px-5">
           <ul>
             <form id="editForm{{$count}}" method="POST" action="{{route('slides.update', ['id'=>$presentation])}}">
+              @csrf
+              @method('PUT')
             @if($slide->text1!=null && $slide->text1!="null")
             <li><b>Text Box 1:</b> <br>
               <div class="viewer1{{$count}} ck-editor__editable outlined-div" id="viewer1{{$count}}" style="width=50%;"></div>
