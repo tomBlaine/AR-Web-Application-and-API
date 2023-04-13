@@ -214,6 +214,7 @@
                 >
               </div>
             <br><br>
+            </div>
             @endif
             @if($slide->text3!=null && $slide->text3!="null")
             <li id="readOnly3{{$count}}"><b>Text Box 3:</b> <br>
