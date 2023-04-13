@@ -119,7 +119,7 @@
             </li>
             <div id="editDiv1{{$count}}" style="display: none;">
               <p>Change text box shape:</p>
-              <input type="hidden" name="checkbox1" value="">
+              <input type="hidden" name="editCheckbox1" value="">
               <div style="display: flex; flex-direction: row; align-items: center;">
                 <input type="checkbox" class="editCheckboxes1" value="S" name="editCheckbox1[]">
                 <label for="editCheckbox1">  Small Box</label>
@@ -159,24 +159,118 @@
                 >
               </div>
 
-              <input type="submit" value="Update Slide">
+              
 
             </div>
 
             <br><br>
             @endif
             @if($slide->text2!=null && $slide->text2!="null")
-            <li><b>Text Box 2:</b> <br>
+            <li id="readOnly2{{$count}}"><b>Text Box 2:</b> <br>
               <div class="viewer2{{$count}} ck-editor__editable outlined-div" id="viewer2{{$count}}" style="width=50%;"></div>
             </li>
+            <li id="editable2{{$count}}" style="display: none;"><b>Text Box 2:</b> <br>
+              <div class="viewerEdit2{{$count}} ck-editor__editable outlined-div" id="viewer2{{$count}}" style="width=50%;"></div>
+            </li>
+            <div id="editDiv2{{$count}}" style="display: none;">
+              <p>Change text box shape:</p>
+              <input type="hidden" name="editCheckbox2" value="">
+              <div style="display: flex; flex-direction: row; align-items: center;">
+                <input type="checkbox" class="editCheckboxes2" value="S" name="editCheckbox2[]">
+                <label for="editCheckbox1">  Small Box</label>
+              </div>
+              <div style="display: flex; flex-direction: row; align-items: center;">
+                <input type="checkbox" class="editCheckboxes2" value="V" name="editCheckbo2[]">
+                <label for="editCheckbox2">  Vertical Rectangle</label>
+              </div>
+              <div style="display: flex; flex-direction: row; align-items: center;">
+                <input type="checkbox" class="editCheckboxes2" value="H" name="editCheckbox2[]">
+                <label for="editCheckbox3">  Horizontal Rectangle</label>
+              </div>
+              <div style="display: flex; flex-direction: row; align-items: center;">
+                <input type="checkbox" class="editCheckboxes2" value="B" name="editCheckbox2[]">
+                <label for="editCheckbox4">  Big Square</label>
+              </div>
+              <label for="editBoxColour2" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Change box colour:</label>
+              <select id="editBoxColour2" name="editBoxColour2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected value="null">No change</option>
+                <option value="g">Light Green</option>
+                <option value="p">Light Purple</option>
+                <option value="w">White</option>
+              </select>
+              <br>
+              <p>Change position for your text box (leave blank for no change):</p>
+              <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
+                <textarea
+                  class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outlined-div transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                  id="editBoxPos2"
+                  rows="1"
+                  name="editBoxPos2"
+                  placeholder="Change text box position"></textarea>
+                <label
+                  for="editBoxPos2"
+                  class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                  >Change text box position (e.g 1)</label
+                >
+              </div>
             <br><br>
             @endif
             @if($slide->text3!=null && $slide->text3!="null")
-            <li><b>Text Box 3:</b> <br>
-            <div class="viewer3{{$count}} ck-editor__editable outlined-div" id="viewer3{{$count}}" style="width=50%;"></div>
+            <li id="readOnly3{{$count}}"><b>Text Box 3:</b> <br>
+              <div class="viewer3{{$count}} ck-editor__editable outlined-div" id="viewer3{{$count}}" style="width=50%;"></div>
             </li>
+            <li id="editable3{{$count}}" style="display: none;"><b>Text Box 3:</b> <br>
+              <div class="viewerEdit3{{$count}} ck-editor__editable outlined-div" id="viewer3{{$count}}" style="width=50%;"></div>
+            </li>
+            <div id="editDiv3{{$count}}" style="display: none;">
+              <p>Change text box shape:</p>
+              <input type="hidden" name="editCheckbox3" value="">
+              <div style="display: flex; flex-direction: row; align-items: center;">
+                <input type="checkbox" class="editCheckboxes3" value="S" name="editCheckbox3[]">
+                <label for="editCheckbox1">  Small Box</label>
+              </div>
+              <div style="display: flex; flex-direction: row; align-items: center;">
+                <input type="checkbox" class="editCheckboxes3" value="V" name="editCheckbo3[]">
+                <label for="editCheckbox2">  Vertical Rectangle</label>
+              </div>
+              <div style="display: flex; flex-direction: row; align-items: center;">
+                <input type="checkbox" class="editCheckboxes3" value="H" name="editCheckbox3[]">
+                <label for="editCheckbox3">  Horizontal Rectangle</label>
+              </div>
+              <div style="display: flex; flex-direction: row; align-items: center;">
+                <input type="checkbox" class="editCheckboxes3" value="B" name="editCheckbox3[]">
+                <label for="editCheckbox4">  Big Square</label>
+              </div>
+              <label for="editBoxColour3" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Change box colour:</label>
+              <select id="editBoxColour3" name="editBoxColour3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected value="null">No change</option>
+                <option value="g">Light Green</option>
+                <option value="p">Light Purple</option>
+                <option value="w">White</option>
+              </select>
+              <br>
+              <p>Change position for your text box (leave blank for no change):</p>
+              <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
+                <textarea
+                  class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outlined-div transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                  id="editBoxPos3"
+                  rows="1"
+                  name="editBoxPos3"
+                  placeholder="Change text box position"></textarea>
+                <label
+                  for="editBoxPos3"
+                  class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                  >Change text box position (e.g 1)</label
+                >
+              </div>
             <br><br>
             @endif
+            <input type="submit" value="Update Slide">
+          </form>
+
+
+
+
             <li><b>Model Reference:</b> <br><br> {{$slide->obj}}</li>
             <br>
             <li><b>Model Scale:</b> <br><br> {{$slide->objScale}}</li>
@@ -360,12 +454,14 @@
             event.preventDefault();
               
               $('#editDiv1'+{{$count}}).toggle(); // Toggle the visibility of the section
-              var editor = window.editor; // Assuming you have stored the CKEditor instance in the window object as 'editor'
-              var name = 'viewer' + 1 + {{ $count }}; // Assuming you have stored the editor name in a variable called 'name' as in your initial script
-              editor.disableReadOnlyMode(name);
-
               $('#editable1'+{{$count}}).toggle();
               $('#readOnly1'+{{$count}}).toggle();
+              $('#editDiv2'+{{$count}}).toggle(); // Toggle the visibility of the section
+              $('#editable2'+{{$count}}).toggle();
+              $('#readOnly2'+{{$count}}).toggle();
+              $('#editDiv3'+{{$count}}).toggle(); // Toggle the visibility of the section
+              $('#editable3'+{{$count}}).toggle();
+              $('#readOnly3'+{{$count}}).toggle();
 
           });
       });
