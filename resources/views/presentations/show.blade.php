@@ -114,24 +114,24 @@
             <li><b>Text Box 1:</b> <br>
               <div class="viewer1{{$count}} ck-editor__editable outlined-div" id="viewer1{{$count}}" style="width=50%;"></div>
             </li>
-            <div id="editDiv1{{$count}}" type="hidden">
+            <div id="editDiv1{{$count}}" style="display: none;">
               <p>Change text box shape:</p>
               <input type="hidden" name="checkbox1" value="">
               <div style="display: flex; flex-direction: row; align-items: center;">
-                <input type="checkbox" class="checkboxes1" value="S" name="editCheckbox1[]">
-                <label for="checkbox1">  Small Box</label>
+                <input type="checkbox" class="editCheckboxes1" value="S" name="editCheckbox1[]">
+                <label for="editCheckbox1">  Small Box</label>
               </div>
               <div style="display: flex; flex-direction: row; align-items: center;">
-                <input type="checkbox" class="checkboxes1" value="V" name="editCheckbox1[]">
-                <label for="checkbox2">  Vertical Rectangle</label>
+                <input type="checkbox" class="editCheckboxes1" value="V" name="editCheckbox1[]">
+                <label for="editCheckbox2">  Vertical Rectangle</label>
               </div>
               <div style="display: flex; flex-direction: row; align-items: center;">
-                <input type="checkbox" class="checkboxes1" value="H" name="editCheckbox1[]">
-                <label for="checkbox3">  Horizontal Rectangle</label>
+                <input type="checkbox" class="editCheckboxes1" value="H" name="editCheckbox1[]">
+                <label for="editCheckbox3">  Horizontal Rectangle</label>
               </div>
               <div style="display: flex; flex-direction: row; align-items: center;">
-                <input type="checkbox" class="checkboxes1" value="B" name="editCheckbox1[]">
-                <label for="checkbox4">  Big Square</label>
+                <input type="checkbox" class="editCheckboxes1" value="B" name="editCheckbox1[]">
+                <label for="editCheckbox4">  Big Square</label>
               </div>
               <label for="editBoxColour1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Change box colour:</label>
               <select id="editBoxColour1" name="editBoxColour1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
