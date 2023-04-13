@@ -59,7 +59,7 @@ Route::get('/presentations/{id}', [PresentationController::class, 'show'])
 Route::delete('/presentations/slide/{id}/delete', [SlideController::class, 'destroy'])
     ->name('slides.destroy')->middleware(['auth']);
 
-Route::get('/presentations/{id}/slide/update', [SlideController::class, 'update'])
+Route::put('/presentations/{id}/slide/update', [SlideController::class, 'update'])
     ->name('slides.update')->middleware(['auth']);
 
 Route::post('/presentations/{id}', [SlideController::class, 'store'])

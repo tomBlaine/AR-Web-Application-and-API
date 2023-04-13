@@ -286,7 +286,15 @@
             <input type="hidden" name="text2" id="editData2{{$count}}" value="null">
             <input type="hidden" name="text3" id="editData3{{$count}}" value="null">
             
-            <input id="updateSlide{{$count}}" type="submit" value="Update Slide" style="display: none;">
+
+            <button
+            type="submit"
+            id="updateSlide{{$count}}"
+            style="display: none;"
+            class="inline-block rounded-full border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
+            data-te-ripple-init>
+              Update Slide
+            </button>
 
           </form>
 
