@@ -886,6 +886,10 @@
   const checkboxesClass2 = document.querySelectorAll('.checkboxes2');
   const checkboxesClass3 = document.querySelectorAll('.checkboxes3');
 
+  const editCheckboxesClass1 = document.querySelectorAll('.editCheckboxes1');
+  const editCheckboxesClass2 = document.querySelectorAll('.editCheckboxes2');
+  const editCheckboxesClass3 = document.querySelectorAll('.editCheckboxes3');
+
   function limitCheckboxSelection(checkboxes) {
     checkboxes.forEach(checkbox => {
       checkbox.addEventListener('change', () => {
@@ -901,6 +905,9 @@
   limitCheckboxSelection(checkboxesClass1);
   limitCheckboxSelection(checkboxesClass2);
   limitCheckboxSelection(checkboxesClass3);
+  limitCheckboxSelection(editCheckboxesClass1);
+  limitCheckboxSelection(editCheckboxesClass2);
+  limitCheckboxSelection(editCheckboxesClass3);
 </script>
 
 
