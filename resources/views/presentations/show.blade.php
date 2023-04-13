@@ -111,8 +111,11 @@
               @csrf
               @method('PUT')
             @if($slide->text1!=null && $slide->text1!="null")
-            <li><b>Text Box 1:</b> <br>
+            <li id="readOnly1{{$count}}"><b>Text Box 1:</b> <br>
               <div class="viewer1{{$count}} ck-editor__editable outlined-div" id="viewer1{{$count}}" style="width=50%;"></div>
+            </li>
+            <li id="editable1{{$count}}" style="display: none;"><b>Text Box 1:</b> <br>
+              <div class="viewerEdit1{{$count}} ck-editor__editable outlined-div" id="viewer1{{$count}}" style="width=50%;"></div>
             </li>
             <div id="editDiv1{{$count}}" style="display: none;">
               <p>Change text box shape:</p>
@@ -279,7 +282,77 @@
               console.error( error );
       } );
 
+      BalloonEditor
+          .create( document.querySelector( '.viewerEdit' + 1 + {{ $count }} ), {
+  
+          licenseKey: '',
+          initialData: {!! json_encode($slide->text1) !!},
+  
+  
+  
+      } )
+        .then( editor => {
+           
+           var name = 'viewerEdit' + 1 + {{ $count }};
+           editor.name = name;
+           window.editor = editor;
+  
+  
+          } )
+            .catch( error => {
+              console.error( 'Oops, something went wrong!' );
+              console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+             console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
+              console.error( error );
+      } );
 
+      BalloonEditor
+          .create( document.querySelector( '.viewerEdit' + 2 + {{ $count }} ), {
+  
+          licenseKey: '',
+          initialData: {!! json_encode($slide->text2) !!},
+  
+  
+  
+      } )
+        .then( editor => {
+           
+           var name = 'viewerEdit' + 2 + {{ $count }};
+           editor.name = name;
+           window.editor = editor;
+  
+  
+          } )
+            .catch( error => {
+              console.error( 'Oops, something went wrong!' );
+              console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+             console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
+              console.error( error );
+      } );
+
+      BalloonEditor
+          .create( document.querySelector( '.viewerEdit' + 3 + {{ $count }} ), {
+  
+          licenseKey: '',
+          initialData: {!! json_encode($slide->text3) !!},
+  
+  
+  
+      } )
+        .then( editor => {
+           
+           var name = 'viewerEdit' + 3 + {{ $count }};
+           editor.name = name;
+           window.editor = editor;
+  
+  
+          } )
+            .catch( error => {
+              console.error( 'Oops, something went wrong!' );
+              console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+             console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
+              console.error( error );
+      } );
     </script>
     <script>
       $(document).ready(function() {
@@ -291,6 +364,8 @@
               var name = 'viewer' + 1 + {{ $count }}; // Assuming you have stored the editor name in a variable called 'name' as in your initial script
               editor.disableReadOnlyMode(name);
 
+              $('#editable1'+{{$count}}).toggle();
+              $('#readOnly1'+{{$count}}).toggle();
 
           });
       });
