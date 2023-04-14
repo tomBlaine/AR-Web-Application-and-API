@@ -98,7 +98,7 @@ class SlideController extends Controller
         
         $slide = Slide::findOrFail($id);
 
-        /*
+        
 
         $checkboxes1 = $request->input('editCheckbox1'); 
         $selectedBox = null; 
@@ -112,10 +112,10 @@ class SlideController extends Controller
         }
         if($selectedBox == null)
         {
-            
+            $selectedBox = substr(($slide->text1Format),0,1);
         }
-        */
-        $selectedBox = substr(($slide->text1Format),0,1);
+        
+        
         $newBoxPos1 = null;
         if($request->has('editBoxPos1'))
         {
@@ -129,7 +129,7 @@ class SlideController extends Controller
 
         if(($selectedBox.$newBoxPos1)!=$slide->text1Format)
         {
-            $slide->text1Format = $newBoxPos1;
+            $slide->text1Format = $selectedBox.$newBoxPos1;
             $slide->save();
         }
 
