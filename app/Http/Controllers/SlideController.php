@@ -123,14 +123,15 @@ class SlideController extends Controller
             $newBoxPos1 = ($slide->text1Format)[1];
         }
 
-        if($newBoxPos1!=$slide->text1Format)
+        if(($selectedBox.$newBoxPos1)!=$slide->text1Format)
         {
             $slide->text1Format = $newBoxPos1;
+            $slide->save();
         }
 
-        $slide->text1 = $request['text1'];
+        //$slide->text1 = $request['text1'];
 
-        $slide->save();
+        
 
 
         
