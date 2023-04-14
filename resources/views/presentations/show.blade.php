@@ -122,7 +122,7 @@
             </li>
             <li><p>Text area 1 format: {{$slide->text1Format}}</p></li>
             <li id="editable1{{$count}}" style="display: none;"><b>Text Box 1:</b> <br>
-              <div class="viewerEdit1{{$count}} ck-editor__editable outlined-div" id="viewer1{{$count}}" style="width=50%;"></div>
+              <div class="viewerEdit1{{$count}} ck-editor__editable outlined-div" id="viewerEdit1{{$count}}" style="width=50%;"></div>
             </li>
             <div id="editDiv1{{$count}}" style="display: none;">
               <p>Change text box shape:</p>
@@ -177,7 +177,7 @@
               <div class="viewer2{{$count}} ck-editor__editable outlined-div" id="viewer2{{$count}}" style="width=50%;"></div>
             </li>
             <li id="editable2{{$count}}" style="display: none;"><b>Text Box 2:</b> <br>
-              <div class="viewerEdit2{{$count}} ck-editor__editable outlined-div" id="viewer2{{$count}}" style="width=50%;"></div>
+              <div class="viewerEdit2{{$count}} ck-editor__editable outlined-div" id="viewerEdit2{{$count}}" style="width=50%;"></div>
             </li>
             <div id="editDiv2{{$count}}" style="display: none;">
               <p>Change text box shape:</p>
@@ -228,7 +228,7 @@
               <div class="viewer3{{$count}} ck-editor__editable outlined-div" id="viewer3{{$count}}" style="width=50%;"></div>
             </li>
             <li id="editable3{{$count}}" style="display: none;"><b>Text Box 3:</b> <br>
-              <div class="viewerEdit3{{$count}} ck-editor__editable outlined-div" id="viewer3{{$count}}" style="width=50%;"></div>
+              <div class="viewerEdit3{{$count}} ck-editor__editable outlined-div" id="viewerEdit3{{$count}}" style="width=50%;"></div>
             </li>
             <div id="editDiv3{{$count}}" style="display: none;">
               <p>Change text box shape:</p>
