@@ -134,8 +134,77 @@ class SlideController extends Controller
         }
 
 
-        $slide->text1 = $request->input('text1');
+        $checkboxes2 = $request->input('editCheckbox2'); 
+        $selectedBox2 = null; 
+        if ($checkboxes2 && is_array($checkboxes2)) {
+            foreach ($checkboxes2 as $checkbox2) {
+                if ($checkbox2) { 
+                    $selectedBox2 = $checkbox2;
+                    break; 
+                }    
+            }
+        }
+        if($selectedBox2 == null)
+        {
+            $selectedBox2 = substr(($slide->text2Format),0,1);
+        }
         
+        
+        $newBoxPos2 = null;
+        if($request->has('editBoxPos2'))
+        {
+            $newBoxPos2 = $request->input('editBoxPos2', null);
+        }
+
+        if($newBoxPos2==null || $newBoxPos2=="")
+        {
+            $newBoxPos2 = substr(($slide->text2Format),1,1);
+        }
+
+        if(($selectedBox2.$newBoxPos2)!=$slide->text2Format)
+        {
+            $slide->text2Format = $selectedBox2.$newBoxPos2;
+            
+        }
+
+
+        $checkboxes3 = $request->input('editCheckbox3'); 
+        $selectedBox3 = null; 
+        if ($checkboxes3 && is_array($checkboxes3)) {
+            foreach ($checkboxes3 as $checkbox3) {
+                if ($checkbox3) { 
+                    $selectedBox3 = $checkbox3;
+                    break; 
+                }    
+            }
+        }
+        if($selectedBox3 == null)
+        {
+            $selectedBox3 = substr(($slide->text3Format),0,1);
+        }
+        
+        
+        $newBoxPos3 = null;
+        if($request->has('editBoxPos3'))
+        {
+            $newBoxPos3 = $request->input('editBoxPos3', null);
+        }
+
+        if($newBoxPos3==null || $newBoxPos3=="")
+        {
+            $newBoxPos3 = substr(($slide->text3Format),1,1);
+        }
+
+        if(($selectedBox3.$newBoxPos3)!=$slide->text3Format)
+        {
+            $slide->text3Format = $selectedBox3.$newBoxPos3;
+            
+        }
+
+
+        $slide->text1 = $request->input('text1');
+        $slide->text2 = $request->input('text2');
+        $slide->text3 = $request->input('text3');
 
         
 
