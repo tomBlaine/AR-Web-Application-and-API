@@ -294,7 +294,7 @@
             
 
             <button
-            onclick="submitForm{{$count}}()"
+            type="submit"
             id="updateSlide{{$count}}"
             style="display: none;"
             class="inline-block rounded-full border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
@@ -517,9 +517,9 @@
       <script>
 
         
-        function submitForm{{$count}}() {
-
-            var form = document.getElementById('editForm'+{{$count}});
+      var form2 = document.getElementById('editForm'+{{$count}});
+        form2.addEventListener('submit', function(event) {
+        event.preventDefault();
             
 
             var element1 = document.getElementById('viewerEdit1' + {{$count}});
@@ -545,7 +545,7 @@
 
             form.submit();
 
-        };
+        });
         
 
       </script>
@@ -739,7 +739,7 @@
                             <option value="w">White</option>
                           </select>
                           <br>
-                          <p id="testLog">Choose a position for your text box (visual tutorial for help->):</p>
+                          <p>Choose a position for your text box (visual tutorial for help->):</p>
                           <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
                             <textarea
                               class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outlined-div transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -834,12 +834,7 @@
         form1.addEventListener('submit', function(event) {
         event.preventDefault();
         var grid1Data = document.getElementById('grid1').innerHTML;
-        document.getElementById('testLog').value = grid1Data;
 
-        setTimeout(function() {
-            console.log("Continuing after 2 seconds...");
-            // Continue with the rest of your code here
-        }, 2000);
         if (grid1Data === null || grid1Data === "<p><br data-cke-filler=\"true\"></p>") {
               grid1Data = "null";
         }
@@ -857,40 +852,7 @@
         form1.submit();
 
       });
-      /*
-        submitNewSlide()
-        {
 
-          var sourceDiv = document.getElementById("grid1");
-          var sourceContent = sourceDiv.innerHTML;
-          var destInput = document.getElementById("grid1_data");
-          destInput.value = sourceContent;
-        
-
-          
-
-        var grid1Data = document.getElementById('grid1').innerHTML;
-        if (grid1Data === null || grid1Data === "<p><br data-cke-filler=\"true\"></p>") {
-              grid1Data = "null";
-        }
-        document.getElementById('grid1_data').value = grid1Data;
-        var grid2Data = document.getElementById('grid2').innerHTML;
-        if (grid2Data === null || grid2Data === "<p><br data-cke-filler=\"true\"></p>") {
-              grid2Data = "null";
-        }
-        document.getElementById('grid2_data').value = grid2Data;
-        var grid3Data = document.getElementById('grid3').innerHTML;
-        if (grid3Data === null || grid3Data === "<p><br data-cke-filler=\"true\"></p>") {
-              grid3Data = "null";
-        }
-        document.getElementById('grid3_data').value = grid3Data;
-        
-        var form1 = document.getElementById('form1');
-        
-        form1.submit();
-
-      };
-      */
     </script>
 
 
