@@ -834,8 +834,13 @@
         submitNewSlide()
         {
 
+          var sourceDiv = document.getElementById("grid1");
+          var sourceContent = sourceDiv.innerHTML;
+          var destInput = document.getElementById("grid1_data");
+          destInput.value = sourceContent;
         
-        
+
+          /*
 
         var grid1Data = document.getElementById('grid1').innerHTML;
         if (grid1Data === null || grid1Data === "<p><br data-cke-filler=\"true\"></p>") {
@@ -853,6 +858,7 @@
         }
         document.getElementById('grid3_data').value = grid3Data;
         var form = document.getElementById('form1');
+        */
         form.submit();
 
       };
