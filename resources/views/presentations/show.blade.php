@@ -787,7 +787,7 @@
                     <br>
 
                     <button
-                    onclick="submitNewSlide()"
+                    type="submit1"
                     class="inline-block rounded-full border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
                     data-te-ripple-init>
                       Save New Slide
@@ -831,16 +831,38 @@
     </script>
     <script>
       
+      var form1 = document.getElementById('form1');
+        form1.addEventListener('submit1', function(event) {
+        event.preventDefault();
+        var grid1Data = document.getElementById('grid1').innerHTML;
+        if (grid1Data === null || grid1Data === "<p><br data-cke-filler=\"true\"></p>") {
+              grid1Data = "null";
+        }
+        document.getElementById('grid1_data').value = grid1Data;
+        var grid2Data = document.getElementById('grid2').innerHTML;
+        if (grid2Data === null || grid2Data === "<p><br data-cke-filler=\"true\"></p>") {
+              grid2Data = "null";
+        }
+        document.getElementById('grid2_data').value = grid2Data;
+        var grid3Data = document.getElementById('grid3').innerHTML;
+        if (grid3Data === null || grid3Data === "<p><br data-cke-filler=\"true\"></p>") {
+              grid3Data = "null";
+        }
+        document.getElementById('grid3_data').value = grid3Data;
+        form1.submit();
+
+      });
+      /*
         submitNewSlide()
         {
-          
+
           var sourceDiv = document.getElementById("grid1");
           var sourceContent = sourceDiv.innerHTML;
           var destInput = document.getElementById("grid1_data");
           destInput.value = sourceContent;
         
 
-          /*
+          
 
         var grid1Data = document.getElementById('grid1').innerHTML;
         if (grid1Data === null || grid1Data === "<p><br data-cke-filler=\"true\"></p>") {
@@ -857,12 +879,13 @@
               grid3Data = "null";
         }
         document.getElementById('grid3_data').value = grid3Data;
-        */
+        
         var form1 = document.getElementById('form1');
         
         form1.submit();
 
       };
+      */
     </script>
     @endauth
 </div>
