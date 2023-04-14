@@ -739,7 +739,7 @@
                             <option value="w">White</option>
                           </select>
                           <br>
-                          <p>Choose a position for your text box (visual tutorial for help->):</p>
+                          <p id="testLog">Choose a position for your text box (visual tutorial for help->):</p>
                           <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
                             <textarea
                               class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outlined-div transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -834,6 +834,12 @@
         form1.addEventListener('submit1', function(event) {
         event.preventDefault();
         var grid1Data = document.getElementById('grid1').innerHTML;
+        document.getElementById('testLog').value = grid1Data;
+
+        setTimeout(function() {
+            console.log("Continuing after 2 seconds...");
+            // Continue with the rest of your code here
+        }, 2000);
         if (grid1Data === null || grid1Data === "<p><br data-cke-filler=\"true\"></p>") {
               grid1Data = "null";
         }
