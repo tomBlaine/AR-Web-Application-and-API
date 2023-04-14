@@ -128,13 +128,15 @@ class SlideController extends Controller
             $slide->text1Format = $newBoxPos1;
         }
 
+        $slide->text1 = $request['text1'];
+
         $slide->save();
-        
+
 
         
         
 
-        return redirect()->route('presentations.show', ['id'=>$slide->pres_id])->with('message', 'slide was deleted.');
+        return redirect()->route('presentations.show', ['id'=>$slide->pres_id])->with('message', 'slide was updated.');
     }
 
     
