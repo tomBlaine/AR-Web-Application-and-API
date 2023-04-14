@@ -833,7 +833,7 @@
       
         submitNewSlide()
         {
-
+          
           var sourceDiv = document.getElementById("grid1");
           var sourceContent = sourceDiv.innerHTML;
           var destInput = document.getElementById("grid1_data");
@@ -857,9 +857,10 @@
               grid3Data = "null";
         }
         document.getElementById('grid3_data').value = grid3Data;
-        var form = document.getElementById('form1');
         */
-        form.submit();
+        var form1 = document.getElementById('form1');
+        
+        form1.submit();
 
       };
     </script>
