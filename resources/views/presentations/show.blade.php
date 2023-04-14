@@ -110,16 +110,23 @@
             <form id="editForm{{$count}}" method="POST" action="{{route('slides.update', ['id'=>$slide])}}">
               @csrf
               @method('PUT')
+              <input type="hidden" name="editCheckbox1" value="">
+              <input type="hidden" name="editCheckbox2" value="">
+              <input type="hidden" name="editCheckbox3" value="">
+
+
+
             @if($slide->text1!=null && $slide->text1!="null")
             <li id="readOnly1{{$count}}"><b>Text Box 1:</b> <br>
               <div class="viewer1{{$count}} ck-editor__editable outlined-div" id="viewer1{{$count}}" style="width=50%;"></div>
             </li>
+            <li><p>Text area 1 format: {{$slide->text1Format}}</p></li>
             <li id="editable1{{$count}}" style="display: none;"><b>Text Box 1:</b> <br>
               <div class="viewerEdit1{{$count}} ck-editor__editable outlined-div" id="viewer1{{$count}}" style="width=50%;"></div>
             </li>
             <div id="editDiv1{{$count}}" style="display: none;">
               <p>Change text box shape:</p>
-              <input type="hidden" name="editCheckbox1" value="">
+              
               <div style="display: flex; flex-direction: row; align-items: center;">
                 <input type="checkbox" class="editCheckboxes1" value="S" name="editCheckbox1[]">
                 <label for="editCheckbox1">  Small Box</label>
@@ -174,7 +181,7 @@
             </li>
             <div id="editDiv2{{$count}}" style="display: none;">
               <p>Change text box shape:</p>
-              <input type="hidden" name="editCheckbox2" value="">
+              
               <div style="display: flex; flex-direction: row; align-items: center;">
                 <input type="checkbox" class="editCheckboxes2" value="S" name="editCheckbox2[]">
                 <label for="editCheckbox1">  Small Box</label>
@@ -225,7 +232,6 @@
             </li>
             <div id="editDiv3{{$count}}" style="display: none;">
               <p>Change text box shape:</p>
-              <input type="hidden" name="editCheckbox3" value="">
               <div style="display: flex; flex-direction: row; align-items: center;">
                 <input type="checkbox" class="editCheckboxes3" value="S" name="editCheckbox3[]">
                 <label for="editCheckbox1">  Small Box</label>

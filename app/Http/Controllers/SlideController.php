@@ -97,6 +97,41 @@ class SlideController extends Controller
     {
         
         $slide = Slide::findOrFail($id);
+
+        $checkboxes1 = $request->input('editCheckbox1'); 
+        $selectedBox = null; 
+        if ($checkboxes1 && is_array($checkboxes1)) {
+            foreach ($checkboxes1 as $checkbox1) {
+                if ($checkbox1) { 
+                    $selectedBox = $checkbox1;
+                    break; 
+                }    
+            }
+        }
+        if($selectedBox == null)
+        {
+            $selectedBox = ($slide->text1Format)[0];
+        }
+
+        $newBoxPos1 = null;
+        if($request->has('editBoxPos1'))
+        {
+            $newBoxPos1 = $request->input('editBoxPos1', null);
+        }
+        if($newBoxPos1==null)
+        {
+            $newBoxPos1 = ($slide->text1Format)[1];
+        }
+
+        if($newBoxPos1!=$slide->text1Format)
+        {
+            $slide->text1Format = $newBoxPos1;
+        }
+
+        $slide->save();
+        
+
+        
         
 
         return redirect()->route('presentations.show', ['id'=>$slide->pres_id])->with('message', 'slide was deleted.');
