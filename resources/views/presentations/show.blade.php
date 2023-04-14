@@ -294,7 +294,7 @@
             
 
             <button
-            type="submit"
+            onclick="submitForm{{$count}}()"
             id="updateSlide{{$count}}"
             style="display: none;"
             class="inline-block rounded-full border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
@@ -516,11 +516,11 @@
 
       <script>
 
-        var form = document.getElementById('editForm'+{{$count}});
-        form.addEventListener('submit', function(event) {
+        
+        function submitForm{{$count}}() {
 
-          
-            event.preventDefault();
+            var form = document.getElementById('editForm'+{{$count}});
+            
 
             var element1 = document.getElementById('viewerEdit1' + {{$count}});
             var data1 = "null";
@@ -543,22 +543,9 @@
             }
             document.getElementById('editData3'+{{$count}}).value = data3;
 
-
-
-        /*
-            var data1 = document.getElementById('viewerEdit1'+{{$count}}).innerHTML;
-            document.getElementById('editData1'+{{$count}}).value = data1;
-
-            var data2 = document.getElementById('viewerEdit2'+{{$count}}).innerHTML;
-            document.getElementById('editData2'+{{$count}}).value = data2;
-
-            var data3 = document.getElementById('viewerEdit3'+{{$count}}).innerHTML;
-            document.getElementById('editData3'+{{$count}}).value = data3;
-          */
-
             form.submit();
 
-        });
+        };
         
 
       </script>
@@ -799,7 +786,12 @@
                     </div>
                     <br>
 
-                    <input type="submit" value="Save">
+                    <button
+                    onclick="submitNewSlide()"
+                    class="inline-block rounded-full border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
+                    data-te-ripple-init>
+                      Save New Slide
+                    </button>
                     <a href="{{route('presentations.index')}}">Cancel</a>
                 </form>
             </div>
@@ -811,9 +803,13 @@
 
     <script>
       // Add an event listener to the form submit event
-      var form = document.getElementById('form1');
-        form.addEventListener('submit', function(event) {
-        event.preventDefault();
+      
+        submitNewSlide()
+        {
+
+        
+        var form = document.getElementById('form1');
+
         var grid1Data = document.getElementById('grid1').innerHTML;
         if (grid1Data === null || grid1Data === "<p><br data-cke-filler=\"true\"></p>") {
               grid1Data = "null";
@@ -831,7 +827,7 @@
         document.getElementById('grid3_data').value = grid3Data;
         form.submit();
 
-      });
+      };
     </script>
     @endauth
 </div>
