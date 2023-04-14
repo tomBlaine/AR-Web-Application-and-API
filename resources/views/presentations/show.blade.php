@@ -543,7 +543,7 @@
             }
             document.getElementById('editData3'+{{$count}}).value = data3;
 
-            form.submit();
+            form2.submit();
 
         });
         
