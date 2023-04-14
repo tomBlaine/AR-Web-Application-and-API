@@ -762,7 +762,7 @@
                     
                     <button id="toggleButton">Add text box</button>
 
-                    <input type="hidden" name="grid1_data" id="grid1_data" value="null">
+                    <input type="hidden" name="grid1_data" id="grid1_data" value="">
                     <input type="hidden" name="grid2_data" id="grid2_data" value="null">
                     <input type="hidden" name="grid3_data" id="grid3_data" value="null">
 
