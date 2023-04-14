@@ -802,13 +802,40 @@
 
 
     <script>
-      // Add an event listener to the form submit event
+      for (var i = 1; i <= 3; i++) {
+        BalloonEditor
+            .create( document.querySelector( '.editor'+i ), {
+              
+              licenseKey: '',
+              
+              
+              
+            } )
+            .then( editor => {
+              window.editor = editor;
+              editor.name = 'editor' + i;
+          
+              
+              
+              
+            } )
+            .catch( error => {
+              console.error( 'Oops, something went wrong!' );
+              console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+              console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
+              console.error( error );
+            } );
+      }
+    
+    
+    </script>
+    <script>
       
         submitNewSlide()
         {
 
         
-        var form = document.getElementById('form1');
+        
 
         var grid1Data = document.getElementById('grid1').innerHTML;
         if (grid1Data === null || grid1Data === "<p><br data-cke-filler=\"true\"></p>") {
@@ -825,6 +852,7 @@
               grid3Data = "null";
         }
         document.getElementById('grid3_data').value = grid3Data;
+        var form = document.getElementById('form1');
         form.submit();
 
       };
@@ -837,34 +865,7 @@
 
 
 
-<script>
-  for (var i = 1; i <= 3; i++) {
-    BalloonEditor
-				.create( document.querySelector( '.editor'+i ), {
-					
-					licenseKey: '',
-					
-					
-					
-				} )
-				.then( editor => {
-					window.editor = editor;
-          editor.name = 'editor' + i;
-			
-					
-					
-					
-				} )
-				.catch( error => {
-					console.error( 'Oops, something went wrong!' );
-					console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
-					console.warn( 'Build id: qr0wowhu05ri-ycwdx5r1c3oi' );
-					console.error( error );
-				} );
-  }
 
-
-</script>
 
 
 <script>
