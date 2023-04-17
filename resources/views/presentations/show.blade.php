@@ -847,17 +847,17 @@
         var grid1Data = document.getElementById('grid1').innerHTML;
 
         if (grid1Data === null || grid1Data === "<p><br data-cke-filler=\"true\"></p>") {
-              grid1Data = "null";
+              grid1Data = "";
         }
         document.getElementById('grid1_data').value = grid1Data;
         var grid2Data = document.getElementById('grid2').innerHTML;
         if (grid2Data === null || grid2Data === "<p><br data-cke-filler=\"true\"></p>") {
-              grid2Data = "null";
+              grid2Data = "";
         }
         document.getElementById('grid2_data').value = grid2Data;
         var grid3Data = document.getElementById('grid3').innerHTML;
         if (grid3Data === null || grid3Data === "<p><br data-cke-filler=\"true\"></p>") {
-              grid3Data = "null";
+              grid3Data = "";
         }
         document.getElementById('grid3_data').value = grid3Data;
         form1.submit();
