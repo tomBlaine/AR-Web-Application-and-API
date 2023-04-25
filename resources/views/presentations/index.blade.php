@@ -11,7 +11,7 @@
 @endguest
 <ul>
     @foreach ($presentations as $presentation)
-        <li><a style="font-size: 24px; font-weight: bold;" href={{route('presentations.show', ['id'=>$presentation->id])}}>Title: {{$presentation->title}}</a></li>
+        <li><a style="font-size: 24px; font-weight: bold;" href={{route('presentations.show', ['id'=>$presentation->id])}}>{{$presentation->title}}</a></li>
         <li>Description: {{$presentation->text}}</li>
         <p> </p>
         <p> </p>

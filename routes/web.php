@@ -29,7 +29,7 @@ Route::get('/dashboard', function () {
 
 
 
-Route::get('/timeline', [PresentationController::class, 'index'])
+Route::get('/mypresentations', [PresentationController::class, 'index'])
     ->name('presentations.index');
 
     
