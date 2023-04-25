@@ -3,11 +3,7 @@
 @vite('resources/js/app.js')
 <style>
     body {
-        background: linear-gradient(to top right, 
-                    #003366 0%,  
-                     #00cccc 50%, 
-                  #ffffff 100% 
-                    );
+            background-color: paleblue;
         }
 </style>
 <head>
