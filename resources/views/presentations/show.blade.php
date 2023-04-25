@@ -97,12 +97,16 @@
       aria-labelledby="dropdownMenuButton1u"
       data-te-dropdown-menu-ref>
       <li>
-        <a
+        <form method="POST" action="{{ route('sessions.store', ['id' => $presentation->id, 'type' => 'edit']) }}">
+          @csrf
+          <input type="hidden" name="_method" value="POST">
+          <a
           class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-          href="{{ route("sessions.store", ["id" => $presentation->id, "type" => "edit"]) }}"
           data-te-dropdown-item-ref
           >Edit session (to make final changes to your presentation)</a
         >
+        </form>
+
       </li>
       <li>
         <a
