@@ -3,7 +3,7 @@
 @vite('resources/js/app.js')
 <style>
     body {
-  background-color: #c3d9ff;
+  background-color: #bed6ff;
 }
 </style>
 <head>
