@@ -38,7 +38,7 @@ class PresentationController extends Controller
 
     public function index()
     {
-        $presentations = Presentation::where('user_id', auth()->id());
+        $presentations = Presentation::where('user_id', auth()->id())->get();
         return view('presentations.index', ['presentations' => $presentations]);
     }
 

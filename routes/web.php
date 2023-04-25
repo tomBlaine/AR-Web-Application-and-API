@@ -17,7 +17,7 @@ use App\Http\Controllers\SessionController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('presentations.index');
 });
 
 
@@ -29,10 +29,10 @@ Route::get('/dashboard', function () {
 
 
 
-Route::get('/timeline', [PresentationController::class, 'index'])
+Route::get('/mypresentations', [PresentationController::class, 'index'])
     ->name('presentations.index');
 
-    
+
 Route::get('/sessions/create', [SessionController::class, 'create'])
     ->name('sessions.create')->middleware(['auth']);
 
