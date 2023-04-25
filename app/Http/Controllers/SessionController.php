@@ -17,12 +17,14 @@ class SessionController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store($id, $type)
     {
+        /*
         $validatedData = $request->validate([
             'pres_id' => ['max:10'],
             'session_type' => ['max:5']
         ]);
+        */
 
         $oldSession = Session::where('user_id', auth()->id())->get()->first();
         $oldSession->delete();
@@ -30,8 +32,8 @@ class SessionController extends Controller
         $a = new Session;
         $a->code=rand(100000, 999999);
         $a->user_id = auth()->id();
-        $a->pres_id = $validatedData['pres_id'];
-        $a->sessionType = $validatedData['session_type'];
+        $a->pres_id = $id;
+        $a->sessionType = $type;
         $a->currentSlide = 0;
         
 
