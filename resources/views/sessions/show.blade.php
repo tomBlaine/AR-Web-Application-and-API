@@ -15,7 +15,7 @@
   <hr
     class="my-6 h-0.5 border-t-0 bg-neutral-200 opacity-100 dark:opacity-30" />
   <p class="mb-4">
-    Session Type: @ {{$session->sessionType}}
+    Session Type:{{$session->sessionType}}
   </p>
 </div>
 
