@@ -46,7 +46,7 @@
 <body>
 
 <div
-  style="border-radius: 5px; background-color: #f1f1f142;"
+  style="border-radius: 5px; background-color: #f1f1f19c;"
   class="rounded-lg bg-neutral-100 p-6 text-neutral-700 shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:shadow-black/30">
   <h2 class="mb-5 text-3xl font-semibold">{{$presentation->title}}</h2>
   <p>
@@ -72,8 +72,7 @@
     @php
         $count++; // Increment the value
     @endphp
-    <div
-      class="rounded-t-lg border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800">
+    <div style="background-color: #c7dafb;" class="rounded-t-lg border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800">
       <h2 class="mb-0" id="headingOne5">
         <button
           class="group relative flex w-full items-center rounded-t-[15px] border-0 bg-white py-4 px-5 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white [&:not([data-te-collapse-collapsed])]:bg-white [&:not([data-te-collapse-collapsed])]:text-primary [&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:[&:not([data-te-collapse-collapsed])]:bg-neutral-800 dark:[&:not([data-te-collapse-collapsed])]:text-primary-400 dark:[&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]"
@@ -117,7 +116,7 @@
         
         aria-labelledby="headingOne5">
         <div id="viewSlide{{ $count }}" class="py-4 px-5">
-          <ul>
+          <ul style="background-color: #c7dafb;">
             <form id="editForm{{$count}}" method="POST" action="{{route('slides.update', ['id'=>$slide])}}">
               @csrf
               @method('PUT')
