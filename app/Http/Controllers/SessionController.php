@@ -24,11 +24,11 @@ class SessionController extends Controller
             'pres_id' => ['max:10'],
             'session_type' => ['max:5']
         ]);
-        */
+        
 
         $oldSession = Session::where('user_id', auth()->id())->get()->first();
         $oldSession->delete();
-
+        */
         $a = new Session;
         $a->code=rand(100000, 999999);
         $a->user_id = auth()->id();
