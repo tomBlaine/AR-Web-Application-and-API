@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return redirect()->route('presentations.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 

@@ -17,7 +17,6 @@
       </div>
     </div>
 </div>
-<p style="font-size: 24px; font-weight: bold;"> Sign Up to create a presentation</p>
 @endguest
 <ul>
     @foreach ($presentations as $presentation)
