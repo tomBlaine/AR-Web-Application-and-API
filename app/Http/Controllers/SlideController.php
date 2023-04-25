@@ -63,7 +63,7 @@ class SlideController extends Controller
         $a->text3Format = $checkedValue3.($request->input('boxPos3', ""));
 
         $string = $request['obj'];
-        $parts = explode('/', $string);
+        $parts = explode('-', $string);
         
         $a->obj= end($parts);
         $a->user_id = auth()->id();
