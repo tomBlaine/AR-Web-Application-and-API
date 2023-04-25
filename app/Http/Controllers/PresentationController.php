@@ -33,7 +33,7 @@ class PresentationController extends Controller
         $a->save();
 
         //session()->flash('message', 'Presentation was created.');
-        return redirect()->route('presentations.index');
+        return redirect()->route('presentations.show', ['id'=>$a->id]);
     }
 
     public function index()
