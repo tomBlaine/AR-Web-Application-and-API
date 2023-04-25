@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 @vite('resources/css/app.css')
 @vite('resources/js/app.js')
+<style>
+    body {
+        background: linear-gradient(to top right, 
+                    #003366 0%,  
+                     #00cccc 50%, 
+                  #ffffff 100% 
+                    );
+        }
+</style>
 <head>
 
     <meta charset="UTF-8" />
