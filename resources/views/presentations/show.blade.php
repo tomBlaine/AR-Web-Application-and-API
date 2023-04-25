@@ -657,7 +657,7 @@
                           <br>
                         </div>
                         <div style="flex: 1;">
-                          <img src="{{asset('images/1.gif')}}" alt="Large Image" style="width: 100%; height: 300px;">
+                          <img id="img1" src="{{asset('images/3.gif')}}" alt="Large Image" style="width: 100%; height: 100%;">
                         </div>
                       </div>
                     </div>
@@ -865,6 +865,35 @@
         form1.submit();
 
       });
+
+    </script>
+    <script>
+
+const checkboxes = document.querySelectorAll('.checkboxes1');
+const image = document.querySelector('img1');
+
+
+checkboxes.forEach(function(checkbox) {
+  checkbox.addEventListener('change', function() {
+
+    const selectedCheckbox = document.querySelector('.checkboxes1:checked');
+    const value = selectedCheckbox.value;
+    switch(value) {
+      case 'S':
+        image.src = {{asset('images/4.gif')}};
+        break;
+      case 'V':
+        image.src = {{asset('images/3.gif')}};
+        break;
+      case 'H':
+        image.src = {{asset('images/2.gif')}};
+        break;
+      case 'B':
+        image.src = {{asset('images/1.gif')}};
+        break;
+    }
+  });
+});
 
     </script>
 
