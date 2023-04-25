@@ -657,7 +657,7 @@
                           <br>
                         </div>
                         <div style="flex: 1;">
-                          <img src="image.jpg" alt="Large Image" style="width: 100%; height: 300px;">
+                          <img src="{{asset('images/1.gif')}}" alt="Large Image" style="width: 100%; height: 300px;">
                         </div>
                       </div>
                     </div>
