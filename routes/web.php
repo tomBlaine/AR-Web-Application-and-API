@@ -29,10 +29,10 @@ Route::get('/dashboard', function () {
 
 
 
-Route::get('/mypresentations', [PresentationController::class, 'index'])
+Route::get('/timeline', [PresentationController::class, 'index'])
     ->name('presentations.index');
 
-
+    
 Route::get('/sessions/create', [SessionController::class, 'create'])
     ->name('sessions.create')->middleware(['auth']);
 
