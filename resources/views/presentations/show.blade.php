@@ -66,6 +66,22 @@
     class="rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
     Click to Deploy Now!
   </button>
+
+  <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" style="background-color: #386dfd; color: white;" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown button <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+<!-- Dropdown menu -->
+<div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit session (for teacher to add final toaches to app)</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Solo Session (everyone can control their own progression)</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Group Session (Teacher controls progression for all)</a>
+      </li>
+    </ul>
+</div>
 </div>
 
 
@@ -712,7 +728,7 @@
                           </div>
                         </div>
                         <div style="flex: 1;">
-                          <img src="image.jpg" alt="Large Image" style="width: 100%; height: 300px;">
+                          <img src="{{asset('images/4.gif')}}" alt="Large Image" style="width: 100%; height: 100%;">
                         </div>
                       </div>
                     </div>
@@ -767,7 +783,7 @@
                           </div>
                         </div>
                         <div style="flex: 1;">
-                          <img src="image.jpg" alt="Large Image" style="width: 100%; height: 300px;">
+                          <img src="{{asset('images/4.gif')}}" alt="Large Image" style="width: 100%; height: 100%;">
                         </div>
                       </div>
                     </div>
@@ -865,35 +881,6 @@
         form1.submit();
 
       });
-
-    </script>
-    <script>
-
-const checkboxes = document.querySelectorAll('.checkboxes1');
-const image = document.querySelector('img1');
-
-
-checkboxes.forEach(function(checkbox) {
-  checkbox.addEventListener('change', function() {
-
-    const selectedCheckbox = document.querySelector('.checkboxes1:checked');
-    const value = selectedCheckbox.value;
-    switch(value) {
-      case 'S':
-        image.src = {{asset('images/4.gif')}};
-        break;
-      case 'V':
-        image.src = {{asset('images/3.gif')}};
-        break;
-      case 'H':
-        image.src = {{asset('images/2.gif')}};
-        break;
-      case 'B':
-        image.src = {{asset('images/1.gif')}};
-        break;
-    }
-  });
-});
 
     </script>
 
