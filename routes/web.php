@@ -44,7 +44,7 @@ Route::post('/sessions/{id}/plus', [SessionController::class, 'increment'])
 Route::post('/sessions/{id}/minus', [SessionController::class, 'decrement'])
     ->name('sessions.decrement')->middleware(['auth']);
 
-Route::post('/sessions/store', [SessionController::class, 'store'])
+Route::post('/sessions/store/{id}/{type}', [SessionController::class, 'store'])
     ->name('sessions.store')->middleware(['auth']);
 
 Route::delete('/presentations/{id}/delete', [PresentationController::class, 'destroy'])
