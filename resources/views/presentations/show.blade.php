@@ -46,6 +46,7 @@
 <body>
 
 <div
+
   style="border-radius: 5px; background-color: #ecf1ff;"
   class="rounded-lg bg-neutral-100 p-6 text-neutral-700 shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:shadow-black/30">
   <h2 class="mb-5 text-3xl font-semibold">{{$presentation->title}}</h2>
