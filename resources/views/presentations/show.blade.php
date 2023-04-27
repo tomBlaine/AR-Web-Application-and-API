@@ -938,7 +938,7 @@
 <script>
   $(document).ready(function() {
     var counter = 0;
-      $('#toggleButton').click(function() {
+      $('#toggleButton').click(function(event) {
         event.preventDefault();
           counter++;
           $('#sectionToToggle'+(counter)).toggle(); // Toggle the visibility of the section
