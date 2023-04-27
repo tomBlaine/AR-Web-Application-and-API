@@ -51,7 +51,7 @@ class SlideController extends Controller
 
 
         $a = new Slide;
-        //hello
+
         
         $a->text1 = $request->input('grid1_data', "");
         $a->text1Format = $checkedValue1.($request->input('boxPos1', ""));
