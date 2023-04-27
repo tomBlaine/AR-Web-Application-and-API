@@ -822,12 +822,7 @@
                       </div>
                     </div>
 
-                    <button
-                    id="toggleButton"
-                    class="inline-block rounded-full border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
-                    data-te-ripple-init>
-                      +Add text box
-                    </button>
+                    <button id="toggleButton">Add text box</button>
 
                     <input type="hidden" name="grid1_data" id="grid1_data" value="null">
                     <input type="hidden" name="grid2_data" id="grid2_data" value="null">
